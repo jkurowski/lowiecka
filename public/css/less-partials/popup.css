@@ -1,0 +1,19 @@
+#popModal * {
+  border-radius: 0 !important;
+}
+#popModal .modal-content {
+  border: 0;
+}
+#popModal .modal-content p {
+  margin: 0;
+}
+#popModal .modal-header {
+  background: #b79a5e;
+}
+#popModal .modal-dialog {
+  max-width: fit-content;
+}
+.modal-backdrop.show {
+  opacity: 0.8;
+}
+/*# sourceMappingURL=popup.css.map */

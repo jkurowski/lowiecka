@@ -1,0 +1,1348 @@
+<p>&nbsp;</p>
+<p><strong>PROSPEKT INFORMACYJNY PRZEDSIĘWZIĘCIA DEWELOPERSKIEGO</strong></p>
+<p><strong>PN. &bdquo;BESKIDZKA PARK&rdquo;</strong></p>
+<p>&nbsp;</p>
+<p><strong>Stan na dzień sporządzenia prospektu </strong><strong>&hellip;&hellip;&hellip;&hellip;</strong></p>
+<p>&nbsp;</p>
+<p>CZĘŚĆ OG&Oacute;LNA</p>
+<p>&nbsp;</p>
+<ol type="I">
+<li>
+<p><strong>DANE INDENTYFIKACYJNE I KONTAKTOWE DOTYCZĄCE DEWELOPERA</strong></p>
+</li>
+</ol>
+<dl>
+<dd>
+<table style="border-collapse: collapse; width: 100%;" border="1" width="100%" rules="ROWS" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td colspan="3" bgcolor="#d9d9d9" width="100%">
+<p><strong>DANE DEWELOPERA</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2">
+<p>Deweloper</p>
+</td>
+<td colspan="2">
+<p><strong>Heritage Invest Park Sp. z o.o.</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2">
+<p>Adres</p>
+</td>
+<td colspan="2">
+<p><strong>90-329 Ł&oacute;dź</strong></p>
+<p><strong>Al. Marszałka J&oacute;zefa Piłsudskiego 3</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2">
+<p>Numer NIP i REGON</p>
+</td>
+<td>
+<p><strong>NIP 7252311134</strong></p>
+</td>
+<td>
+<p><strong>REGON: 389621545</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2">
+<p>Numer telefonu</p>
+</td>
+<td colspan="2">
+<p><strong>536&ndash;882-090</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2">
+<p>Adres poczty elektronicznej</p>
+</td>
+<td colspan="2">
+<p><strong>biuro@beskidzkapark.pl</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2">
+<p>Numer faksu</p>
+</td>
+<td colspan="2">
+<p><strong>Brak</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2">
+<p>Adres strony internetowej dewelopera</p>
+</td>
+<td colspan="2">
+<p><strong><a href="/admin/contract/template/www.beskidzkapark.pl">www.beskidzkapark.pl</a></strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>&nbsp;</p>
+<ol start="2" type="I">
+<li>
+<p><strong>DOŚWIADCZENIE DEWELOPERA</strong></p>
+</li>
+</ol>
+<dl>
+<dd>
+<table style="border-collapse: collapse; width: 100%;" border="1" width="100%" cellspacing="0" cellpadding="7"><colgroup><col width="201" /> <col width="418" /> </colgroup>
+<tbody>
+<tr style="height: 21px;">
+<td style="height: 21px;" colspan="2" valign="TOP" bgcolor="#d9d9d9" width="633" height="11">
+<p><strong>HISTORIA</strong><strong> </strong>I <strong>UDOKUMENTOWANE</strong><strong> </strong><strong>DOŚWIADCZENIE</strong><strong> </strong><strong>DEWELOPERA</strong></p>
+</td>
+</tr>
+<tr style="height: 63px;">
+<td style="height: 63px;" colspan="2" valign="TOP" bgcolor="#d9d9d9" width="633" height="23">
+<p><strong>PRZYKŁAD</strong><strong> </strong><strong>UKOŃCZONEGO</strong><strong> </strong><strong>PRZEDSIĘWZIĘCIA DEWELOPERSKIEGO (należy</strong><strong> </strong><strong>wskazać, o ile istnieją, </strong><strong>trzy</strong><strong> </strong><strong>ukończone</strong><strong> </strong><strong>przedsięwzięcia</strong><strong> </strong><strong>deweloperskie,</strong><strong> </strong><strong>w</strong><strong> </strong><strong>tym</strong><strong> </strong><strong>ostatnie)</strong></p>
+</td>
+</tr>
+<tr style="height: 21px;" valign="TOP">
+<td style="height: 21px;" bgcolor="#f2f2f2" width="201">
+<p>Adres</p>
+</td>
+<td style="height: 21px;" width="418">
+<p>Nie dotyczy</p>
+</td>
+</tr>
+<tr style="height: 21px;" valign="TOP">
+<td style="height: 21px;" bgcolor="#f2f2f2" width="201">
+<p>Data rozpoczęcia</p>
+</td>
+<td style="height: 21px;" width="418">
+<p>Nie dotyczy</p>
+</td>
+</tr>
+<tr style="height: 42px;" valign="TOP">
+<td style="height: 42px;" bgcolor="#f2f2f2" width="201">
+<p>Data wydania decyzji o pozwoleniu na użytkowanie</p>
+</td>
+<td style="height: 42px;" width="418">
+<p>Nie dotyczy</p>
+</td>
+</tr>
+<tr style="height: 21px;">
+<td style="height: 21px;" colspan="2" valign="TOP" bgcolor="#d9d9d9" width="633">
+<p><strong>PRZYKŁAD INNEGO UKOŃCZONEGO PRZEDSIĘWZIĘCIA DEWELOPERSKIEGO</strong></p>
+</td>
+</tr>
+<tr style="height: 21px;" valign="TOP">
+<td style="height: 21px;" bgcolor="#f2f2f2" width="201">
+<p>Adres</p>
+</td>
+<td style="height: 21px;" width="418">
+<p>Nie dotyczy</p>
+</td>
+</tr>
+<tr style="height: 21px;" valign="TOP">
+<td style="height: 21px;" bgcolor="#f2f2f2" width="201">
+<p>Data rozpoczęcia</p>
+</td>
+<td style="height: 21px;" width="418">
+<p>Nie dotyczy</p>
+</td>
+</tr>
+<tr style="height: 42px;" valign="TOP">
+<td style="height: 42px;" bgcolor="#f2f2f2" width="201">
+<p>Data wydania decyzji o pozwoleniu na użytkowanie</p>
+</td>
+<td style="height: 42px;" width="418">
+<p>Nie dotyczy</p>
+</td>
+</tr>
+<tr style="height: 21px;">
+<td style="height: 21px;" colspan="2" valign="TOP" bgcolor="#d9d9d9" width="633">
+<p><strong>PRZYKŁAD OSTATNIEGO UKOŃCZONEGO PRZEDSIĘWZIĘCIA DEWELOPERSKIEGO</strong></p>
+</td>
+</tr>
+<tr style="height: 21px;" valign="TOP">
+<td style="height: 21px;" bgcolor="#f2f2f2" width="201">
+<p>Adres</p>
+</td>
+<td style="height: 21px;" width="418">
+<p>Nie dotyczy</p>
+</td>
+</tr>
+<tr style="height: 21px;" valign="TOP">
+<td style="height: 21px;" bgcolor="#f2f2f2" width="201">
+<p>Data rozpoczęcia</p>
+</td>
+<td style="height: 21px;" width="418">
+<p>Nie dotyczy</p>
+</td>
+</tr>
+<tr style="height: 42px;" valign="TOP">
+<td style="height: 42px;" bgcolor="#f2f2f2" width="201">
+<p>Data wydania decyzji o pozwoleniu na użytkowanie</p>
+</td>
+<td style="height: 42px;" width="418">
+<p>Nie dotyczy</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>&nbsp;</p>
+<dl>
+<dd>
+<table style="border-collapse: collapse; width: 100%;" border="1" width="100%" cellspacing="0" cellpadding="7"><colgroup><col width="201" /> <col width="418" /> </colgroup>
+<tbody>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="201">
+<p>Czy przeciwko deweloperowi prowadzono lub prowadzi się postępowania egzekucyjne na kwoty powyżej 100 000 zł</p>
+</td>
+<td width="418">
+<p>Nie</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ol start="3" type="I">
+<li>
+<p><strong>INFORMACJE DOTYCZĄCE NIERUCHOMOŚCI I PRZEDSIĘWZIĘCIA DEWELOPERSKIEGO</strong></p>
+</li>
+</ol>
+<dl>
+<dd>
+<table style="border-collapse: collapse; width: 100%;" border="1" width="100%" cellspacing="0" cellpadding="7">
+<tbody>
+<tr>
+<td colspan="9" valign="TOP" bgcolor="#d9d9d9">
+<p><strong>INFORMACJE DOTYCZĄCE GRUNTU I ZAGOSPODAROWANIA PRZESTRZENNEGO TERENU</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" bgcolor="#f2f2f2">
+<p>Adres, numer działki ewidencyjnej i numer obrębu ewidencyjnego<sup>1)</sup></p>
+</td>
+<td colspan="7">
+<p>91-610 Ł&oacute;dź, ul. Beskidzka 129</p>
+<p>Nr działki ew. 129/2, nr obrębu ew. W-4</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" bgcolor="#f2f2f2">
+<p>Numer księgi wieczystej</p>
+</td>
+<td colspan="7">
+<p>LD1M/00041756/7</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" bgcolor="#f2f2f2">
+<p>Istniejące obciążenia hipoteczne nieruchomości <strong>lub </strong>wnioski o wpis w dziale czwartym księgi wieczystej</p>
+</td>
+<td colspan="7">
+<p>Nie dotyczy</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" bgcolor="#f2f2f2">
+<p>W przypadku braku księgo wieczystej informacja o powierzchni działki i stanie prawnym nieruchomości<sup>2)</sup></p>
+</td>
+<td colspan="7">
+<p>Nie dotyczy</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" bgcolor="#f2f2f2">
+<p>Informacje dotyczące obiekt&oacute;w istniejących położonych w sąsiedztwie inwestycji i wpływających na warunki życia<sup>3)</sup></p>
+</td>
+<td colspan="7">
+<p>Schronisko dla zwierząt w Łodzi przy ul. Marmurowej</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" rowspan="4" bgcolor="#f2f2f2">
+<p>Akty planowania przestrzennego i inne akty prawne na terenie objętym przedsięwzięciem deweloperski, lub zadaniem inwestycyjnym</p>
+</td>
+<td colspan="2">
+<p>Plan og&oacute;lny gminy</p>
+</td>
+<td colspan="5">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2">
+<p>Miejscowy plan zagospodarowania przestrzennego</p>
+</td>
+<td colspan="5">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2">
+<p>Miejscowy plan odbudowy</p>
+</td>
+<td colspan="5">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2">
+<p>Inne<sup>4)</sup></p>
+</td>
+<td colspan="5">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" rowspan="13" bgcolor="#f2f2f2">
+<p>Ustalenia obowiązującego miejscowego planu zagospodarowania przestrzennego dla terenu objętego przedsięwzięciem deweloperskim lub zadaniem inwestycyjnym</p>
+</td>
+<td colspan="2">
+<p>Przeznaczenie terenu</p>
+</td>
+<td colspan="5">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2">
+<p>Maksymalna intensywność zabudowy</p>
+</td>
+<td colspan="5">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2">
+<p>Maksymalna i minimalna nadziemna intensywność zabudowy</p>
+</td>
+<td colspan="5">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2">
+<p>Maksymalna powierzchnia zabudowy</p>
+</td>
+<td colspan="5">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2">
+<p>Maksymalna wysokość zabudowy</p>
+</td>
+<td colspan="5" width="201">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2">
+<p>Minimalny udział procentowy powierzchni biologicznie czynnej</p>
+</td>
+<td colspan="5">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2">
+<p>Minimalna liczba miejsc do parkowania</p>
+</td>
+<td colspan="5">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>Warunki ochrony środowiska i zdrowia ludzi, przyrody i krajobrazu</p>
+</td>
+<td colspan="5" width="201">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>Wymagania dotyczące zabudowy i zagospodarowania terenu położonego na obszarach szczeg&oacute;lnego zagrożenia powodzią</p>
+</td>
+<td colspan="5" width="201">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>Warunki ochrony dziedzictwa kulturowego i zabytk&oacute;w</p>
+<p>oraz d&oacute;br kultury wsp&oacute;łczesnej</p>
+</td>
+<td colspan="5" width="201">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>Wymagania dotyczące ochrony innych teren&oacute;w lub obiekt&oacute;w podlegających ochronie</p>
+<p>na podstawie przepis&oacute;w odrębnych</p>
+</td>
+<td colspan="5" width="201">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>Warunki i szczeg&oacute;łowe zasady obsługi w zakresie komunikacji</p>
+</td>
+<td colspan="5" width="201">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>Warunki i szczeg&oacute;łowe zasady obsługi w zakresie infrastruktury technicznej</p>
+</td>
+<td colspan="5" width="201">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" rowspan="7" bgcolor="#f2f2f2" width="201">
+<p>Ustalenia obowiązującego miejscowego planu zagospodarowania przestrzennego dla działek lub ich fragment&oacute;w znajdujących się w odległości do 100m od granicy terenu objętego przedsięwzięciem deweloperskim lub zadaniem inwestycyjnym<sup>5)</sup></p>
+</td>
+<td colspan="2" width="203">
+<p>Przeznaczenie terenu</p>
+</td>
+<td colspan="5" width="201">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>Maksymalna intensywność zabudowy</p>
+</td>
+<td colspan="5" width="201">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>Maksymalna i minimalna nadziemna intensywność zabudowy</p>
+</td>
+<td colspan="5" width="201">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>Maksymalna powierzchnia zabudowy</p>
+</td>
+<td colspan="5" width="201">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>Maksymalna wysokość zabudowy</p>
+</td>
+<td colspan="5" width="201">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>Minimalny udział procentowy powierzchni biologicznie czynnej</p>
+</td>
+<td colspan="5" width="201">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>Minimalna liczba miejsc do parkowania</p>
+</td>
+<td colspan="5" width="201">
+<p>Brak planu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" rowspan="15" bgcolor="#f2f2f2" width="201">
+<p>Ustalenia decyzji o warunkach zabudowy albo decyzji o ustaleniu lokalizacji inwestycji celu publicznego dla terenu objętego przedsięwzięciem deweloperskim lub zadaniem inwestycyjnym w przypadku braku miejscowego planu zagospodarowania przestrzennego</p>
+</td>
+<td colspan="2" width="203">
+<p>Funkcja zabudowy</p>
+<p>i zagospodarowania terenu</p>
+</td>
+<td colspan="5" width="201">
+<p>Domy jednorodzinne wraz z ogr&oacute;dkami i drogą dojazdową do posesji</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="7" width="418">
+<p>Cechy zabudowy i zagospodarowania terenu:</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>gabaryty</p>
+</td>
+<td colspan="5" width="201">
+<p>Gabaryt największego zespołu:<br />wysokość maksymalna: 8,63m<br />Długość:12,00m<br />Szerokość: 31,16m</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>forma architektoniczna</p>
+</td>
+<td colspan="5" width="201">
+<p>Zabudowa jednorodzinna bliźniacza i szeregowa</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>usytuowanie linii zabudowy</p>
+</td>
+<td colspan="5" width="201">
+<p>Na przedłużeniu linii zabudowy na działce sąsiedniej 130/1</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>intensywność wykorzystania terenu</p>
+</td>
+<td colspan="5" width="201">
+<p>Wskaźnik powierzchni nowej zabudowy w stosunku do terenu inwestycji tj. działki nr 192/2 &ndash; od 0,2 do 0,3</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>warunki ochrony środowiska</p>
+<p>i zdrowia ludzi, przyrody i krajobrazu</p>
+</td>
+<td colspan="5" width="201">
+<p>Wg WZ: Zgodne z ustawą z dnia 27 kwietnia 2001 r. prawo ochrony środowiska (Dz. U. z 2021 r., poz.1973); oraz ustawą z dnia 16 kwietnia 2004 r. o ochronie przyrody (Dz. U. z 2021 r., poz. 1326)</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>wymagania dotyczące zabudowy i zagospodarowania terenu położonego na obszarach szczeg&oacute;lnego zagrożenia powodzią</p>
+</td>
+<td colspan="5" width="201">
+<p>Wg WZ: Zgodne z ustawą z dnia 20 lipca 2017 r. Prawo wodne (Dz.U z 2021 r., poz. 2233)</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>warunki ochrony dziedzictwa kulturowego i zabytk&oacute;w oraz d&oacute;br kultury wsp&oacute;łczesnej</p>
+</td>
+<td colspan="5" width="201">
+<p>Wg WZ: zgodne z ustawą z dnia 23 lipca 2003 r. o ochronie zabytk&oacute;w i opiece nad zabytkami (Dz. U. 2021 r. poz. 710); zwłaszcza z art. 32 ust. 1.</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>wymagania dotyczące ochrony innych teren&oacute;w lub obiekt&oacute;w podlegających ochronie na podstawie przepis&oacute;w odrębnych</p>
+</td>
+<td colspan="5" width="201">
+<p>Wg WZ: zgodne z ustawą z dnia 3 lutego 1995 r. o ochronie grunt&oacute;w rolnych i leśnych (Dz. U. z 2021 r., poz. 1326 oraz<br />ustawą z dnia 13 września 1996 r. o utrzymaniu czystości i porządku w gminach (Dz. U. z 2020 r., poz. 1439 z zm.) oraz<br />ustawą z dnia 14 grudnia 2012 r. o odpadach (Dz. U. z 2021r. poz. 779)</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>warunki i szczeg&oacute;łowe zasady obsługi w zakresie komunikacji</p>
+</td>
+<td colspan="5" width="201">
+<p>Wg WZ: Obsługa komunikacyjna inwestycji z ul. Beskidzkiej &ndash; drogi gminnej, poprzez projektowany zjazd, dla obsługi planowanej inwestycji należy zapewnić co najmniej 1 miejsce parkingowe/garażowe na jedno mieszkanie.</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>warunki i szczeg&oacute;łowe zasady obsługi w zakresie infrastruktury technicznej</p>
+</td>
+<td colspan="5" width="201">
+<p>Wg WZ: Zaopatrzenie w energię elektryczną i wodę z sieci oraz odprowadzenie ściek&oacute;w sanitarnych do kanalizacji miejskiej na warunkach gestor&oacute;w sieci, zaopatrzenie w ciepło z kotłowni lokalnych</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>minimalny udział procentowy powierzchni biologicznie czynnej</p>
+</td>
+<td colspan="5" width="201">
+<p>Powierzchnia biologicznie czynna łącznie: 55%</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>nadziemna intensywność zabudowy</p>
+</td>
+<td colspan="5" width="201">
+<p>Wskaźnik powierzchni zabudowy od 0,2 do 0,3</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>wysokość zabudowy</p>
+</td>
+<td colspan="5" width="201">
+<p>Wysokość g&oacute;rnej elewacji frontowej, jej gzymsu lub attyki od 3 do 6,5 m<br />Wysokość gł&oacute;wnej kalenicy od 7 do 9 m</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" rowspan="18" valign="TOP" bgcolor="#f2f2f2" width="201">
+<p>Informacje dotyczące przewidzianych inwestycji w promieniu 1 km od terenu objętego przedsięwzięciem</p>
+<p>deweloperskim lub zadaniem inwestycyjnym<sup>6)</sup>, zawarte w:</p>
+</td>
+<td colspan="2" valign="TOP" width="203">
+<p>miejscowych planach zagospodarowania przestrzennego</p>
+</td>
+<td colspan="5" rowspan="7" width="201">
+<p><strong>Załącznik nr 7</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>Studium uwarunkowań i kierunk&oacute;w zagospodarowania przestrzennego gminy</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>decyzjach o warunkach zabudowy i zagospodarowania terenu</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>decyzjach o środowiskowych uwarunkowaniach</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>uchwałach o obszarach ograniczonego użytkowania</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>miejscowych planach odbudowy</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="2" width="203">
+<p>mapach zagrożenia powodziowego i mapach ryzyka powodziowego</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="7" width="418">
+<p>Ustalenia decyzji w zakresie rozmieszczenia inwestycji celu publicznego, mogące mieć znaczenie dla terenu objętego przedsięwzięciem deweloperskim lub zadaniem inwestycyjnym:</p>
+</td>
+</tr>
+<tr>
+<td colspan="4" valign="TOP" width="211">
+<p>decyzja o zezwoleniu na realizacji inwestycji drogowej</p>
+</td>
+<td colspan="3" rowspan="10" width="192">
+<p><strong>Załącznik nr 7</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="4" width="211">
+<p>decyzja o ustaleniu lokalizacji linii kolejowej</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="4" width="211">
+<p>decyzja o zezwoleniu na realizacji inwestycji w zakresie lotniska użytku publicznego</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="4" width="211">
+<p>decyzja o pozwoleniu na realizacji inwestycji w zakresie budowli przeciwpowodziowych</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="4" width="211">
+<p>decyzja o ustaleniu lokalizacji inwestycji w zakresie budowy obiektu energetyki jądrowej</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="4" width="211">
+<p>decyzja o ustaleniu lokalizacji strategicznej inwestycji w zakresie</p>
+<p>sieci przesyłowej</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="4" width="211">
+<p>decyzja o ustaleniu lokalizacji regionalnej sieci szerokopasmowej</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="4" width="211">
+<p>decyzja o ustaleniu lokalizacji inwestycji w zakresie Centralnego Portu Komunikacyjnego</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="4" width="211">
+<p>decyzja o zezwoleniu na realizacji inwestycji w zakresie infrastruktury</p>
+<p>dostępowej</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="4" width="211">
+<p>decyzja o ustaleniu lokalizacji strategicznej inwestycji w sektorze naftowym</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" valign="TOP" bgcolor="#d9d9d9" width="633">
+<p><strong>INFORMACJE DOTYCZĄCE BUDYNKU</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="199">
+<p>Czy jest pozwolenie na budowę</p>
+</td>
+<td colspan="4" bgcolor="#ffffff" width="212">
+<p>tak*</p>
+</td>
+<td colspan="4" bgcolor="#ffffff" width="194">
+<p><span style="text-decoration: line-through;">nie*</span></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="199">
+<p>Czy pozwolenie na budowę jest ostateczne</p>
+</td>
+<td colspan="4" bgcolor="#ffffff" width="212">
+<p>tak*</p>
+</td>
+<td colspan="4" bgcolor="#ffffff" width="194">
+<p><span style="text-decoration: line-through;">nie*</span></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="199">
+<p>Czy pozwolenie na budowę jest zaskarżone</p>
+</td>
+<td colspan="4" bgcolor="#ffffff" width="212">
+<p><span style="text-decoration: line-through;">tak*</span></p>
+</td>
+<td colspan="4" bgcolor="#ffffff" width="194">
+<p>nie*</p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="199">
+<p>Numer pozwolenia na budowę oraz nazwa organu, kt&oacute;ry je wydał</p>
+</td>
+<td colspan="8" bgcolor="#ffffff" width="420">
+<p><strong>DPRG-UA-XIV.1566.2022 wydane przez Prezydenta Miasta Łodzi</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="3" bgcolor="#f2f2f2" width="324">
+<p>Data uprawomocnienia się decyzji o pozwoleniu na użytkowanie budynku</p>
+</td>
+<td colspan="6" bgcolor="#ffffff" width="295">
+<p><strong>Nie dotyczy</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="3" bgcolor="#f2f2f2" width="324">
+<p>Numer zgłoszenia budowy, o kt&oacute;rej mowa w art. 29 ust. 1 pkt 1 ustawy z dnia 7 lipca 1994 r. - Prawo budowlane (Dz. U. z 2021 r. poz. 2351, Z p&oacute;źń. Zill.), oraz oznaczenie organu, do kt&oacute;rego dokonano zgłoszenia, wraz z informacje o braku wniesienia sprzeciwu przez ten organ</p>
+</td>
+<td colspan="6" bgcolor="#ffffff" width="295">
+<p><strong>Nie dotyczy</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="3" bgcolor="#f2f2f2" width="324">
+<p>Data zakończenia budowy domu jednorodzinnego</p>
+</td>
+<td colspan="6" bgcolor="#ffffff" width="295">
+<p><strong>31.08.2025</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="3" bgcolor="#f2f2f2" width="324">
+<p>Planowany termin rozpoczęcia i zakończenia robot budowlanych</p>
+</td>
+<td colspan="6" bgcolor="#ffffff" width="295">
+<p><strong>03.10.2022-31.08.2025</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="3" rowspan="2" bgcolor="#f2f2f2" width="324">
+<p>Opis przedsięwzięcia deweloperskiego lub zadania inwestycyjnego</p>
+</td>
+<td colspan="5" bgcolor="#ffffff" width="147">
+<p>Liczba budynk&oacute;w</p>
+</td>
+<td bgcolor="#ffffff" width="134">
+<p><strong>20 Budynk&oacute;w</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="5" bgcolor="#ffffff" width="147">
+<p>Rozmieszczenie budynk&oacute;w na nieruchomości (należy podać minimalny odstęp między budynkami)</p>
+</td>
+<td bgcolor="#ffffff" width="134">
+<p><strong>Budynki mieszkalne jednorodzinne w zabudowie szeregowej lub bliźniaczej. Odległość między szeregami/bliźniakami wynosi minimum 8m.</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="3" bgcolor="#f2f2f2" width="324">
+<p>Spos&oacute;b pomiaru powierzchni użytkowej lokalu mieszkalnego albo domu jednorodzinnego</p>
+</td>
+<td colspan="6" bgcolor="#ffffff" width="295">
+<p><strong>W świetle ścian z tynkami zgodnie z PN-ISO 9836:2015</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="3" rowspan="2" bgcolor="#f2f2f2" width="324">
+<p>Zamierzony spos&oacute;b i procentowy udział źr&oacute;deł finansowania przedsięwzięcia deweloperskiego lub zadania inwestycyjnego</p>
+</td>
+<td colspan="4" bgcolor="#ffffff" width="143">
+<p>Rodzaj posiadanych środk&oacute;w finansowych &ndash; kredyt, środki własne, inne</p>
+</td>
+<td colspan="2" bgcolor="#ffffff" width="138">
+<p><strong>Środki własne oraz wpłaty nabywc&oacute;w</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="4" bgcolor="#ffffff" width="143">
+<p>W następujących instytucjach finansowych (wypełnia się w przypadku kredytu)</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</td>
+<td colspan="2" bgcolor="#ffffff" width="138">
+<p><strong>Nie dotyczy</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="3" rowspan="2" bgcolor="#f2f2f2" width="324">
+<p>Środki ochrony nabywc&oacute;w</p>
+</td>
+<td colspan="4" bgcolor="#ffffff" width="143">
+<p>Otwarty mieszkaniowy rachunek powierniczy*</p>
+</td>
+<td colspan="2" bgcolor="#ffffff" width="138">
+<p><span style="text-decoration: line-through;">Zamknięty mieszkaniowy rachunek powierniczy*</span></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td colspan="4" bgcolor="#ffffff" width="143">
+<p>Wysokość stawki procentowej, wg kt&oacute;rej jest obliczana kwota składki na Deweloperski Fundusz Gwarancyjny<sup>7)</sup></p>
+</td>
+<td colspan="2" bgcolor="#ffffff" width="138">
+<p><strong>0,45%</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>&nbsp;</p>
+<p><sup><strong>1) </strong></sup>Jeżeli działkanieposiadaadresu,należyopisowookreślićjejpołożenie.</p>
+<p><sup><strong>2)</strong></sup><strong> </strong>Wszczeg&oacute;lnościimięinazwiskoalbofirmawłaściciela lubużytkownikawieczystegoorazistniejąceobciążenia na nieruchomości.</p>
+<p><sup>3</sup><sup><strong>) </strong></sup>W szczeg&oacute;lności obiekty generujące uciążliwości zapachowe, hałasowe, świetlne.</p>
+<p><sup>4)</sup>Akty prawne (rozporządzenia, zarządzenia, uchwały) w sprawach:</p>
+<ol start="3" type="I">
+<li style="list-style-type: none;">
+<ol>
+<li>
+<p>dotyczących Inwestycji, Inwestycji Towarzyszących oraz obszaru otoczenia CPK,</p>
+</li>
+<li>
+<p>lokalizacji inwestycji mieszkaniowej lub inwestycji towarzyszącej,</p>
+</li>
+<li>
+<p>ustanowienia form ochrony przyrody lub ich otulin (parku narodowego, rezerwatu przyrody, parku krajobrazowego, obszaru chronionego krajobrazu, obszaru Natura 2000, pomnika przyrody, stanowiska dokumentacyjnego, użytku ekologicznego, zespołu przyrodniczo-krajobrazowego, ochrony gatunkowej roślin, zwierząt i grzyb&oacute;w),</p>
+</li>
+<li>
+<p>ustanowienia strefy ochronnej terenu ochrony bezpośredniej i terenu ochrony pośredniej ujęcia wody,</p>
+</li>
+<li>
+<p>wyznaczenia obszar&oacute;w cichych w aglomeracji lub obszar&oacute;w cichych poza aglomeracją,</p>
+</li>
+<li>
+<p>utworzenia obszaru ograniczonego użytkowania,</p>
+</li>
+<li>
+<p>uznania zabytku za pomnik historii,</p>
+</li>
+<li>
+<p>określenia granic obszaru Pomnika Zagłady i jego strefy ochronnej, utworzenia parku kulturowego,</p>
+</li>
+<li>
+<p>ustalenia zasad i warunk&oacute;w sytuowania obiekt&oacute;w malej architektury, tablic reklamowych i urządzeń reklamowych oraz ogrodzeń, ich gabaryt&oacute;w standard&oacute;w jakościowych oraz rodzaj&oacute;w materiał&oacute;w budowlanych.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p><sup>5) </sup>W przypadku braku miejscowego planu zagospodarowania przestrzennego umieszcza się informację &bdquo;brak planu&rdquo;</p>
+<p><sup>6)</sup>Wskazane inwestycje dotyczące w szczeg&oacute;lności budowy lub rozbudowy dr&oacute;g, budowy linii szynowych oraz przewidzianych korytarzy powietrznych, inwestycji komunalnych, takich jak: oczyszczalnie ściek&oacute;w, spalarnie śmieci, wysypiska, cmentarzy.</p>
+<p><sup>7)</sup>Zgodnie z art. 48 ust. 6 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym (Dz. U. poz. 1177 oraz z 2023 r. poz. 1114) wysokość składki jest wyliczana według stawki procentowej obowiązującej w dniu rozpoczęcia sprzedaży lokali mieszkalnych lub dom&oacute;w jednorodzinnych w ramach danego przedsięwzięcia deweloperskiego lub zadania inwestycyjnego. Natomiast stawka procentowa określa akt wykonawczy wydany na podstawie art. 48 ust. 8 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym.</p>
+<p>* niepotrzebne skreślić</p>
+<p>&nbsp;</p>
+<dl>
+<dd>
+<table style="border-collapse: collapse; width: 100%;" border="1" width="100%" rules="COLS" cellspacing="0" cellpadding="7"><colgroup><col width="183" /> <col width="427" /> </colgroup>
+<tbody>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="183">
+<p>Gł&oacute;wne zasady funkcjonowania wybranego rodzaju zabezpieczenia środk&oacute;w nabywcy</p>
+</td>
+<td width="427">
+<p>W związku z realizacją przez dewelopera umowy deweloperskiej bank wypłaca deweloperowi środki pieniężne wpłacone przez nabywcę na otwarty rachunek powierniczy, nie wcześniej niż po 30 dniach od dnia zawarcia umowy deweloperskiej i potwierdzeniu zakończenia danego etapu realizacji zadania inwestycyjnego, w wysokości kwoty stanowiącej iloczyn procenty koszt&oacute;w danego etapu określonego w harmonogramie zadania inwestycyjnego oraz ceny lokalu.</p>
+<p>W przypadku zakończenia ostatniego etapu zadania inwestycyjnego określonego w jego harmonogramach, bank wypłaca deweloperowi pozostałe środki na otwartym mieszkaniowym rachunku powierniczym środki pieniężne wpłacone przez nabywcę na poczet realizacji ostatniego etapu prac po otrzymaniu wypisu aktu notarialnego umowy przenoszącej na nabywcę praca wynikające z umowy deweloperskiej lub umowy, o kt&oacute;rej mowa w art. 2 ust. 2 pkt 1 lub 3 Ustawy deweloperskiej, w stanie wolnym od obciążeń, praw i roszczeń os&oacute;b trzecich, z wyjątkiem obciążeń, na kt&oacute;re wyraził zgodę nabywca.</p>
+<p>Bank dokonuje kontroli zakończenia każdego z etap&oacute;w zadania inwestycyjnego przez wypłatą środk&oacute;w pieniężnych. Nabywca nie ponosi koszt&oacute;w związanych z otwarciem i utrzymaniem wyżej opisanego otwartego rachunku powierniczego, w tym subkonta przypisanego odo nabywcy.</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="183">
+<p>Nazwa instytucji zapewniającej bezpieczeństwo środk&oacute;w</p>
+<p>nabywcy</p>
+</td>
+<td width="427">
+<p><strong>ING Bank Śląski S.A.</strong></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="183">
+<p>Harmonogram przedsięwzięcia deweloperskiego lub zadania inwestycyjnego</p>
+</td>
+<td width="427">
+<p><strong>Załącznik nr 4</strong></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="183">
+<p>Dopuszczenie waloryzacji ceny oraz określenie zasad waloryzacji</p>
+</td>
+<td width="427">
+<p>Cena nie podlega waloryzacji.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td colspan="2" valign="TOP" bgcolor="#d9d9d9" width="624">
+<p><strong>WARUNKI ODSTĄPIENIA OD UMOWY DEWELOPERSKIEJ LUB UMOWY, O KTOREJ MOWA WART. 2 UST. 1 PKT 2, 3 LUB 5 USTAWY Z DNIA 20 MAJA 2021 r. O OCHRONIE PRAW NABYWCY LOKALU MIESZKALNEGO LUB DOMU JEDNORODZINNEGO ORAZ DEWELOPERSKIM FUNDUSZU GWARANCYJNYM</strong></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="183">
+<p>Warunki, na jakich można odstąpić od umowy deweloperskiej lub jednej</p>
+<p>z um&oacute;w, o kt&oacute;rych mowa wart. 2 ust. 1 pkt 2, 3 lub 5 ustawy z dnia 20 maja 202 l r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego</p>
+<p>oraz Deweloperskim Funduszu Gwarancyjnym</p>
+</td>
+<td width="427">
+<p>Podstawa prawna:</p>
+<p>Deweloper niniejszym informuje, że:</p>
+<p>1) Nabywcy przysługuje prawo do odstąpienia od umowy deweloperskiej lub innej umowy zawieranej z Deweloperem na zasadach określonych w ustawie z dnia 20 maja 2021 roku o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym (Dz. U. poz. 1177 z p&oacute;źn. zm.), dalej także &bdquo;Ustawa&rdquo;;</p>
+<p>2) Nabywcy przysługuje dodatkowo prawo do odstąpienia od umowy deweloperskiej na zasadach określonych w umowie;</p>
+<p>3) Deweloperowi przysługuje prawo do odstąpienia od umowy deweloperskiej lub innej umowy zawieranej z Deweloperem na zasadach określonych w ustawie z dnia 20 maja 2021 roku o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym</p>
+<p>&nbsp;</p>
+<p>Przesłanki odstąpienia od umowy przez Nabywcę zgodnie z Ustawą:</p>
+<p>Nabywca ma prawo odstąpić od umowy deweloperskiej albo umowy, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy:</p>
+<p>1) jeżeli umowa deweloperska albo umowa, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy, nie zawiera odpowiednio element&oacute;w, o kt&oacute;rych mowa w art. 35 Ustawy, albo element&oacute;w, o kt&oacute;rych mowa w art. 36 Ustawy;</p>
+<p>2) jeżeli informacje zawarte w umowie deweloperskiej albo umowie, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy, nie są zgodne z informacjami zawartymi w prospekcie informacyjnym lub jego załącznikach, z wyjątkiem zmian, o kt&oacute;rych mowa w art. 35 ust. 2 Ustawy;</p>
+<p>3) jeżeli deweloper nie doręczył zgodnie z art. 21 Ustawy lub art. 22 Ustawy prospektu informacyjnego wraz z załącznikami lub informacji o zmianie danych lub informacji zawartych w prospekcie informacyjnym lub jego załącznikach;</p>
+<p>4) jeżeli dane lub informacje zawarte w prospekcie informacyjnym lub jego załącznikach, na podstawie kt&oacute;rych zawarto umowę deweloperską albo umowę, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy, są niezgodne ze stanem faktycznym lub prawnym w dniu zawarcia umowy;</p>
+<p>5) jeżeli prospekt informacyjny, na podstawie kt&oacute;rego zawarto umowę deweloperską albo umowę, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy, nie zawiera danych lub informacji określonych we wzorze prospektu informacyjnego;</p>
+<p>6) w przypadku nie przeniesienia na nabywcę praw wynikających z umowy deweloperskiej albo umowy, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy, w terminie wynikającym z tych um&oacute;w;</p>
+<p>7) w przypadku gdy deweloper nie zawrze umowy mieszkaniowego rachunku powierniczego z innym bankiem lub inną kasą w trybie i terminie, o kt&oacute;rych mowa w art. 10 ust. 1 Ustawy;</p>
+<p>8) w przypadku gdy deweloper nie posiada zgody wierzyciela hipotecznego lub zobowiązania do jej udzielenia, o kt&oacute;rych mowa w art. 25 ust. 1 pkt 1 lub 2 Ustawy;</p>
+<p>9) w przypadku niewykonania przez dewelopera obowiązku, o kt&oacute;rym mowa w art. 12 ust. 2 Ustawy, w terminie określonym w tym przepisie;</p>
+<p>10) w przypadku nieusunięcia przez dewelopera wady istotnej lokalu mieszkalnego albo domu jednorodzinnego na zasadach określonych w art. 41 ust. 11 Ustawy;</p>
+<p>11) w przypadku stwierdzenia przez rzeczoznawcę istnienia wady istotnej, o kt&oacute;rym mowa w art. 41 ust. 15 Ustawy;</p>
+<p>12) jeżeli syndyk zażądał wykonania umowy na podstawie art. 98 ustawy z dnia 28 lutego 2003 r. - Prawo upadłościowe.</p>
+<p>&nbsp;</p>
+<p>Terminy i spos&oacute;b wykonania przez Nabywcę ustawowego prawa do odstąpienia od umowy:</p>
+<p>W przypadkach, o kt&oacute;rych mowa w pkt 1-5 powyżej, Nabywca ma prawo odstąpienia od umowy deweloperskiej albo umowy, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy, w terminie 30 dni od dnia jej zawarcia.</p>
+<p>W przypadku, o kt&oacute;rym mowa w pkt 6 powyżej, przed skorzystaniem z prawa do odstąpienia od umowy Nabywca wyznacza deweloperowi 120-dniowy termin na przeniesienie praw wynikających z umowy deweloperskiej albo umowy, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy, a w razie bezskutecznego upływu wyznaczonego terminu jest uprawniony do odstąpienia od tej umowy. Nabywca zachowuje roszczenie z tytułu kary umownej za okres op&oacute;źnienia.</p>
+<p>W przypadku, o kt&oacute;rym mowa w pkt 7 powyżej, Nabywca ma prawo odstąpienia od umowy deweloperskiej albo umowy, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy, po dokonaniu przez bank lub kasę zwrotu środk&oacute;w zgodnie z art. 10 ust. 3 Ustawy.</p>
+<p>W przypadku, o kt&oacute;rym mowa w pkt 8 powyżej, Nabywca ma prawo odstąpienia od umowy deweloperskiej albo umowy, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy, w terminie 60 dni od dnia jej zawarcia.</p>
+<p>W przypadku, o kt&oacute;rym mowa w pkt 9 powyżej, nabywca ma prawo odstąpienia od umowy deweloperskiej albo umowy, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy, po upływie 60 dni od dnia podania do publicznej wiadomości informacji, o kt&oacute;rych mowa w art. 12 ust. 1 Ustawy.</p>
+<p>Oświadczenie woli Nabywcy o odstąpieniu od umowy deweloperskiej albo umowy, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy, jest skuteczne, jeżeli zawiera zgodę na wykreślenie z księgi wieczystej odpowiednich roszczeń, o kt&oacute;rych mowa w art. 38 ust. 2 Ustawy, i jest złożone w formie pisemnej z podpisami notarialnie poświadczonymi.</p>
+<p>&nbsp;</p>
+<p>Przesłanki odstąpienia od umowy przez Nabywcę zgodnie z umową:</p>
+<p>Nabywca ma prawo odstąpić od umowy deweloperskiej:</p>
+<p>1) w przypadku podwyższenia stawki podatku od towar&oacute;w i usług (VAT) mającej wpływ na wysokość ceny nabycia przedmiotu umowy;</p>
+<p>2) jeżeli w wyniku zmiany powierzchni użytkowej Budynku, jego powierzchnia ustalona w oparciu o pomiary powykonawcze będzie r&oacute;żnić się od projektowanej powierzchni o ponad- 2%/+2% (minus dwa procent łamane przez plus dwa procent) &ndash; nie uwzględniając powierzchni użytkowej loggii, balkonu, tarasu itp.;</p>
+<p>3) jeżeli w wyniku zmiany powierzchni Działki Nowo Wydzielonej lub Drogi Wewnętrznej, powierzchnia ustalona w oparciu o pomiary geodezyjne będzie mniejsza od projektowanej powierzchni o ponad - 2 % (minus dwa procent)</p>
+<p>&nbsp;</p>
+<p>Terminy i spos&oacute;b wykonania przez Nabywcę ustawowego prawa do odstąpienia od umowy:</p>
+<p>W przypadku, o kt&oacute;rym mowa w pkt 1 powyżej, Nabywca ma prawo odstąpienia od umowy deweloperskiej w terminie 14 dni od otrzymania oświadczenia Dewelopera o zwiększeniu ceny nabycia przedmiotu umowy, jednak nie p&oacute;źniej niż do terminu zawarcia umowy ostatecznej.</p>
+<p>W przypadkach, o kt&oacute;rych mowa w pkt 2-3 powyżej, Nabywca może odstąpić od Umowy w terminie 14 dni od dnia poinformowania Nabywcy o zmianie powierzchni Budynku, jednak nie p&oacute;źniej niż do terminu zawarcia umowy ostatecznej.</p>
+<p>Oświadczenie woli Nabywcy o odstąpieniu od umowy deweloperskiej albo umowy, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy, jest skuteczne, jeżeli zawiera zgodę na wykreślenie z księgi wieczystej odpowiednich roszczeń, o kt&oacute;rych mowa w art. 38 ust. 2 Ustawy, i jest złożone w formie pisemnej z podpisami notarialnie poświadczonymi.</p>
+<p>&nbsp;</p>
+<p>Skutki złożenia oświadczenia o odstąpieniu od umowy przez Nabywcę:</p>
+<p>W przypadku skorzystania przez Nabywcę z prawa odstąpienia umowa uważana jest za niezawartą, a Nabywca nie ponosi żadnych koszt&oacute;w związanych z odstąpieniem od umowy.</p>
+<p>Deweloper ma obowiązek niezwłocznie, jednak nie p&oacute;źniej niż w terminie 30 dni od dnia otrzymania oświadczenia Nabywcy o odstąpieniu od umowy, zwr&oacute;cić Nabywcy środki wypłacone Deweloperowi przez bank lub kasa z otwartego mieszkaniowego rachunku powierniczego w związku z realizacją umowy deweloperskiej albo umowy, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy.</p>
+<p>W terminie 30 dni od dnia otrzymania oświadczenia Nabywcy o odstąpieniu od umowy Deweloper przekazuje do Ubezpieczeniowego Funduszu Gwarancyjnego, o kt&oacute;rym mowa w rozdziale 7 ustawy z dnia 22 maja 2003 r. o ubezpieczeniach obowiązkowych, Ubezpieczeniowym Funduszu Gwarancyjnym i Polskim Biurze Ubezpieczycieli Komunikacyjnych (Dz. U. z 2021 r. poz. 854 i 1177), zwanego dalej "Ubezpieczeniowym Funduszem Gwarancyjnym", w celu realizacji przez ten fundusz zwrotu wpłat nabywc&oacute;w w przypadku określonym w art. 48 ust. 1 pkt 6 Ustawy, informację o wysokości środk&oacute;w zwr&oacute;conych Nabywcy w związku z odstąpieniem przez niego od umowy i dacie dokonania zwrotu tych środk&oacute;w.</p>
+<p>W przypadku odstąpienia przez Nabywcę od umowy wskutek podwyższenia stawki od towar&oacute;w i usług (VAT) Nabywcy nie przysługują względem Dewelopera żadne roszczenia poza prawem do zwrotu uiszczonej już części ceny nabycia przedmiotu umowy.</p>
+<p>W przypadku odstąpienia przez Nabywcę o umowy z uwagi na zmiany powierzchni Budynku, Działki Nowo Wydzielanej lub Drogi Wewnętrznej, Nabywca otrzyma zwrot kwot wpłaconych na poczet ceny nabycia przedmiotu umowy.</p>
+<p>&nbsp;</p>
+<p>Uprawnienie Dewelopera do odstąpienia od umowy:</p>
+<p>Deweloper ma prawo odstąpić od umowy deweloperskiej albo umowy, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy:</p>
+<p>1) w przypadku niespełnienia przez Nabywcę świadczenia pieniężnego w terminie lub wysokości określonych w umowie, mimo wezwania nabywcy w formie pisemnej do uiszczenia zaległych kwot w terminie 30 dni od dnia doręczenia wezwania, chyba że niespełnienie przez Nabywcę świadczenia pieniężnego jest spowodowane działaniem siły wyższej;</p>
+<p>2) w przypadku niestawienia się nabywcy do odbioru lokalu mieszkalnego albo domu jednorodzinnego lub podpisania aktu notarialnego przenoszącego na Nabywcę prawa wynikające z umowy deweloperskiej albo umowy, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy, mimo dwukrotnego doręczenia wezwania w formie pisemnej w odstępie co najmniej 60 dni, chyba że niestawienie się Nabywcy jest spowodowane działaniem siły wyższej.</p>
+<p>W przypadku odstąpienia od umowy deweloperskiej albo umowy, o kt&oacute;rej mowa w art. 2 ust. 1 pkt 2, 3 lub 5 Ustawy, przez Dewelopera na podstawie pkt. 1 i 2 powyżej, Nabywca jest obowiązany wyrazić zgodę na wykreślenie z księgi wieczystej odpowiednich roszczeń, o kt&oacute;rych mowa w art. 38 ust. 2 Ustawy.</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td colspan="2" valign="TOP" bgcolor="#d9d9d9" width="624">
+<p><strong>INNE INFORMACJE</strong></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td colspan="2" valign="TOP" bgcolor="#f2f2f2" width="624">
+<p>I. informacja:</p>
+<ol>
+<li>
+<p>o zgodzie banku, kasy lub innego wierzyciela hipotecznego na bezobciążeniowe ustanowienie odrębnej własności lokalu mieszkalnego i przeniesienie jego własności na nabywcy po wpłacie pełnej ceny przez nabywcy lub zobowiązaniu do jej udzielenia, jeżeli takie obciążenie istnieje, albo zgodzie banku, kasy lub innego wierzyciela hipotecznego na bezobciążeniowe przeniesienie na nabywcy własności nieruchomości wraz z domem jednorodzinnym lub użytkowania wieczystego nieruchomości gruntowej i własności domu jednorodzinnego stanowiącego odrębną nieruchomość, lub przeniesienie ułamkowej części własności nieruchomości wraz z prawem do wyłączonego korzystania z części nieruchomości służącej zaspokajaniu potrzeb mieszkaniowych po wpłacie pełnej ceny przez nabywcy lub zobowiązaniu do jej udzielenia, jeżeli takie obciążenie istnieje;</p>
+</li>
+<li>
+<p>w przypadku um&oacute;w, o kt&oacute;rych mowa wart. 2 ust. 2 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym - o zgodzie banku, kasy lub innego wierzyciela hipotecznego na bezobciążeniowe przeniesienie własności lokalu użytkowego na nabywcy po wpłacie pełnej ceny przez nabywcy lub zobowiązaniu do udzielenia takiej zgody, jeżeli takie obciążenie istnieje, albo zgodzie banku, kasy lub innego wierzyciela hipotecznego na bezobciążeniowe przeniesienie na nabywcy ułamkowej części własności lokalu użytkowego po wpłacie pełnej ceny przez nabywcy lub zobowiązaniu do udzielenia takiej zgody, jeżeli takie obciążenie istnieje.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="TOP" bgcolor="#ffffff" width="624">
+<p>II. Informacja o możliwości zapoznania się w lokalu przedsiębiorstwa przez osoby zainteresowanej zawarciem umowy odpowiednio do zakresu umowy z:</p>
+<ol>
+<li>
+<p>aktualnym stanem księgi wieczystej prowadzonej dla nieruchomości;</p>
+</li>
+<li>
+<p>aktualnym odpisem, wyciągiem, zaświadczeniem lub wydrukiem komputerowym z Centralnej Informacji Krajowego Rejestru Sądowego, jeżeli podmiot podlega wpisowi do Krajowego Rejestru Sądowego, albo aktualnym zaświadczeniem o wpisie do Centralnej Ewidencji i informacji o Działalności Gospodarczej;</p>
+</li>
+<li>
+<p>pozwoleniem na budowę albo zgłoszeniem budowy, o kt6rym mowa wart. 29 ust. 1 pkt 1 ustawy z dnia 7 lipca 1994 r. - Prawo budowlane, do kt&oacute;rego organ administracji architektoniczno-budowlanej nie wni&oacute;sł sprzeciwu;</p>
+</li>
+<li>
+<p>sprawozdaniem finansowym dewelopera za ostatnie dwa lata, a w przypadku:</p>
+<ol type="a">
+<li>
+<p>prowadzenia działalności przez okres kr&oacute;tszy niż dwa lata - sprawozdaniem finansowym za okres ostatniego roku,</p>
+</li>
+<li>
+<p>realizacji inwestycji przez sp&oacute;łkę celową - sprawozdaniem sp&oacute;łki dominującej oraz sp&oacute;łki celowej;</p>
+</li>
+</ol>
+</li>
+<li>
+<p>projektem budowlanym;</p>
+</li>
+<li>
+<p>decyzją o pozwoleniu na użytkowanie budynku lub zawiadomieniem o zakończeniu budowy, do kt&oacute;rego organ nadzoru budowlanego nie wni&oacute;sł sprzeciwu;</p>
+</li>
+<li>
+<p>zaświadczeniem o samodzielności lokalu;</p>
+</li>
+<li>
+<p>aktem ustanowienia odrębnej własności lokalu;</p>
+</li>
+<li>
+<p>dokumentem potwierdzającym:</p>
+<ol type="a">
+<li>
+<p>zgody banku, kasy lub innego wierzyciela hipotecznego na bezobciążeniowe ustanowienie odrębnej własności lokalu mieszkalnego i przeniesienie jego własności na nabywcy po wpłacie pełnej ceny przez nabywcy lub zobowiązanie do jej udzielenia, jeżeli takie obciążenie istnieje, albo zgody banku, kasy lub innego wierzyciela hipotecznego na bezobciążeniowe przeniesienie na nabywcy własności nieruchomości wraz z domem jednorodzinnym lub użytkowania wieczystego nieruchomości gruntowej i własności domu jednorodzinnego stanowiącego odrębna nieruchomość, lub przeniesienie ułamkowej części własności nieruchomości wraz z prawem do wyłącznego korzystania z części nieruchomości służącej zaspokajaniu potrzeb mieszkaniowych po wpłacie pełnej ceny przez nabywcy lub zobowiązanie do jej udzielenia, jeżeli takie obciążenie istnieje,</p>
+</li>
+<li>
+<p>w przypadku um&oacute;w, o kt&oacute;rych mowa wart. 2 ust. 2 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym - zgody banku, kasy lub innego wierzyciela hipotecznego na bezobciążeniowe przeniesienie własności lokalu użytkowego na nabywcy po wpłacie pełnej ceny przez nabywcy lub zobowiązanie do udzielenia takiej zgody, jeżeli takie obciążenie istnieje, albo zgody banku, kasy lub innego wierzyciela hipotecznego na bezobciążeniowe przeniesienie na nabywcy ułamkowej części własności lokalu użytkowego po wpłacie pełnej ceny przez nabywcy lub zobowiązaniem do udzielenia takiej zgody, jeżeli takie obciążenie istnieje.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>III Informacja:</p>
+<p>Środki pieniężne zgromadzone w ING Bank Śląski S.A., prowadzącym otwarty mieszkaniowy rachunek powierniczy, <em>są </em>objęte ochroną obowiązkowego systemu gwarantowania depozyt&oacute;w na zasadach określonych w ustawie z dnia 10 czerwca 2016 r. o Bankowym Funduszu Gwarancyjnym, systemie gwarantowania depozyt&oacute;w oraz przymusowej restrukturyzacji (Dz. U. z 2022 r. poz. 2253 oraz z 2023 r. poz. 825, 1705, 1784 i 1843).</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Informacje podstawowe o obowiązkowym systemie gwarantowania depozyt&oacute;w:</p>
+<p>- ochrona środk&oacute;w dotyczy sytuacji spełnienia warunku gwarancji wobec: ING Bank Śląski S.A</p>
+<p>&nbsp;</p>
+<p>- w przypadku rachunku powierniczego deponentem (uprawnionym do środk&oacute;w gwarantowanych) jest każdy z powierzających, w granicach wynikających z jego udziału w kwocie zgromadzonej na tym rachunku, a w granicach pozostałej kwoty na rachunku prawo do środk&oacute;w gwarantowanych ma powiernik,</p>
+<p>&nbsp;</p>
+<p>- limit gwarancyjny przypadający na jednego deponenta to r&oacute;wnowartość w złotych 100 000 euro; w przypadkach określonych wart. 24 ust. 3 i 4 ustawy z dnia 10 czerwca 2016 r. o Bankowym Funduszu Gwarancyjnym, systemie gwarantowania depozyt6w oraz przymusowej restrukturyzacji, środki deponenta, w terminie 3 miesięcy od dnia ich wpływu na rachunek, objęte są gwarancjami ponad r&oacute;wnowartość w złotych 100 000 euro,</p>
+<p>&nbsp;</p>
+<p>- podstawą wyliczenia kwoty środk&oacute;w gwarantowanych należnej deponentowi jest suma wszystkich podlegających ochronie należności tego deponenta od banku lub kasy, w tym należności z tytułu srodk6w zgromadzonych na jego rachunkach osobistych i z tytułu jego udziału w środkach zgromadzonych na rachunku powierniczym,</p>
+<p>&nbsp;</p>
+<p>- wyplata środk&oacute;w gwarantowanych - co do zasady - następuje w terminie 7 dni roboczych od dnia spełnienia warunku gwarancji wobec banku lub kasy,</p>
+<p>&nbsp;</p>
+<p>- wyplata środk&oacute;w gwarantowanych jest dokonywana w złotych,</p>
+<p>&nbsp;</p>
+<p>- ING Bank Śląski S.A korzysta także z następujących znak&oacute;w towarowych:</p>
+<p>&nbsp;</p>
+<p>Dalsze informacje na temat systemu gwarantowania depozyt&oacute;w można uzyskać na stronie internetowej Bankowego Funduszu Gwarancyjnego: <a href="https://www.bfg.pl/">https://www.bfg.pl/</a><a href="http://www.bfg.pl/">.</a></p>
+<p>&nbsp;</p>
+<p>informacja zamieszczana w przypadku zawarcia umowy mieszkaniowego rachunku powierniczego z oddziałem instytucji kredytowej w rozumieniu art. 4 ust. 1 pkt 18 ustawy z dnia 29 sierpnia 1997 r. - Prawo bankowe (Dz. U. z 2022 r. poz. 2324, 2339, 2640 i 2707 oraz z 2023 r. poz. 180,825,996, 1059, 1394, 1407, 1723 i 1843).</p>
+<p>&nbsp;</p>
+<p>Oddział instytucji kredytowej w rozumieniu art. 4 ust. 1 pkt 18 ustawy z dnia 29 sierpnia 1997 r. - Prawo bankowe jest objęty systemem gwarantowania państwa macierzystego, co oznacza, ze nie maj4 do niego zastosowania przepisy ustawy z dnia 10 czerwca 2016 r. o Bankowym Funduszu Gwarancyjnym, systemie gwarantowania depozyt&oacute;w oraz przymusowej restrukturyzacji.</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>CZĘŚĆ INDYWIDUALNA</strong></p>
+<dl>
+<dd>
+<table style="border-collapse: collapse; width: 100%;" border="1" width="100%" cellspacing="0" cellpadding="7"><colgroup><col width="183" /> <col width="189" /> <col width="224" /> </colgroup>
+<tbody>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="183">
+<p>Cena lokalu mieszkalnego albo domu jednorodzinnego</p>
+</td>
+<td colspan="2" width="427">
+<p>&hellip;<strong>.</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="183">
+<p>Powierzchnia użytkowa lokalu mieszkalnego albo domu jednorodzinnego</p>
+</td>
+<td colspan="2" width="427">
+<p>&hellip;<strong>.</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="183">
+<p>Cena m2 powierzchni użytkowej lokalu mieszkalnego albo domu jednorodzinnego</p>
+</td>
+<td colspan="2" width="427">
+<p>&hellip;<strong>.</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="183">
+<p>Termin, do kt&oacute;rego nastąpi przeniesienie prawa własności nieruchomości wynikającego z umowy deweloperskiej lub jednej z um&oacute;w, o kt&oacute;rych mowa w art. 2 ust. 1 pkt 2, 3 lub 5 lub ust. 2 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym</p>
+</td>
+<td colspan="2" width="427">
+<p><strong>31.12.2025</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td rowspan="7" bgcolor="#f2f2f2" width="183">
+<p>Określenie położenia oraz istotnych cech domu jednorodzinnego albo budynku, w kt&oacute;rym ma znajdować się lokal mieszkalny będący przedmiotem umowy rezerwacyjnej albo umowy deweloperskiej lub jednej z um&oacute;w, o kt&oacute;rych mowa wart. 2 ust. 1 pkt 2, 3 lub 5 lub ust. 2 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym</p>
+</td>
+<td width="189">
+<p>Liczba kondygnacji</p>
+</td>
+<td width="224">
+<p><strong>2</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td width="189">
+<p>Technologia wykonania</p>
+</td>
+<td width="224">
+<p><strong>Technologia tradycyjna murowana, więźba dachowa drewniana tradycyjna.</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td width="189">
+<p>Standard prac wykończeniowych w części wsp&oacute;lnej budynku i terenie wok&oacute;ł niego, stanowiącym części wsp&oacute;lne nieruchomości</p>
+</td>
+<td width="224">
+<p><strong>Załącznik nr 5</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td width="189">
+<p>Liczba lokali w budynku</p>
+</td>
+<td width="224">
+<p><strong>1</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td width="189">
+<p>Liczba miejsc garażowych i postojowych</p>
+</td>
+<td width="224">
+<p><strong>1 garażowe, 1 zewnętrzne</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td width="189">
+<p>Dostępne media w budynku</p>
+</td>
+<td width="224">
+<p><strong>Elektryka, woda, pompa ciepła, światłow&oacute;d, ścieki</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td width="189">
+<p>Dostąp do drogi publicznej</p>
+</td>
+<td width="224">
+<p><strong>Indywidualny zjazd z ulicy Beskidzkiej o parametrach zgodnych z obowiązującymi warunkami technicznymi dla dr&oacute;g publicznych</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="183">
+<p>Określenie usytuowania lokalu mieszkalnego w budynku, jeżeli przedsięwzięcie deweloperskie lub zadanie inwestycyjne dotyczy lokali mieszkalnych</p>
+</td>
+<td colspan="2" width="427">
+<p>&hellip;<strong>.</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="183">
+<p>Określenie powierzchni użytkowej i układu pomieszczeń oraz zakresu i standardu prac wykończeniowych, do kt&oacute;rych wykonania zobowiązuje się deweloper</p>
+</td>
+<td colspan="2" width="427">
+<p>&hellip;<strong>.</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="183">
+<p>Data wydania zaświadczenia o samodzielności lokalu mieszkalnego</p>
+</td>
+<td colspan="2" width="427">
+<p><strong>Nie dotyczy</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="183">
+<p>Data ustanowienia odrębnej własności lokalu mieszkalnego</p>
+</td>
+<td colspan="2" width="427">
+<p><strong>Nie dotyczy</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="183">
+<p>Informacje o lokalu użytkowym nabywanym r&oacute;wnocześnie z lokalem mieszkalnym albo domem jednorodzinnym</p>
+</td>
+<td colspan="2" width="427">
+<p>&hellip;<strong>.</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="183">
+<p>Cena lokalu użytkowego albo ułamkowej części własności lokalu użytkowego</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</td>
+<td colspan="2" width="427">
+<p><a name="Bookmark1"></a>&hellip;<strong>.</strong></p>
+</td>
+</tr>
+<tr valign="TOP">
+<td bgcolor="#f2f2f2" width="183">
+<p>Termin, do kt&oacute;rego nastąpi przeniesienie prawa własności lokalu użytkowego albo ułamkowej części własności lokalu użytkowego</p>
+</td>
+<td colspan="2" width="427">
+<p><strong>Nie dotyczy</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<p>&nbsp;</p>
+<p><strong>Podpis dewelopera albo osoby upoważnionej do reprezentacji dewelopera</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Załączniki:</strong></p>
+<ol>
+<li>
+<p>Rzut kondygnacji z zaznaczeniem lokalu mieszkalnego.</p>
+</li>
+<li>
+<p>Wz&oacute;r umowy deweloperskiej lub umowy, o kt&oacute;rej mowa wart. 2 ust. 1 pkt 2, 3 lub 5 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym.</p>
+</li>
+<li>
+<p>Szkic koncepcji zagospodarowania terenu inwestycji i jego otoczenia z zaznaczeniem budynku oraz istotnych uwarunkowań lokalizacji inwestycji wynikających z istniejącego stanu użytkowania teren&oacute;w sąsiednich (np. z funkcji terenu, stref ochronnych, uciążliwości).</p>
+</li>
+<li>
+<p>Harmonogram przedsięwzięcia deweloperskiego.</p>
+</li>
+<li>
+<p>Standard prac wykończeniowych w części wsp&oacute;lnej budynku i terenie wok&oacute;ł niego, stanowiącym części wsp&oacute;lne nieruchomości.</p>
+</li>
+<li>
+<p>Harmonogram płatności</p>
+</li>
+<li>
+<p>Informacje dotyczące przewidzianych inwestycji w promieniu 1 km od terenu objętego przedsięwzięciem deweloperskim.</p>
+</li>
+</ol>

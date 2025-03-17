@@ -1,0 +1,117 @@
+header {
+    width: 100%;
+    padding: 20px 0;
+    -webkit-transition: all 100ms linear;
+    -moz-transition: all 100ms linear;
+    -o-transition: all 100ms linear;
+    transition: all 100ms linear;
+    z-index: 990;
+    background: #26407d;
+    #logo {
+        img {
+            filter: brightness(0) invert(1);
+        }
+        .logo-h {
+            display: none;
+        }
+    }
+    nav {
+        display: flex;
+        justify-content: end;
+    }
+    .header-menu {
+        display: flex;
+        li {
+            margin-right: 30px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+            a {
+                color: white;
+                font-size: 16px;
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+            ul {
+                position: absolute;
+                display: none;
+
+            }
+            &:hover {
+                ul {
+                    display: block;
+                    top: 100%;
+                    background: #1e366c;
+                }
+            }
+        }
+        .header-cta {
+            a {
+                display: inline-flex;
+                align-items: center;
+                font-size: 18px;
+                background: #b79a5e;
+                padding: 0 20px 0 60px;
+                border-radius: 30px;
+                height: 40px;
+                position: relative;
+                i {
+                    position: absolute;
+                    left: 15px;
+                    font-size: 24px;
+                }
+                &:hover {
+                    i {
+                        animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#pagecontent {
+    header #logo img {
+        filter: brightness(0) invert(1);
+        width: 120px;
+    }
+}
+
+header.fixed {
+    background: white;
+    padding: 10px 40px;
+    #logo img.logo-v {
+        display: none;
+    }
+    #logo img.logo-h {
+        display: block !important;
+        width: 160px !important;
+        filter: brightness(1) invert(0) !important;
+    }
+    li:not(.header-cta) a {
+        color: #213c13;
+        font-weight: 500;
+    }
+    .header-menu li {
+        height: 66px
+    }
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-2px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(2px, 0, 0);
+    }
+}
