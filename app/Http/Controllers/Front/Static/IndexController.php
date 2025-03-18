@@ -26,6 +26,17 @@ class IndexController extends Controller
         ]);
     }
 
+    public function pages($page)
+    {
+        $allowedPages = ['polityka-prywatnosci', 'regulamin', 'kontakt'];
+
+        if (in_array($page, $allowedPages)) {
+            return view('front.static.'.$page);
+        }
+
+        abort(404); // Return a 404 error if the page is not allowed
+    }
+
     public function store(Request $request)
     {
         try {

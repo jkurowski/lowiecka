@@ -21,11 +21,11 @@
                     <h4 class="be-vietnam-pro-semibold">Menu</h4>
                     <ul class="list-unstyled mb-0">
                         <li><a href="">O inwestycji</a></li>
-                        <li><a href="">Mieszkania</a></li>
+                        <li><a href="{{ route('front.developro.show') }}">Mieszkania</a></li>
                         <li><a href="">Lokalizacja</a></li>
                         <li><a href="">Galeria</a></li>
                         <li><a href="">Inwestor</a></li>
-                        <li><a href="">Kontakt</a></li>
+                        <li><a href="{{ route('front.contact') }}">Kontakt</a></li>
                     </ul>
                 </div>
             </div>
@@ -33,11 +33,11 @@
                 <div class="footer-box">
                     <h4 class="be-vietnam-pro-semibold">Informacje</h4>
                     <ul class="list-unstyled mb-0">
-                        <li><a href="">Regulamin</a></li>
-                        <li><a href="">Polityka prywatności</a></li>
-                        <li><a href="">Ciasteczka</a></li>
-                        <li><a href="">Finansowanie</a></li>
-                        <li><a href="">Pod klucz</a></li>
+                        <li class="d-none"><a href="">Regulamin</a></li>
+                        <li><a href="{{ route('static.page', ['page' => 'polityka-prywatnosci']) }}">Polityka prywatności</a></li>
+                        <li class="d-none"><a href="">Ciasteczka</a></li>
+                        <li class="d-none"><a href="">Finansowanie</a></li>
+                        <li class="d-none"><a href="">Pod klucz</a></li>
                     </ul>
                 </div>
             </div>

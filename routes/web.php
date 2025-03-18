@@ -24,9 +24,6 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
     // Galeria
     Route::get('/galeria/{gallery},{gallerySlug}', 'Gallery\IndexController@show')->name('gallery.show');
 
-    // Pakiety rabatowe
-    // Route::get('/pakiety-rabatowe', 'Discount\IndexController@index')->name('discount');
-
     // O firmie
     Route::get('/o-firmie', 'About\IndexController@index')->name('discount');
 

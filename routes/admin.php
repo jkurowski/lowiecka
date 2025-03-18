@@ -482,4 +482,6 @@ Route::group(['namespace' => 'Facebook', 'prefix' => 'auth/facebook', 'middlewar
     Route::get('/delete/{access_token}', 'IndexController@delete')->name('facebook.page.delete');
 });
 
-Route::get('{uri}', [MenuController::class, 'index'])->where('uri', '([A-Za-z0-9\-\/]+)');
+//Route::get('{uri}', [MenuController::class, 'index'])->where('uri', '([A-Za-z0-9\-\/]+)');
+
+Route::get('/{page}', 'Front\Static\IndexController@pages')->name('static.page');
