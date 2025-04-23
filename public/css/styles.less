@@ -457,6 +457,105 @@ button:focus,
 .badge.room-list-status-3 {background:#b71c1c}
 .badge.room-list-status-4 {background:#e17f00}
 
+/* Apartament types tabs
+================================================== */
+.nav-rooms {
+    display: flex;
+    flex-wrap: wrap;
+
+    button {
+        flex: 1 1 auto;
+        font-size: 21px;
+        border-color: #ECECEC;
+        color: black;
+        font-weight: 600;
+        &:hover {
+            background: var(--main-color-gold);
+            border-color: var(--main-color-gold);
+            color: white;
+        }
+    }
+
+    .active, .active:hover {
+        background: var(--main-color-blue);
+        border-color: var(--main-color-blue);
+        color: white;
+    }
+    .active:focus {
+        box-shadow: 0 0 0 0 rgba(13,110,253,0);
+    }
+}
+
+#roomsTabContent {
+    background: #f5efe3;
+    padding: 90px 50px;
+
+    .rooms-tab-detail {
+        h3 {
+            font-size: 82px;
+            color: var(--main-color-gold);
+            font-family: "DM Serif Display",serif;
+            small {
+                font-size: 52px;
+            }
+        }
+        p {
+            font-size: 18px;
+            line-height: 32px;
+            color: var(--main-color-blue);
+        }
+
+        li {
+            font-size: 24px;
+            display: flex;
+            font-weight: 400;
+            color: var(--main-color-blue);
+            border-bottom: 1px solid #ccad72;
+            padding: 15px 0;
+            &:last-child {
+                border:0
+            }
+            span {
+                color: var(--main-color-gold);
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+
+/* Blue mozaik
+================================================== */
+.blue-mozaik {
+    background: #030344 url(../images/footer.png);
+    padding: 140px 0;
+    margin: 90px 0;
+    .section-title {
+        h2 {
+            color: white;
+        }
+    }
+
+    .blue-number-box {
+        text-align: center;
+        strong {
+            font-size: 68px;
+            color: var(--main-color-gold);
+            font-family: "DM Serif Display", serif;
+            font-weight: 400;
+            font-style: normal;
+            display: block;
+            line-height: 1.2;
+        }
+        p {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+        }
+    }
+}
+
 /* Apartament types
 ================================================== */
 .apartament-type {
@@ -716,6 +815,42 @@ section {
 }
 
 
+
+/* Icon, title, text: box
+================================================== */
+.icon-title-text-box {
+    img {
+        margin: 0 auto;
+    }
+    h3 {
+        font-size: 26px;
+        font-weight: 500;
+        margin: 25px 0 20px;
+    }
+    p {
+        margin: 0;
+        font-size: 15px;
+        line-height: 26px;
+    }
+}
+
+
+/* Breadcrumbs
+================================================== */
+.breadcrumbs {
+    padding-top: 50px;
+    a, span {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .breadcrumbs-separator {
+        color: var(--main-color-gold);
+        font-weight: 300;
+    }
+    .breadcrumbs-current {
+
+    }
+}
 /* Header
 ================================================== */
 @import url(less-partials/header);

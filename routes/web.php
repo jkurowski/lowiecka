@@ -25,7 +25,8 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
     Route::get('/galeria/{gallery},{gallerySlug}', 'Gallery\IndexController@show')->name('gallery.show');
 
     // O firmie
-    Route::get('/o-firmie', 'About\IndexController@index')->name('discount');
+    Route::get('/inwestor', 'About\IndexController@index')->name('investor');
+    Route::get('/o-inwestycji', 'About\IndexController@investment')->name('investment');
 
     // DeveloPro
     Route::group(['namespace' => 'Developro', 'prefix' => '/mieszkania', 'as' => 'developro.'], function () {

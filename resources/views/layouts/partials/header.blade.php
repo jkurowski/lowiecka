@@ -18,11 +18,11 @@
                     <div class="col-12">
                         <nav>
                             <ul class="mb-0 list-unstyled h-100">
-                                <li><a href="">O INWESTYCJI</a></li>
+                                <li class="{{ Request::routeIs('front.investment') ? 'active' : '' }}"><a href="{{ route('front.investment') }}">O INWESTYCJI</a></li>
                                 <li class="{{ Request::routeIs('front.developro.*') ? 'active' : '' }}"><a href="{{ route('front.developro.show') }}">MIESZKANIA</a></li>
                                 <li><a href="">LOKALIZACJA</a></li>
                                 <li><a href="">GALERIA</a></li>
-                                <li><a href="">INWESTOR</a></li>
+                                <li class="{{ Request::routeIs('front.investor') ? 'active' : '' }}"><a href="{{ route('front.investor') }}">INWESTOR</a></li>
                                 <li><a href="">FINANSOWANIE</a></li>
                                 <li class="{{ Request::routeIs('front.contact') ? 'active' : '' }}"><a href="{{ route('front.contact') }}">KONTAKT</a></li>
                             </ul>
