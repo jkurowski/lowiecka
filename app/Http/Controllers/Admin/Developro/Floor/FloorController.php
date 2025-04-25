@@ -95,6 +95,19 @@ class FloorController extends Controller
         $newFloor->number = $floor->number + 1;
         $newFloor->position = $floor->position + 1;
         $newFloor->save();
+
+        if($floor->properties->count() > 0){
+            foreach($floor->properties as $p) {
+                $newProperty = $p->replicate();
+                $newProperty->name = $p->name.' - kopia';
+                $newProperty->file = '';
+                $newProperty->file_webp = '';
+                $newProperty->file_pdf = '';
+                $newProperty->floor_id = $newFloor->id;
+                $newProperty->save();
+            }
+        }
+
         return redirect()->route('admin.developro.investment.floors.index', $investment)->with('success', 'Pietro skopiowane');
     }
 
