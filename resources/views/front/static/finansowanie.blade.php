@@ -65,7 +65,7 @@
                     <div class="col-12">
                         <div class="section-title mb-4">
                             <div class="sub-section-title">
-                                <span>MFINANSE</span>
+                                <span><i>m</i>FINANSE</span>
                             </div>
                             <h2 class="mb-4">Umów się na konsultację <br>i uzyskaj wsparcie eksperta kredytowego</h2>
                         </div>
@@ -74,6 +74,11 @@
                 <div class="row">
                     <div class="col-12 d-flex justify-content-center align-items-center">
                         <a href="https://mfinanse.pl/oferta-indywidualna/kredyt-hipoteczny/" target="_blank" rel="nofollow"><img src="{{ asset('../images/mBank_logo_finanse.jpg') }}" alt="Logotyp mBank finanse"></a>
+                    </div>
+                    <div class="col-12 text-center mt-5">
+                        <h3>Ekspert: Tomasz Zientała</h3>
+                        <p>telefon: <a href="tel:+48533600233">533600233</a></p>
+                        <p>e-mail: <a href="mailto:tomasz.zientala@mfinanse.pl">tomasz.zientala@mfinanse.pl</a></p>
                     </div>
                 </div>
             </div>

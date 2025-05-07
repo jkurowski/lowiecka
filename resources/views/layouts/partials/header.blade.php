@@ -23,7 +23,7 @@
                                 <li><a href="">LOKALIZACJA</a></li>
                                 <li><a href="">GALERIA</a></li>
                                 <li class="{{ Request::routeIs('front.investor') ? 'active' : '' }}"><a href="{{ route('front.investor') }}">INWESTOR</a></li>
-                                <li><a href="">FINANSOWANIE</a></li>
+                                <li><a href="{{ route('static.page', ['page' => 'finansowanie']) }}">FINANSOWANIE</a></li>
                                 <li class="{{ Request::routeIs('front.contact') ? 'active' : '' }}"><a href="{{ route('front.contact') }}">KONTAKT</a></li>
                             </ul>
                         </nav>

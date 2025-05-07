@@ -576,6 +576,25 @@ header nav ul a:hover {
   font-size: 12px;
   line-height: 17px;
 }
+.contact-data li {
+  padding-left: 35px;
+  margin-top: 20px;
+}
+.contact-data li.contact-data-mail {
+  background: url("../images/adres_email.png") no-repeat left center;
+}
+.contact-data li.contact-data-phone {
+  background: url("../images/numer_telefonu.png") no-repeat left center;
+}
+.contact-data li.contact-data-location {
+  background: url("../images/lokalizacja_icon.png") no-repeat left top 2px;
+}
+.contact-data li a,
+.contact-data li p {
+  font-size: 21px;
+  font-weight: 500;
+  color: #030344;
+}
 /* Maps
 ================================================== */
 @-webkit-keyframes bs-notify-fadeOut {
@@ -9043,6 +9062,10 @@ section.mt-section {
   position: absolute;
   left: 0;
   content: "";
+}
+.section-title .sub-section-title span i {
+  font-style: normal;
+  text-transform: lowercase;
 }
 .section-title h2 {
   font-size: 38px;

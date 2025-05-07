@@ -35,21 +35,21 @@
                 <div class="row mt-4">
                     <div class="col-4">
                         <div class="icon-title-text-box text-center">
-                            <img src="https://placehold.co/75" alt="">
+                            <img src="{{ asset('../images/kompleksowosc-icon.png') }}" alt="Kompleksowość ikonka" width="75" height="75">
                             <h3>Kompleksowość</h3>
                             <p>Mauris malesuada, dolor a cursus pretium, est orci ultrices ante, ac tempor arcu tellus sollicitudin risus. Maecenas egestas congue accumsan. Nullam ut arcu pellentesque, viverra turpis at.</p>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="icon-title-text-box text-center">
-                            <img src="https://placehold.co/75" alt="">
+                            <img src="{{ asset('../images/partnerstwo-icon.png') }}" alt="Partnerstwo ikonka" width="75" height="75">
                             <h3>Partnerstwo</h3>
                             <p>Mauris malesuada, dolor a cursus pretium, est orci ultrices ante, ac tempor arcu tellus sollicitudin risus. Maecenas egestas congue accumsan. Nullam ut arcu pellentesque, viverra turpis at.</p>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="icon-title-text-box text-center">
-                            <img src="https://placehold.co/75" alt="">
+                            <img src="{{ asset('../images/jakosc-icon.png') }}" alt="Jakość ikonka" width="75" height="75">
                             <h3>Jakość</h3>
                             <p>Mauris malesuada, dolor a cursus pretium, est orci ultrices ante, ac tempor arcu tellus sollicitudin risus. Maecenas egestas congue accumsan. Nullam ut arcu pellentesque, viverra turpis at.</p>
                         </div>
@@ -69,7 +69,7 @@
                             <div class="golden-line-3">
                                 <img src="{{ asset('images/zote-linie-3-white.png') }}" alt="">
                             </div>
-                            <img src="https://placehold.co/740x530" alt="">
+                            <img src="{{ asset('../images/para-oglada-oferte-mieszkania.png') }}" alt="Młoda para ogląda ofertę mieszkania" width="740" height="530">
                         </div>
                     </div>
                     <div class="col-5 d-flex align-items-center">

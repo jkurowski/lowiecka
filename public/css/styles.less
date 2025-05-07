@@ -321,6 +321,26 @@ button:focus,
   }
 }
 
+.contact-data {
+    li {
+        padding-left: 35px;
+        margin-top: 20px;
+        &.contact-data-mail {
+            background: url("../images/adres_email.png") no-repeat left center;
+        }
+        &.contact-data-phone {
+            background: url("../images/numer_telefonu.png") no-repeat left center;
+        }
+        &.contact-data-location {
+            background: url("../images/lokalizacja_icon.png") no-repeat left top 2px;
+        }
+        a, p {
+            font-size: 21px;
+            font-weight: 500;
+            color: #030344;
+        }
+    }
+}
 
 /* Maps
 ================================================== */
@@ -647,6 +667,10 @@ section {
         left: 0;
         content: "";
       }
+        i {
+            font-style: normal;
+            text-transform: lowercase;
+        }
     }
   }
 
