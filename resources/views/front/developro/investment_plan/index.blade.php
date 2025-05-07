@@ -98,6 +98,8 @@
             </div>
         </div>
     </div>
+
+    @include('front.developro.investment_shared.list', ['investment' => $investment])
 </section>
 @endsection
 @push('scripts')

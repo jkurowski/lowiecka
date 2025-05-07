@@ -45,10 +45,6 @@ class InvestmentController extends Controller
 
         // Filter properties
         $filteredProperties = $investment->properties->filter(function ($property) use ($area, $rooms, $floor, $status) {
-            if ($property->storey_type == 2) {
-                return false;
-            }
-
             // Parse area range
             if ($area) {
                 [$minArea, $maxArea] = explode('-', $area);
@@ -80,7 +76,7 @@ class InvestmentController extends Controller
         return view('front.developro.investment_plan.index', [
             'investment' => $investment,
             'page' => $page,
-            'filtered_properties' => $filteredProperties->values()
+            'properties' => $filteredProperties->values()
         ]);
     }
 }
