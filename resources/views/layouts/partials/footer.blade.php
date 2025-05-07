@@ -27,7 +27,7 @@
                         <li><a href="{{ route('front.investment') }}">O inwestycji</a></li>
                         <li><a href="{{ route('front.developro.show') }}">Mieszkania</a></li>
                         <li><a href="">Lokalizacja</a></li>
-                        <li><a href="">Galeria</a></li>
+                        <li><a href="{{ route('front.gallery.index') }}">Galeria</a></li>
                         <li><a href="{{ route('front.investor') }}">Inwestor</a></li>
                         <li><a href="{{ route('front.contact') }}">Kontakt</a></li>
                     </ul>
@@ -64,3 +64,4 @@
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{ asset('js/slick.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>

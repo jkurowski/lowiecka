@@ -56,14 +56,12 @@
                                         </span> Slider</a>
                                 </li>
                             @endif
-                            @if (in_array('gallery', $modules))
                                 <li {{ Request::routeIs('admin.gallery.*') ? 'class=active' : '' }}>
                                     <a href="{{ route('admin.gallery.index') }}">
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span> Galeria</a>
                                 </li>
-                            @endif
                             @if (in_array('user', $modules))
                                 <li {{ Request::routeIs('admin.user.*') ? 'class=active' : '' }}>
                                     <a href="{{ route('admin.user.index') }}">

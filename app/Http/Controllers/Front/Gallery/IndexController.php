@@ -4,13 +4,21 @@ namespace App\Http\Controllers\Front\Gallery;
 
 use App\Http\Controllers\Controller;
 use App\Models\Gallery;
+use App\Repositories\GalleryRepository;
+use App\Services\GalleryService;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
+    private GalleryRepository $repository;
+    public function __construct(GalleryRepository $repository){
+        $this->repository = $repository;
+    }
+
     public function index()
     {
-        return redirect('/');
+        $galleries = $this->repository->allSort('ASC');
+        return view('front.gallery.index', compact('galleries'));
     }
 
     public function show(Gallery $gallery, $gallerySlug)
@@ -18,6 +26,8 @@ class IndexController extends Controller
         if ($gallery->status == 0 || $gallerySlug != $gallery->slug) {
             return redirect('/');
         }
-        return view('front.gallery.show', compact('gallery'));
+
+        $images = $gallery->photos()->get();
+        return view('front.gallery.show', compact('gallery', 'images'));
     }
 }

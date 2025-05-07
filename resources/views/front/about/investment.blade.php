@@ -307,7 +307,16 @@
                                     <span>KONTAKT</span>
                                 </div>
                                 <h2 class="text-start mb-4">Zapytaj o ofertę!</h2>
-                                <p>Nasz zespół jest do Twojej dyspozycji, aby udzielić wszelkich informacji i odpowiedzieć na Twoje pytania. </p>
+                                <p>Nasz zespół jest do Twojej dyspozycji, aby udzielić wszelkich informacji i odpowiedzieć na Twoje pytania.</p>
+                                <ul class="mb-0 contact-data list-unstyled mt-4">
+                                    <li class="contact-data-phone"><a href="tel:+48690256457">690-256-457</a></li>
+                                    <li class="contact-data-mail"><a href="mailto:biuro@epsdevelopment.pl">biuro@epsdevelopment.pl</a></li>
+                                    <li class="contact-data-location">
+                                        <p>EPS Development Sp. z o.o.</p>
+                                        <p>Kozietulskiego 14</p>
+                                        <p>96-100 Skierniewice</p>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

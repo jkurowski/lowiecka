@@ -22,6 +22,7 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
     Route::post('/kontakt/{property}', 'ContactController@property')->name('contact.property');
 
     // Galeria
+    Route::get('/galeria', 'Gallery\IndexController@index')->name('gallery.index');
     Route::get('/galeria/{gallery},{gallerySlug}', 'Gallery\IndexController@show')->name('gallery.show');
 
     // O firmie

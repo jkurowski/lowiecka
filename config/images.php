@@ -136,6 +136,8 @@ return [
     */
 
     'gallery' => [
+        'catalog_width' => 740,
+        'catalog_height' => 530,
         'big_width' => 1360,
         'big_height' => 765,
         'thumb_width' => 520,

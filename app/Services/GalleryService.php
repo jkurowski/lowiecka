@@ -26,12 +26,9 @@ class GalleryService
         $filepath = public_path('uploads/gallery/' . $name);
 
         $image = Image::make($file->getRealPath());
-        $image->resize(
-                config('images.gallery.big_width'),
-                config('images.gallery.big_height'),
-                function ($constraint) {
-                    $constraint->aspectRatio();
-                }
+        $image->fit(
+                config('images.gallery.catalog_width'),
+                config('images.gallery.catalog_height'),
                 )->save($filepath);
 
         // WebP

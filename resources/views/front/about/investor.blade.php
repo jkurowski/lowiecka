@@ -37,21 +37,70 @@
                         <div class="icon-title-text-box text-center">
                             <img src="{{ asset('../images/kompleksowosc-icon.png') }}" alt="Kompleksowość ikonka" width="75" height="75">
                             <h3>Kompleksowość</h3>
-                            <p>Mauris malesuada, dolor a cursus pretium, est orci ultrices ante, ac tempor arcu tellus sollicitudin risus. Maecenas egestas congue accumsan. Nullam ut arcu pellentesque, viverra turpis at.</p>
+                            <p class="d-none">Mauris malesuada, dolor a cursus pretium, est orci ultrices ante, ac tempor arcu tellus sollicitudin risus. Maecenas egestas congue accumsan. Nullam ut arcu pellentesque, viverra turpis at.</p>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="icon-title-text-box text-center">
                             <img src="{{ asset('../images/partnerstwo-icon.png') }}" alt="Partnerstwo ikonka" width="75" height="75">
                             <h3>Partnerstwo</h3>
-                            <p>Mauris malesuada, dolor a cursus pretium, est orci ultrices ante, ac tempor arcu tellus sollicitudin risus. Maecenas egestas congue accumsan. Nullam ut arcu pellentesque, viverra turpis at.</p>
+                            <p class="d-none">Mauris malesuada, dolor a cursus pretium, est orci ultrices ante, ac tempor arcu tellus sollicitudin risus. Maecenas egestas congue accumsan. Nullam ut arcu pellentesque, viverra turpis at.</p>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="icon-title-text-box text-center">
                             <img src="{{ asset('../images/jakosc-icon.png') }}" alt="Jakość ikonka" width="75" height="75">
                             <h3>Jakość</h3>
-                            <p>Mauris malesuada, dolor a cursus pretium, est orci ultrices ante, ac tempor arcu tellus sollicitudin risus. Maecenas egestas congue accumsan. Nullam ut arcu pellentesque, viverra turpis at.</p>
+                            <p class="d-none">Mauris malesuada, dolor a cursus pretium, est orci ultrices ante, ac tempor arcu tellus sollicitudin risus. Maecenas egestas congue accumsan. Nullam ut arcu pellentesque, viverra turpis at.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-3 position-relative">
+                        <div class="big-number">
+                            <div>
+                                <strong>20</strong>
+                                <p>sprzedanych <br>mieszkań</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="section-title justify-content-start">
+                            <div class="sub-section-title">
+                                <span>NASZE INWESTYCJE</span>
+                            </div>
+                            <h2 class="text-start">Budujemy wspólnie dla Was</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="position-relative split-bg">
+                <div class="split">
+                    <div class="split-left"></div>
+                    <div class="split-right"></div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-7">
+                            <img src="{{ asset('./images/apartamenty-sucharskiego.jpg') }}" alt="Wizualizacja inwestycji Apartamenty Sucharskiego">
+                        </div>
+                        <div class="col-5 d-flex align-items-center">
+                            <div class="ps-5">
+                                <div class="section-title justify-content-start mb-4">
+                                    <div class="sub-section-title">
+                                        <span>SKIERNIEWICE</span>
+                                    </div>
+                                    <h2 class="text-start">Apartamenty Sucharskiego</h2>
+                                </div>
+                                <div class="section-text">
+                                    <p>Apartamenty Sucharskiego to kameralna inwestycja położona na osiedlu Widok w Skierniewicach. Doskonała lokalizacja zapewnia idealne skomunikowanie z resztą miasta, oferuje bogatą infrastrukturę oraz mnóstwo zieleni w okolicy. W budynku znajduje się 20 mieszkań co czyni inwestycję wyjątkową i dyskretną.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -100,7 +149,16 @@
                                     <span>KONTAKT</span>
                                 </div>
                                 <h2 class="text-start mb-4">Zapytaj o ofertę!</h2>
-                                <p>Nasz zespół jest do Twojej dyspozycji, aby udzielić wszelkich informacji i odpowiedzieć na Twoje pytania. </p>
+                                <p>Nasz zespół jest do Twojej dyspozycji, aby udzielić wszelkich informacji i odpowiedzieć na Twoje pytania.</p>
+                                <ul class="mb-0 contact-data list-unstyled mt-4">
+                                    <li class="contact-data-phone"><a href="tel:+48690256457">690-256-457</a></li>
+                                    <li class="contact-data-mail"><a href="mailto:biuro@epsdevelopment.pl">biuro@epsdevelopment.pl</a></li>
+                                    <li class="contact-data-location">
+                                        <p>EPS Development Sp. z o.o.</p>
+                                        <p>Kozietulskiego 14</p>
+                                        <p>96-100 Skierniewice</p>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

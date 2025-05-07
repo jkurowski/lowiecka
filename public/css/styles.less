@@ -342,6 +342,104 @@ button:focus,
     }
 }
 
+/* Galeria
+================================================== */
+#galleryList {
+    .col-4 {
+        .golden-line-3 {
+            right: -15px;
+            bottom: -15px;
+            width: 62px;
+            z-index: 30
+        }
+        .golden-line-4 {
+            left: -16px;
+            top: -15px;
+            width: 62px;
+            z-index: 30;
+        }
+        .gallery-item-list {
+            margin-bottom: 90px;
+        }
+    }
+
+    .col-6 {
+        .golden-line-3 {
+            right: -17px;
+            bottom: -17px;
+            width: 90px;
+            z-index: 30
+        }
+        .golden-line-4 {
+            left: -16px;
+            top: -15px;
+            width: 83px;
+            z-index: 30
+        }
+
+        .gallery-item-list {
+            margin-bottom: 90px;
+        }
+    }
+
+    h3 {
+        font-size: 24px;
+        padding-right: 80px;
+        margin-bottom: 0;
+        padding-top: 20px;
+    }
+}
+.gallery-item-list {
+    padding: 0 30px;
+}
+.gallery-item-img {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+.gallery-item-img:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    width: 400%;
+    height: 400%;
+    opacity: 0;
+    background-color: rgba(255,255,255,0.6);
+    transform: rotate(45deg) translate(0, 0);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+.gallery-item-img:hover::after {
+    //transform: rotate(45deg) translate(-100%, 0);
+    //opacity: 1;
+}
+.col-gallery-thumb {
+    margin-bottom: 30px;
+}
+.col-gallery-thumb img,
+.col-gallery-thumb a {
+    display: block;
+    position: relative;
+}
+.col-gallery-thumb a {
+    overflow: hidden;
+}
+.col-gallery-thumb div {
+    position: absolute;
+    background: rgba(186, 139, 65, 0.81);
+    width: 100%;
+    height: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+.col-gallery-thumb div i {
+    color: white;
+    font-size: 32px;
+}
+
 /* Maps
 ================================================== */
 @import url(less-partials/additions);
@@ -674,6 +772,7 @@ section {
     }
   }
 
+
   h2 {
     font-size: 38px;
     color: var(--main-color-blue);
@@ -685,6 +784,62 @@ section {
     width: 100%;
     margin: 10px 0 0;
   }
+}
+
+.split {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    .split-left {
+        width: 50%;
+        height: 100%;
+    }
+    .split-right {
+        background: #030344 url(../images/footer.png);
+        width: 50%;
+        height: 100%;
+    }
+}
+.split-bg {
+    .container {
+        position: relative;
+        z-index: 20;
+    }
+    .section-title h2, .section-text p {
+        color: white;
+    }
+}
+
+.big-number {
+    width: 100%;
+    height: 280px;
+    background: #d9b282;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 90;
+    left: -90px;
+    top: -70px;
+    strong {
+        font-family: "DM Serif Display",serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 120px;
+        line-height: 120px;
+        color: white;
+    }
+    p {
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-weight: 600;
+        font-size: 26px;
+        color: white;
+        text-align: center;
+    }
 }
 
 .container-right-after {

@@ -29,13 +29,13 @@
                         <div class="row w-100 form-group">
                             @include('form-elements.html-input-file', [
                                 'label' => 'Zdjęcie',
-                                'sublabel' => '(wymiary: '.config('images.gallery.big_width').'px / '.config('images.gallery.big_height').'px)',
+                                'sublabel' => '(wymiary: '.config('images.gallery.catalog_width').'px / '.config('images.gallery.catalog_height').'px)',
                                 'name' => 'file',
                                 'file' => $entry->file,
                                 'file_preview' => config('images.gallery.preview_file_path')
                             ])
                         </div>
-                        <div class="row w-100 form-group">
+                        <div class="row w-100 form-group d-none">
                             @include('form-elements.textarea-fullwidth', ['label' => 'Treść', 'name' => 'text', 'value' => $entry->text, 'rows' => 21, 'class' => 'tinymce', 'required' => 1])
                         </div>
                     </div>
