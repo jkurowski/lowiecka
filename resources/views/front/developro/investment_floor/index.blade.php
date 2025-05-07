@@ -12,7 +12,7 @@
             <div class="col-12 col-sm-4 d-flex justify-content-center">
                 <a href="{{route('front.developro.show')}}" class="bttn bttn-sm">Plan budynku</a>
             </div>
-            <div class="col-12 col-sm-4 d-flex justify-content-end">@if($next_floor) <a href="{{route('front.developro.floor', [$next_floor, Str::slug($next_floor->name)]}}" class="bttn bttn-sm">{{$next_floor->name}}</a> @endif</div>
+            <div class="col-12 col-sm-4 d-flex justify-content-end">@if($next_floor) <a href="{{route('front.developro.floor', [$next_floor, Str::slug($next_floor->name)])}}" class="bttn bttn-sm">{{$next_floor->name}}</a> @endif</div>
         </div>
 
         <div class="row">
