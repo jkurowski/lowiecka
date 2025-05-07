@@ -8,11 +8,11 @@
 <section>
     <div class="container">
         <div id="planNav" class="row mb-5">
-            <div class="col-12 col-sm-4 d-flex justify-content-start">@if($prev_floor) <a href="{{route('front.developro.floor', $prev_floor->id)}}" class="bttn bttn-sm">{{$prev_floor->name}}</a> @endif</div>
+            <div class="col-12 col-sm-4 d-flex justify-content-start">@if($prev_floor) <a href="{{route('front.developro.floor', [$prev_floor, Str::slug($prev_floor->name)])}}" class="bttn bttn-sm">{{$prev_floor->name}}</a> @endif</div>
             <div class="col-12 col-sm-4 d-flex justify-content-center">
                 <a href="{{route('front.developro.show')}}" class="bttn bttn-sm">Plan budynku</a>
             </div>
-            <div class="col-12 col-sm-4 d-flex justify-content-end">@if($next_floor) <a href="{{route('front.developro.floor', $next_floor->id)}}" class="bttn bttn-sm">{{$next_floor->name}}</a> @endif</div>
+            <div class="col-12 col-sm-4 d-flex justify-content-end">@if($next_floor) <a href="{{route('front.developro.floor', [$next_floor, Str::slug($next_floor->name)]}}" class="bttn bttn-sm">{{$next_floor->name}}</a> @endif</div>
         </div>
 
         <div class="row">
