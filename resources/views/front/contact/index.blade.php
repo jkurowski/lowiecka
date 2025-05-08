@@ -58,7 +58,16 @@
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
 
-            L.marker([51.954484502336655, 20.133848175057228]).addTo(map);
+            // Define your custom icon
+            var myIcon = L.icon({
+                iconUrl: '{{ asset("images/marker.png") }}', // replace with your actual path
+                iconSize: [64, 64],       // size of the icon
+                iconAnchor: [32, 64],     // point of the icon which will correspond to marker's location
+                popupAnchor: [0, -128]     // optional: point from which the popup should open relative to the iconAnchor
+            });
+
+            // Add marker with custom icon
+            L.marker([51.954484502336655, 20.133848175057228], { icon: myIcon }).addTo(map);
         });
     </script>
 @endpush
