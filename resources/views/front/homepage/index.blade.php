@@ -4,7 +4,7 @@
     <main>
         <div id="slider">
             <div class="container h-100">
-                <div class="row h-100 align-items-center">
+                <div class="row h-100">
                     <div class="col-5">
                         <div class="slider-apla">
                             <span class="sub-header">Skierniewice</span>
@@ -15,6 +15,7 @@
                     </div>
                 </div>
             </div>
+            <img src="{{ asset('images/slider.jpg') }}" alt="">
         </div>
 
         <div class="container">
