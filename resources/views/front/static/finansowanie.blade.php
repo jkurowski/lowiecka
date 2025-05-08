@@ -32,25 +32,25 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="atut">
-                                    <img src="https://placehold.co/125" alt="">
+                                    <img src="{{ asset('images/konsultacje-icon.png') }}" alt="Konsultacje ikonka">
                                     <p class="mt-4">Konsultacje i wsparcie eksperta <br>w całym procesie kredytowym</p>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="atut">
-                                    <img src="https://placehold.co/125" alt="">
+                                    <img src="{{ asset('images/wybor-oferty.png') }}" alt="Wybór oferty ikonka">
                                     <p class="mt-4">Wybór najkorzystniejszej oferty <br>spośród wielu banków</p>
                                 </div>
                             </div>
                             <div class="col-6 mt-4">
                                 <div class="atut">
-                                    <img src="https://placehold.co/125" alt="">
+                                    <img src="{{ asset('images/zdolnosc-kredytowa.png') }}" alt="Zdolnosc kredytowa ikonka">
                                     <p class="mt-4">Zbadanie zdolności kredytowej <br>i pomoc w analizie Twoich finansów</p>
                                 </div>
                             </div>
                             <div class="col-6 mt-4">
                                 <div class="atut">
-                                    <img src="https://placehold.co/125" alt="">
+                                    <img src="{{ asset('images/kontakt-onliune.png') }}" alt="Kontakt online ikonka">
                                     <p class="mt-4">Mobilność i elastyczność ekspertów <br>w całej Polsce, dogodne formy komunikacji</p>
                                 </div>
                             </div>
