@@ -132,7 +132,7 @@
                             <p><b>Nasza firma ma wieloletnie doświadczenie w tworzeniu wyjątkowych przestrzeni, które spełniają najwyższe standardy jakości i komfortu</b></p>
                             <p>&nbsp;</p>
                             <p>Cechuje nas indywidualne podejście do każdego projektu. Stale poszukujemy nowych, innowacyjnych rozwiązań, aby nasze budynki były nie tylko funkcjonalne, ale również estetycznie doskonałe. Nasze doświadczenie to gwarancja Twojej satysfakcji i pewność, że Twój nowy apartament będzie miejscem pełnym komfortu i elegancji.</p>
-                            <a href="" class="bttn mt-5">DOSTĘPNE MIESZKANIA <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
+                            <a href="{{ route('front.developro.show') }}" class="bttn mt-5">DOSTĘPNE MIESZKANIA <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
                         </div>
                     </div>
                 </div>

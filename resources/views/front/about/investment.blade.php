@@ -26,7 +26,7 @@
                             <div class="golden-line-3">
                                 <img src="{{ asset('images/zote-linie-3-white.png') }}" alt="">
                             </div>
-                            <img src="https://placehold.co/740x530" alt="">
+                            <img src="{{ asset('../images/inwestycja-1.jpg') }}" alt="" width="740" height="530">
                         </div>
                     </div>
                     <div class="col-5 d-flex align-items-center">
@@ -37,11 +37,11 @@
                                 </div>
                                 <h2 class="text-start">Kameralna inwestycja</h2>
                             </div>
-                            <p>Łowicka 100 to kameralna inwestycja położona na osiedlu Widok w Skierniewicach. Doskonała lokalizacja zapewnia idealne skomunikowanie z resztą miasta, oferuje bogatą infrastrukturę oraz mnóstwo zieleni w okolicy.Inwestycja obejmuje 66 mieszkań o przemyślanych układach, które spełnią potrzeby zarówno rodzin, jak i singli.</p>
+                            <p>Łowicka 100 to kameralna inwestycja położona na osiedlu Widok w Skierniewicach. Doskonała lokalizacja zapewnia idealne skomunikowanie z resztą miasta, oferuje bogatą infrastrukturę oraz mnóstwo zieleni w okolicy.Inwestycja obejmuje 66 mieszkań o przemyślanych układach, które spełnią potrzeby zarówno rodzin, jak i singli.</p>
                             <p>&nbsp;</p>
-                            <p>Każde mieszkanie zostało rzetelnie przeanalizowane pod kątem funkcjonalnej aranżacji i komfortu codziennego życia. Lokale na parterze zostały wyposażone w prywatne ogródki, idealne na odpoczynek lub wspólne chwile z bliskimi, a mieszkania na wszystkich wyższych piętrach posiadają duże, przestronne balkony.
+                            <p>Każde mieszkanie zostało rzetelnie przeanalizowane pod kątem funkcjonalnej aranżacji i komfortu codziennego życia. Lokale na parterze zostały wyposażone w prywatne ogródki, idealne na odpoczynek lub wspólne chwile z bliskimi, a mieszkania na wszystkich wyższych piętrach posiadają duże, przestronne balkony.
                             </p>
-                            <a href="" class="bttn mt-5">DOSTĘPNE MIESZKANIA <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
+                            <a href="{{ route('front.developro.show') }}" class="bttn mt-5">DOSTĘPNE MIESZKANIA <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -210,35 +210,35 @@
                     </div>
                     <div class="col-4">
                         <div class="atut">
-                            <img src="https://placehold.co/65" alt="">
+                            <img src="{{ asset('images/doskonala-lokalizacja.png') }}" alt="">
                             <h3>Doskonała lokalizacja</h3>
                             <p>Blisko centrum, sklepów, szkół i komunikacji miejskiej. Sąsiedztwo terenów zielonych i parku sprzyja relaksowi i aktywnemu wypoczynkowi.</p>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="atut">
-                            <img src="https://placehold.co/65" alt="">
+                            <img src="{{ asset('images/komfortowe-mieszkania.png') }}" alt="">
                             <h3>Komfortowe mieszkania</h3>
                             <p>Przemyślane układy, prywatne ogródki na parterze i przestronne balkony na wyższych piętrach. Idealna przestrzeń do życia i relaksu.</p>
                         </div>
                     </div>
                     <div class="col-4 mt-4">
                         <div class="atut">
-                            <img src="https://placehold.co/65" alt="">
+                            <img src="{{ asset('images/ekologiczne-rozwiazania.png') }}" alt="">
                             <h3>Ekologiczne rozwiązania</h3>
                             <p>Fotowoltaika, filtry antysmogowe i smart home zmniejszają koszty energii i zapewniają zdrowe, ekologiczne warunki życia.</p>
                         </div>
                     </div>
                     <div class="col-4 mt-4">
                         <div class="atut">
-                            <img src="https://placehold.co/65" alt="">
+                            <img src="{{ asset('images/nowoczesna-infrastruktura.png') }}" alt="">
                             <h3>Nowoczesna infrastruktura</h3>
                             <p>Podziemna hala garażowa, ładowarki do aut elektrycznych, rowerownia i windy zapewniają wygodę i funkcjonalność na co dzień.</p>
                         </div>
                     </div>
                     <div class="col-4 mt-4">
                         <div class="atut">
-                            <img src="https://placehold.co/65" alt="">
+                            <img src="{{ asset('images/bezpieczenstwo-i-wspolnota.png') }}" alt="">
                             <h3>Bezpieczeństwo i wspólnota</h3>
                             <p>Zamknięte osiedle, monitoring, wideodomofony i przestrzenie wspólne sprzyjają spokojowi oraz budowaniu sąsiedzkich relacji.</p>
                         </div>
