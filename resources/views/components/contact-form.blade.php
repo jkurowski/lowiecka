@@ -141,7 +141,7 @@
                 </div>
                 <div class="col-12 text-center text-md-start pt-md-3">
                     <script type="text/javascript">
-                        document.write("<button type=\"submit\" class=\"g-recaptcha bttn\" data-sitekey=\"{{ config('services.recaptcha_v3.siteKey') }}\" data-callback=\"onRecaptchaSuccess\" data-action=\"submitContact\" style=\"min-width: revert;\">WYŚLIUJ WIADOMOŚĆ</button>");
+                        document.write("<button type=\"submit\" class=\"g-recaptcha bttn\" data-sitekey=\"{{ config('services.recaptcha_v3.siteKey') }}\" data-callback=\"onRecaptchaSuccess\" data-action=\"submitContact\" style=\"min-width: revert;\">WYŚLIJ WIADOMOŚĆ</button>");
                     </script>
                     <noscript>Do poprawnego działania, Java musi być włączona.</noscript>
                 </div>

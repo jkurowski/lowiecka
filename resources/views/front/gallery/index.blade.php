@@ -21,7 +21,7 @@
                     <div class="col-12">
                         <div class="section-title mb-4">
                             <div class="sub-section-title">
-                                <span>LOWIECKA 100</span>
+                                <span>ŁOWICKA 100</span>
                             </div>
                             <h2 class="mb-4">Galeria</h2>
                         </div>
@@ -34,10 +34,10 @@
                                 <div class="gallery-item-list">
                                     <div class="golden-lines">
                                         <div class="golden-line-4">
-                                            <img src="http://lowiecka.test/images/zote-linie-4.png" alt="">
+                                            <img src="{{ asset('images/zote-linie-4.png') }}" alt="">
                                         </div>
                                         <div class="golden-line-3">
-                                            <img src="http://lowiecka.test/images/zote-linie-3-white.png" alt="">
+                                            <img src="{{ asset('images/zote-linie-3-white.png') }}" alt="">
                                         </div>
                                         <div class="gallery-item-img">
                                             <img src="{{ asset('../uploads/gallery/'.$gallery->file) }}" alt="Galeria {{ $gallery->name }}">

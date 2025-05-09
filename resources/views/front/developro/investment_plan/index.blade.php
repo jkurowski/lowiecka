@@ -18,7 +18,7 @@
                     <div class="sub-section-title">
                         <span>Łowicka 100</span>
                     </div>
-                    <h2 class="text-center">Z planu budynku wybierz piętro lub <a href="#filtr" class="scroll-link" data-offset="90"><span class="text-gold">wyszukiwarki</span></a></h2>
+                    <h2 class="text-center">Z planu budynku wybierz piętro lub użyj <a href="#main-search" class="scroll-link" data-offset="90"><span class="text-gold">wyszukiwarki</span></a></h2>
                 </div>
                 @if($investment->plan)
                     <div id="plan-holder">

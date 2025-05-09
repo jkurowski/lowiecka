@@ -52,7 +52,7 @@
     <script src="{{ asset('/js/leaflet.js') }}" charset="utf-8"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            var map = L.map('map').setView([51.954484502336655, 20.133848175057228], 16);
+            var map = L.map('map').setView([51.95463433600277, 20.133244197768118], 17);
 
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -67,7 +67,7 @@
             });
 
             // Add marker with custom icon
-            L.marker([51.954484502336655, 20.133848175057228], { icon: myIcon }).addTo(map);
+            L.marker([51.95463433600277, 20.133244197768118], { icon: myIcon }).addTo(map);
         });
     </script>
 @endpush

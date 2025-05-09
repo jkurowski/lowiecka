@@ -25,7 +25,7 @@
                     <div class="col-12">
                         <div class="section-title mb-4">
                             <div class="sub-section-title">
-                                <span>LOWIECKA 100</span>
+                                <span>ŁOWICKA 100</span>
                             </div>
                             <h2 class="mb-4">{{ $gallery->name }}</h2>
                         </div>
@@ -39,7 +39,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="text-center">
-                            <a href="{{ route('front.gallery.index') }}" class="bttn">Wróć do listy <img src="http://lowiecka.test/images/bttn_arrow.svg" alt=""></a>
+                            <a href="{{ route('front.gallery.index') }}" class="bttn">Wróć do listy <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
                         </div>
                     </div>
                 </div>

@@ -21,7 +21,7 @@
                     <div class="col-12">
                         <div class="section-title mb-4">
                             <div class="sub-section-title">
-                                <span>LOWIECKA 100</span>
+                                <span>ŁOWICKA 100</span>
                             </div>
                             <h2 class="mb-4">Kredyt hipoteczny z mFinanse</h2>
                         </div>

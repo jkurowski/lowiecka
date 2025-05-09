@@ -51,10 +51,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <p>© 2025 Osiedla Łowicka 100</p>
+                    <p>© 2025 Łowicka 100</p>
                 </div>
                 <div class="col-6 text-end">
-                    <p>Realizacja: <a href="" target="_blank">4Dl.pl</a> | Powered by: <a href="" target="_blank">DeveloPro.pl</a></p>
+                    <p>Realizacja: <a href="https://www.4dl.pl/" target="_blank">4Dl.pl</a> | Powered by: <a href="https://www.developro.pl/" target="_blank">DeveloPro.pl</a></p>
                 </div>
             </div>
         </div>

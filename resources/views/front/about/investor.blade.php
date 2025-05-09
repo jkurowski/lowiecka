@@ -28,7 +28,7 @@
                     </div>
                     <div class="col-6">
                         <div class="mt-4">
-                            <p>Spółka powstała w 2021 roku z wizją realizacji szeregu budynków mieszkalnych na terenie całej Polski. Udziałowcami spółki EPS Development są osoby mające bogate i ponad 30 letnie doświadczenie w branży.</p>
+                            <p>Spółka powstała w 2021 roku z wizją realizacji szeregu budynków mieszkalnych na terenie całej Polski. Udziałowcami spółki EPS Development są osoby mające ponad 30 letnie, bogate doświadczenie w branży.</p>
                         </div>
                     </div>
                 </div>
