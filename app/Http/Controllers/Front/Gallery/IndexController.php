@@ -17,7 +17,7 @@ class IndexController extends Controller
 
     public function index()
     {
-        $galleries = $this->repository->allSort('ASC');
+        $galleries = $this->repository->allSortByWhere('status', 1, 'sort', 'ASC');
         return view('front.gallery.index', compact('galleries'));
     }
 
