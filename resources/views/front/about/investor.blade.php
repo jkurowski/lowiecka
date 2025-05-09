@@ -104,6 +104,14 @@
                         </div>
                     </div>
                 </div>
+
+                @if($images->count() > 0)
+                <div class="row mt-5">
+                    <div class="col-12">
+                        @include('front.parse.gallery', ['list' => $images])
+                    </div>
+                </div>
+                @endif
             </div>
         </section>
 
