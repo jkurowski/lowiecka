@@ -671,7 +671,7 @@ header nav ul a:hover {
   pointer-events: none;
 }
 .col-gallery-thumb {
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 .col-gallery-thumb img,
 .col-gallery-thumb a {
