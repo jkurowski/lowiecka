@@ -129,20 +129,20 @@
                                 <div class="row">
                                     <div class="col-7">
                                         <div class="rooms-tab-img pe-5">
-                                            <img src="https://placehold.co/700x650" alt="">
+                                            <img src="{{ asset('images/przykladowe-2-pokoje.jpg') }}" alt="Przykładowy plan mieszkania 2-pokojowego">
                                         </div>
                                     </div>
                                     <div class="col-5">
                                         <div class="rooms-tab-detail">
-                                            <h3>64,21 <small>m<sup>2</sup></small></h3>
-                                            <p class="mt-4 mb-3">Zobaczysz u nas mieszkania 3-pokojowe, które są przestronne i gotowe na wszystkie Twoje pomysły. Wszystkie dostępne lokale są widoczne na liście!</p>
+                                            <h3>43.06 <small>m<sup>2</sup></small></h3>
+                                            <p class="mt-4 mb-3">Zobaczysz u nas mieszkania 2-pokojowe, które są przestronne i gotowe na wszystkie Twoje pomysły. Wszystkie dostępne lokale są widoczne na liście!</p>
                                             <ul class="mb-0 list-unstyled">
-                                                <li>Pokoje<span>3</span></li>
-                                                <li>Sypialnie<span>2</span></li>
-                                                <li>Pokój + Aneks<span>26,59 m<sup>2</sup></span></li>
-                                                <li>Dostępny balkon lub ogródek</li>
+                                                <li>Pokoje<span>2</span></li>
+                                                <li>Sypialnie<span>1</span></li>
+                                                <li>Pokój + Aneks<span>22,77 m<sup>2</sup></span></li>
+                                                <li>Balkon<span>10.35 m<sup>2</sup></span></li>
                                             </ul>
-                                            <a href="" class="bttn mt-5">ZOBACZ MIESZKANIA <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
+                                            <a href="/mieszkania/pietro/2,pietro-1/m/20,mieszkanie-m27" class="bttn mt-5">ZOBACZ MIESZKANIE <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
                                         </div>
                                     </div>
                                 </div>
@@ -151,20 +151,20 @@
                                 <div class="row">
                                     <div class="col-7">
                                         <div class="rooms-tab-img pe-5">
-                                            <img src="https://placehold.co/700x650" alt="">
+                                            <img src="{{ asset('images/przykladowe-3-pokoje.jpg') }}" alt="Przykładowy plan mieszkania 3-pokojowego">
                                         </div>
                                     </div>
                                     <div class="col-5">
                                         <div class="rooms-tab-detail">
-                                            <h3>64,21 <small>m<sup>2</sup></small></h3>
+                                            <h3>59.26 <small>m<sup>2</sup></small></h3>
                                             <p class="mt-4 mb-3">Zobaczysz u nas mieszkania 3-pokojowe, które są przestronne i gotowe na wszystkie Twoje pomysły. Wszystkie dostępne lokale są widoczne na liście!</p>
                                             <ul class="mb-0 list-unstyled">
                                                 <li>Pokoje<span>3</span></li>
                                                 <li>Sypialnie<span>2</span></li>
-                                                <li>Pokój + Aneks<span>26,59 m<sup>2</sup></span></li>
-                                                <li>Dostępny balkon lub ogródek</li>
+                                                <li>Pokój + Aneks<span>24,78 m<sup>2</sup></span></li>
+                                                <li>Ogródek<span>83.51 m<sup>2</sup></span></li>
                                             </ul>
-                                            <a href="" class="bttn mt-5">ZOBACZ MIESZKANIA <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
+                                            <a href="/mieszkania/pietro/1,parter/m/13,mieszkanie-m16" class="bttn mt-5">ZOBACZ MIESZKANIA <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
                                         </div>
                                     </div>
                                 </div>
@@ -173,20 +173,20 @@
                                 <div class="row">
                                     <div class="col-7">
                                         <div class="rooms-tab-img pe-5">
-                                            <img src="https://placehold.co/700x650" alt="">
+                                            <img src="{{ asset('images/przykladowe-4-pokoje.jpg') }}" alt="Przykładowy plan mieszkania 4-pokojowego">
                                         </div>
                                     </div>
                                     <div class="col-5">
                                         <div class="rooms-tab-detail">
-                                            <h3>64,21 <small>m<sup>2</sup></small></h3>
-                                            <p class="mt-4 mb-3">Zobaczysz u nas mieszkania 3-pokojowe, które są przestronne i gotowe na wszystkie Twoje pomysły. Wszystkie dostępne lokale są widoczne na liście!</p>
+                                            <h3>67.48 <small>m<sup>2</sup></small></h3>
+                                            <p class="mt-4 mb-3">Zobaczysz u nas mieszkania 4-pokojowe, które są przestronne i gotowe na wszystkie Twoje pomysły. Wszystkie dostępne lokale są widoczne na liście!</p>
                                             <ul class="mb-0 list-unstyled">
-                                                <li>Pokoje<span>3</span></li>
-                                                <li>Sypialnie<span>2</span></li>
-                                                <li>Pokój + Aneks<span>26,59 m<sup>2</sup></span></li>
-                                                <li>Dostępny balkon lub ogródek</li>
+                                                <li>Pokoje<span>4</span></li>
+                                                <li>Sypialnie<span>3</span></li>
+                                                <li>Pokój + Aneks<span>21,82 m<sup>2</sup></span></li>
+                                                <li>Balkon<span>11.16 m<sup>2</sup></span></li>
                                             </ul>
-                                            <a href="" class="bttn mt-5">ZOBACZ MIESZKANIA <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
+                                            <a href="/mieszkania/pietro/5,pietro-3/m/41,mieszkanie-m44" class="bttn mt-5">ZOBACZ MIESZKANIA <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
                                         </div>
                                     </div>
                                 </div>
