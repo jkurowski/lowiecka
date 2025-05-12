@@ -26,7 +26,7 @@
                     <ul class="list-unstyled mb-0">
                         <li><a href="{{ route('front.investment') }}">O inwestycji</a></li>
                         <li><a href="{{ route('front.developro.show') }}">Mieszkania</a></li>
-                        <li><a href="">Lokalizacja</a></li>
+                        <li><a href="{{ route('static.page', ['page' => 'lokalizacja']) }}">Lokalizacja</a></li>
                         <li><a href="{{ route('front.gallery.index') }}">Galeria</a></li>
                         <li><a href="{{ route('front.investor') }}">Inwestor</a></li>
                         <li><a href="{{ route('front.contact') }}">Kontakt</a></li>

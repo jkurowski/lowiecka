@@ -28,7 +28,7 @@ class IndexController extends Controller
 
     public function pages($page)
     {
-        $allowedPages = ['polityka-prywatnosci', 'regulamin', 'kontakt', 'finansowanie'];
+        $allowedPages = ['polityka-prywatnosci', 'regulamin', 'kontakt', 'finansowanie', 'lokalizacja'];
 
         if (in_array($page, $allowedPages)) {
             return view('front.static.'.$page);
