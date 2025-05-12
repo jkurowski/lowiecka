@@ -37,7 +37,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-7">
-                            <img src="{{ asset('./images/apartamenty-sucharskiego.jpg') }}" alt="Wizualizacja inwestycji Apartamenty Sucharskiego">
+                            <img src="{{ asset('./images/mapa.jpg') }}" alt="Mapa okolicy inwestycji" width="960" height="852">
                         </div>
                         <div class="col-5 d-flex align-items-center">
                             <div class="ps-5">
