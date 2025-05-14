@@ -14,6 +14,7 @@ class IndexController extends Controller
     }
     public function investment()
     {
-        return view('front.about.investment');
+        $images = Gallery::find(2)->photos()->get();
+        return view('front.about.investment', compact('images'));
     }
 }
