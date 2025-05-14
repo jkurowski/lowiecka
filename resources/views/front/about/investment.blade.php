@@ -248,7 +248,7 @@
         </section>
 
         @if($images->count() > 0)
-        <section>
+        <section class="pb-0">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
