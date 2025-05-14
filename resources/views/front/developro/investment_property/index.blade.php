@@ -119,7 +119,7 @@
                     </div>
                     <div class="col-8">
                         <div class="property-plan ps-5">
-                            <a href="{{ asset('/investment/property/'.$property->file) }}" class="glightbox">
+                            <a href="{{ asset('/investment/property/'.$property->file) }}" class="swipebox">
                                 <picture>
                                     <source type="image/webp" srcset="{{ asset('/investment/property/thumbs/webp/'.$property->file_webp) }}">
                                     <source type="image/jpeg" srcset="{{ asset('/investment/property/thumbs/'.$property->file) }}">

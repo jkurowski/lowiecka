@@ -115,6 +115,12 @@
                     <div class="col-6 col-sm-3">
                         <div class="text-center jak-daleko">
                             <img src="{{ asset('images/walking.svg') }}" alt="Ikonka roweru" width="41" height="41" loading="lazy">
+                            <b class="d-block w-100">1,7 km</b><p>Dworzec PKP</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-3">
+                        <div class="text-center jak-daleko">
+                            <img src="{{ asset('images/walking.svg') }}" alt="Ikonka roweru" width="41" height="41" loading="lazy">
                             <b class="d-block w-100">2 km</b><p>Bolimowski Park Krajobrazowy</p>
                         </div>
                     </div>
