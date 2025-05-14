@@ -34,6 +34,7 @@
                             <td>{{ $p->updated_at }}</td>
                             <td class="option-120">
                                 <div class="btn-group">
+                                    @if($p->id <> 2)
                                     <span class="btn action-button move-button me-1"><i class="fe-move"></i></span>
                                     <a href="{{route('admin.gallery.edit', $p->id)}}" class="btn action-button me-1" data-toggle="tooltip" data-placement="top" title="Edytuj wpis"><i class="fe-edit"></i></a>
                                     <form method="POST" action="{{route('admin.gallery.destroy', $p->id)}}">
@@ -48,6 +49,7 @@
                                             data-id="{{ $p->id }}"
                                         ><i class="fe-trash-2"></i></button>
                                     </form>
+                                    @endif
                                 </div>
                             </td>
                         </tr>
