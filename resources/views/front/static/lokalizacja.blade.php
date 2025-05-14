@@ -154,7 +154,7 @@
             </div>
         </section>
 
-        <section class="p-0">
+        <section class="p-0 d-none">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -204,7 +204,7 @@
             </div>
         </section>
 
-        <section class="mt-section">
+        <section class="mt-section pt-0">
             <div class="container">
                 <div class="row">
                     <div class="col-4">
