@@ -37,7 +37,7 @@
                                 </div>
                                 <h2 class="text-start">Kameralna inwestycja</h2>
                             </div>
-                            <p>Łowicka 100 to kameralna inwestycja położona na osiedlu Widok w Skierniewicach. Doskonała lokalizacja zapewnia idealne skomunikowanie z resztą miasta, oferuje bogatą infrastrukturę oraz mnóstwo zieleni w okolicy.Inwestycja obejmuje 66 mieszkań o przemyślanych układach, które spełnią potrzeby zarówno rodzin, jak i singli.</p>
+                            <p>Łowicka 100 to kameralna inwestycja położona na osiedlu Widok w Skierniewicach. Doskonała lokalizacja zapewnia idealne skomunikowanie z resztą miasta, oferuje bogatą infrastrukturę oraz mnóstwo zieleni w okolicy. Inwestycja obejmuje 66 mieszkań o przemyślanych układach, które spełnią potrzeby zarówno rodzin, jak i singli.</p>
                             <p>&nbsp;</p>
                             <p>Każde mieszkanie zostało rzetelnie przeanalizowane pod kątem funkcjonalnej aranżacji i komfortu codziennego życia. Lokale na parterze zostały wyposażone w prywatne ogródki, idealne na odpoczynek lub wspólne chwile z bliskimi, a mieszkania na wszystkich wyższych piętrach posiadają duże, przestronne balkony.
                             </p>
