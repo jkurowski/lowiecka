@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 
 // CMS
+use App\Models\Gallery;
 use Illuminate\Support\Facades\Cookie;
 
 class IndexController extends Controller
@@ -27,10 +28,11 @@ class IndexController extends Controller
         }
 
         $isAdmin = auth()->check();
-
+        $images = Gallery::find(2)->photos()->get();
         return view('front.homepage.index', compact(
             'popup',
-            'isAdmin'
+            'isAdmin',
+            'images'
         ));
     }
 }

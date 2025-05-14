@@ -300,55 +300,30 @@
             </div>
         </section>
 
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-title">
-                            <div class="sub-section-title">
-                                <span>GALERIA</span>
+        @if($images->count() > 0)
+            <section class="pb-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title mb-0">
+                                <div class="sub-section-title">
+                                    <span>GALERIA</span>
+                                </div>
+                                <h2>Zobacz, jak będzie wyglądać Twój dom</h2>
                             </div>
-                            <h2>Zobacz, jak będzie wyglądać Twój dom</h2>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="container-fluid" id="slick-fluid">
-                <div class="row">
-                    <div class="col-4">
-                        <div class="slick-image">
-                            <img src="https://placehold.co/910x580" alt="">
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="slick-image">
-                            <img src="https://placehold.co/910x580" alt="">
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="slick-image">
-                            <img src="https://placehold.co/910x580" alt="">
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="slick-image">
-                            <img src="https://placehold.co/910x580" alt="">
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="slick-image">
-                            <img src="https://placehold.co/910x580" alt="">
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="slick-image">
-                            <img src="https://placehold.co/910x580" alt="">
+                <div class="container">
+                    <div class="row mt-5">
+                        <div class="col-12">
+                            @include('front.parse.gallery', ['list' => $images])
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        @endif
 
         <section class="pb-0">
             <div class="container">
