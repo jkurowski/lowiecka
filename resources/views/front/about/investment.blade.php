@@ -262,21 +262,11 @@
                 </div>
             </div>
 
-            <div class="container-fluid overflow-hidden" id="slick-fluid">
-                <div class="row">
-                    @foreach($images as $p)
-                    <div class="col-4">
-                        <div class="slick-image">
-                            <a href="{{asset('uploads/gallery/images/'.$p->file) }}" class="swipebox">
-                                <picture>
-                                    <source type="image/webp" srcset="{{asset('uploads/gallery/images/webp/'.$p->file_webp) }}">
-                                    <source type="image/jpeg" srcset="{{asset('uploads/gallery/images/'.$p->file) }}">
-                                    <img src="{{asset('uploads/gallery/images/'.$p->file) }}" alt="{{ $p->name }}" class="w-100">
-                                </picture>
-                            </a>
-                        </div>
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-12">
+                        @include('front.parse.gallery', ['list' => $images])
                     </div>
-                    @endforeach
                 </div>
             </div>
         </section>
@@ -313,16 +303,4 @@
         </section>
     </main>
 @endsection
-@push('scripts')
-    @if($images->count() > 0)
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#slick-fluid .row").slick({
-                centerMode: true,
-                slidesToShow: 3,
-            });
-        });
-    </script>
-    @endif
-@endpush
 
