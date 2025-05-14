@@ -252,7 +252,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="section-title">
+                        <div class="section-title mb-0">
                             <div class="sub-section-title">
                                 <span>GALERIA</span>
                             </div>
