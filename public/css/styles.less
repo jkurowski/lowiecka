@@ -194,6 +194,9 @@ button:focus,
     &.bttn-border {
         border:1px solid white
     }
+    &.bttn-border-blue {
+        border:1px solid #030344
+    }
 
     img {
         margin-left: 11px;
@@ -691,6 +694,7 @@ button:focus,
         top: 25px;
         padding: 10px 20px;
         line-height: normal;
+        z-index: 20;
         sup {
             font-size: 12px;
         }
@@ -704,7 +708,12 @@ button:focus,
         position: absolute;
         bottom: 0;
         left: 0;
-        right: 120px;
+        right: 0;
+        top: 0;
+        display: flex;
+        align-items: end;
+        background: rgba(255, 255, 255, 0) url("../images/gradient-bg.png") repeat-x bottom;
+        transition: all 200ms linear;
         h2 {
             font-size: 34px;
             font-family: "Be Vietnam Pro", sans-serif;
@@ -718,6 +727,23 @@ button:focus,
                 display: block;
             }
         }
+
+        .bttn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 200px;
+            height: 53px;
+            background: 0 0;
+            color: var(--main-color-blue) !important;
+            font-weight: 600;
+            display: flex;
+            opacity: 0;
+            transition: all 200ms linear;
+        }
     }
     .number {
         font-size: 260px;
@@ -729,6 +755,34 @@ button:focus,
         position: absolute;
         right: 27px;
         bottom: -70px;
+    }
+
+    &.apartament-type-1 {
+        background: url("../images/ap-1-bg.jpg") no-repeat center;
+        background-size: 409px auto;
+    }
+    &.apartament-type-2 {
+        background: url("../images/ap-2-bg.jpg") no-repeat center;
+        background-size: 409px auto;
+    }
+    &.apartament-type-3 {
+        background: url("../images/ap-3-bg.jpg") no-repeat center;
+        background-size: 409px auto;
+    }
+    &.apartament-type-4 {
+        background: url("../images/ap-4-bg.jpg") no-repeat center;
+        background-size: 409px auto;
+    }
+
+    &:hover {
+        .apartament-type-footer {
+            background: rgba(255, 255, 255, 0.9) bottom;
+            .bttn {
+                background: var(--main-color-blue);
+                color: #fff !important;
+                opacity: 1;
+            }
+        }
     }
 }
 

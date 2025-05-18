@@ -247,49 +247,55 @@
                 <div class="row">
                     <div class="col-3">
                         <a href="{{ route('front.developro.show') }}?rooms=1">
-                            <div class="apartament-type">
-                                <span class="area"><b>29 m<sup>2</sup></b></span>
+                            <div class="apartament-type apartament-type-1">
+                                <span class="area"><b>28 - 36 m<sup>2</sup></b></span>
 
                                 <div class="apartament-type-footer">
                                     <h2><span>Apartament</span> 1-pokojowy</h2>
+                                    <span class="bttn bttn-border-blue">SPRAWDŹ <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></span>
                                 </div>
-
                                 <span class="number">1</span>
                             </div>
                         </a>
                     </div>
                     <div class="col-3">
-                        <div class="apartament-type">
-                            <span class="area"><b>32-47 m<sup>2</sup></b></span>
+                        <a href="{{ route('front.developro.show') }}?rooms=2">
+                            <div class="apartament-type apartament-type-2">
+                                <span class="area"><b>43 - 48 m<sup>2</sup></b></span>
 
-                            <div class="apartament-type-footer">
-                                <h2><span>Apartament</span> 2-pokojowy</h2>
+                                <div class="apartament-type-footer">
+                                    <h2><span>Apartament</span> 2-pokojowy</h2>
+                                    <span class="bttn bttn-border-blue">SPRAWDŹ <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></span>
+                                </div>
+                                <span class="number">2</span>
                             </div>
-
-                            <span class="number">2</span>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-3">
-                        <div class="apartament-type">
-                            <span class="area"><b>50-68 m<sup>2</sup></b></span>
+                        <a href="{{ route('front.developro.show') }}?rooms=3">
+                            <div class="apartament-type apartament-type-3">
+                                <span class="area"><b>55 - 64 m<sup>2</sup></b></span>
 
-                            <div class="apartament-type-footer">
-                                <h2><span>Apartament</span> 3-pokojowy</h2>
+                                <div class="apartament-type-footer">
+                                    <h2><span>Apartament</span> 3-pokojowy</h2>
+                                    <span class="bttn bttn-border-blue">SPRAWDŹ <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></span>
+                                </div>
+                                <span class="number">3</span>
                             </div>
-
-                            <span class="number">3</span>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-3">
-                        <div class="apartament-type">
-                            <span class="area"><b>61-78 m<sup>2</sup></b></span>
+                        <a href="{{ route('front.developro.show') }}?rooms=4">
+                            <div class="apartament-type apartament-type-4">
+                                <span class="area"><b>67 m<sup>2</sup></b></span>
 
-                            <div class="apartament-type-footer">
-                                <h2><span>Apartament</span> 4-pokojowy</h2>
+                                <div class="apartament-type-footer">
+                                    <h2><span>Apartament</span> 4-pokojowy</h2>
+                                    <span class="bttn bttn-border-blue">SPRAWDŹ <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></span>
+                                </div>
+                                <span class="number">4</span>
                             </div>
-
-                            <span class="number">4</span>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="row">
