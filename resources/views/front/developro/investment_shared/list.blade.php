@@ -24,8 +24,8 @@
                     </div>
                     <div class="col d-flex align-items-center">
                         <ul class="mb-0 list-unstyled">
-                            @if($room->price && $room->status == 1)
-                                <li>cena: <b>@money($room->price)</b></li>
+                            @if($room->price_brutto && $room->status == 1)
+                                <li>cena: <b>@money($room->price_brutto)</b></li>
                             @endif
                             <li>pokoje: <b>{{$room->rooms}}</b></li>
                             <li>pow.: <b>{{$room->area}} m<sup>2</sup></b></li>

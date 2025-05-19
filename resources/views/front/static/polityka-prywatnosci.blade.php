@@ -30,7 +30,8 @@
                 <div class="row">
                     <div class="col-12">
 
-                        <p><strong>1. Informacje ogólne.</strong></p>
+                        @php
+                            $text = '<p><strong>1. Informacje ogólne.</strong></p>
                         <p>Operatorem strony www jest EPS Development sp. z o.o. z siedzibą w Skierniewicach, 96-100, ul. Kozietulskiego 14. Dane kontaktowe: biuro@epsdevelopment.pl, telefon: 690256457 Strona www realizuje funkcje pozyskiwania informacji o użytkownikach i ich zachowaniu w następujący sposób:</p>
                         <ul>
                             <li>Poprzez dobrowolnie wprowadzone w formularzach informacje.</li>
@@ -98,7 +99,10 @@
                             <li>Safari (iOS)</li>
                             <li>Windows Phone</li>
                             <li>Blackberry</li>
-                        </ul>
+                        </ul>'
+                        @endphp
+
+                        {!! prevent_orphans($text) !!}
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@
                         <div class="slider-apla">
                             <span class="sub-header">Skierniewice</span>
                             <h1>Łowicka <span class="text-gold">100</span></h1>
-                            <h2>Nowoczesne miejsce do życia</h2>
+                            <h2>nowoczesne miejsce do życia</h2>
                             <a href="" class="bttn mt-5">SPRAWDŹ <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                             <div class="sub-section-title">
                                 <span>ATUTY</span>
                             </div>
-                            <h2 class="text-start">Dlaczego warto zamieszkać na Łowicka <span class="text-gold">100</span>?</h2>
+                            <h2 class="text-start">Dlaczego warto zamieszkać <br>w Łowicka <span class="text-gold">100</span>?</h2>
                         </div>
                     </div>
                     <div class="col-4">
@@ -99,7 +99,7 @@
                         <div class="atut">
                             <img src="{{ asset('images/komfortowe-mieszkania.png') }}" alt="">
                             <h3>Komfortowe mieszkania</h3>
-                            <p>Przemyślane układy, prywatne ogródki na parterze i przestronne balkony na wyższych piętrach. Idealna przestrzeń do życia i relaksu.</p>
+                            <p>Przemyślane układy, prywatne ogródki na parterze i przestronne balkony na wyższych piętrach. Idealna przestrzeń do życia i odpoczynku.</p>
                         </div>
                     </div>
                     <div class="col-4 mt-4">
@@ -191,9 +191,11 @@
                             <h2 class="text-start">Funkcjonalna infrastruktura dla Twojej wygody</h2>
                         </div>
                         <div class="section-text">
-                            <p>W budynku znajduje się podziemna, przestronna hala garażowa na 54 stanowiska, zapewniająca bezpieczeństwo pojazdówmieszkańców, a na wewnętrznym parkingu naziemnym - zasilaniedo podłączenia ładowarki samochodów elektrycznych, którewspierają ekologiczny transport. Do dyspozycji mieszkańcówznajduje się także rowerownia, wózkownia i łatwo dostępnekomórki lokatorskie, zlokalizowane na kondygnacjach mieszkalnych,w ilości odpowiadającej ilości mieszkań.</p>
+                            <p>W budynku znajduje się podziemna, przestronna hala garażowa na 54 stanowiska, zapewniająca bezpieczeństwo pojazdów mieszkańców, a na ogrodzonym parkingu naziemnym - zasilanie do podłączenia ładowarki samochodów elektrycznych, które wspierają ekologiczny transport.</p>
                             <p>&nbsp;</p>
-                            <p>Licznie dostępne udogodnienia to także m.in. dwie windy, naziemnemiejsca postojowe, balkony z oświetleniem zewnętrznym, gniazdem elektrycznym i wykończoną posadzką, a także indywidualny smarthome wewnątrz mieszkań.</p>
+                            <p>Do dyspozycji mieszkańców znajduje się także rowerownia, wózkownia i łatwo dostępne komórki lokatorskie, zlokalizowane na tej samej kondygnacji co mieszkanie, w ilości odpowiadającej liczbie mieszkań.</p>
+                            <p>&nbsp;</p>
+                            <p>Dostępne liczne udogodnienia m.in. dwie windy, zewnętrzne miejsca postojowe, wysoki standard wykończenia balkonów - oświetlenie zewnętrzne, gniazdo elektryczne i wykończona posadzka, a także indywidualny smart home wewnątrz mieszkań.</p>
                         </div>
                     </div>
                     <div class="col"></div>
@@ -205,7 +207,7 @@
                             </div>
                             <div class="icon-box">
                                 <img src="{{ asset('images/parking-1@2x.png') }}" alt="" width="77" height="77">
-                                <h3>13 miejsc postojowych na zewnątrz</h3>
+                                <h3>13 zewnętrznych miejsc postojowych</h3>
                             </div>
                             <div class="icon-box">
                                 <img src="{{ asset('images/electric-vehicle@2x.png') }}" alt="" width="77" height="77">
@@ -342,6 +344,7 @@
                             <h2 class="text-start">Zaufany deweloper <br>- gwarancja solidnej inwestycji</h2>
                         </div>
                     </div>
+                    @if('false' == 'true')
                     <div class="col-6">
                         <div class="stats-container">
                             <div class="number-box">
@@ -352,6 +355,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </section>
@@ -374,7 +378,7 @@
                         <div class="section-text">
                             <p>Spółka powstała w 2021 roku z wizją realizacji szeregu budynków mieszkalnych na terenie całej Polski. Udziałowcami spółki EPS Development są osoby mające bogate i ponad 30 letnie doświadczenie w branży budowlanej, w tym Członkowie Zarządu spółki EL-INWEST ze Skierniewic działającej w całej Polsce od ponad 30 lat.</p>
                             <p>&nbsp;</p>
-                            <p>Pomysł stworzenia spółki EPS Development narodził się w momencie, kiedy okazało się, że na skierniewickim rynku mieszkań brakuje małych, kameralnych inwestycji, a lokalni deweloperzy nastawieni są na budowę apartamentowców, w których na raz mieszka kilkuset mieszkańców - co dla wielu jest uciążliwe.</p>
+                            <p>Pomysł stworzenia spółki EPS Development narodził się w momencie, kiedy okazało się, że na skierniewickim rynku mieszkań brakuje małych, kameralnych inwestycji, a lokalni deweloperzy nastawieni są na realizacje wysokokubaturowych apartamentowców przeznaczonych do zamieszania przez znaczną liczbę mieszkańców.</p>
                             <a href="{{ route('front.investor') }}" class="bttn mt-5">DOWIEDZ SIĘ WIĘCEJ <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
                         </div>
                     </div>

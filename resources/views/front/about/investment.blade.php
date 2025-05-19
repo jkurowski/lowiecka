@@ -205,7 +205,7 @@
                             <div class="sub-section-title">
                                 <span>ATUTY</span>
                             </div>
-                            <h2 class="text-start">Dlaczego warto zamieszkać na Łowicka <span class="text-gold">100</span>?</h2>
+                            <h2 class="text-start">Dlaczego warto zamieszkać <br>w Łowicka <span class="text-gold">100</span>?</h2>
                         </div>
                     </div>
                     <div class="col-4">
@@ -219,7 +219,7 @@
                         <div class="atut">
                             <img src="{{ asset('images/komfortowe-mieszkania.png') }}" alt="">
                             <h3>Komfortowe mieszkania</h3>
-                            <p>Przemyślane układy, prywatne ogródki na parterze i przestronne balkony na wyższych piętrach. Idealna przestrzeń do życia i relaksu.</p>
+                            <p>Przemyślane układy, prywatne ogródki na parterze i przestronne balkony na wyższych piętrach. Idealna przestrzeń do życia i odpoczynku.</p>
                         </div>
                     </div>
                     <div class="col-4 mt-4">
