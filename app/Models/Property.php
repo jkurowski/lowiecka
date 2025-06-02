@@ -55,6 +55,8 @@ class Property extends Model
         'file',
         'file_pdf',
         'file_webp',
+        'file2',
+        'file2_webp',
         'meta_title',
         'meta_description',
         'views',

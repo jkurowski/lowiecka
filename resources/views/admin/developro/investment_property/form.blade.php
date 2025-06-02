@@ -352,6 +352,16 @@
                                         'file_preview' => config('images.property.preview_pdf_path')
                                     ])
                                 </div>
+
+                                <div class="row w-100 form-group">
+                                    @include('form-elements.html-input-file', [
+                                        'label' => 'Plan 3D mieszkania',
+                                        'sublabel' => '(wymiary: '.config('images.property_plan.width').'px / '.config('images.property_plan.height').'px)',
+                                        'name' => 'file2',
+                                        'file' => $entry->file2,
+                                        'file_preview' => config('images.property.preview_file_path')
+                                    ])
+                                </div>
                             </div>
                         </div>
                         @include('form-elements.submit', ['name' => 'submit', 'value' => 'Zapisz'])

@@ -28,7 +28,7 @@
                                 <li>cena: <b>@money($room->price_brutto)</b></li>
                             @endif
                             <li>pokoje: <b>{{$room->rooms}}</b></li>
-                            <li>pow.: <b>{{$room->area}} m<sup>2</sup></b></li>
+                            <li>powierzchnia: <b>{{$room->area}} m<sup>2</sup></b></li>
                         </ul>
                     </div>
                     <div class="col d-flex align-items-center justify-content-center">
