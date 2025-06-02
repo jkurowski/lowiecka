@@ -133,7 +133,7 @@ class PropertyService
         // Update
         $model->update([
             'file2' => $name,
-            'file_webp2' => $name_webp
+            'file2_webp' => $name_webp
         ]);
     }
 
