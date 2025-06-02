@@ -119,6 +119,7 @@
                     </div>
                     <div class="col-8">
                         <div class="property-plan ps-5">
+                            @if($property->file)
                             <a href="{{ asset('/investment/property/'.$property->file) }}" class="swipebox">
                                 <picture>
                                     <source type="image/webp" srcset="{{ asset('/investment/property/thumbs/webp/'.$property->file_webp) }}">
@@ -126,6 +127,16 @@
                                     <img src="{{ asset('/investment/property/thumbs/'.$property->file) }}" alt="{{$property->name}}">
                                 </picture>
                             </a>
+                            @endif
+                            @if($property->file2)
+                            <a href="{{ asset('/investment/property/'.$property->file2) }}" class="swipebox">
+                                <picture>
+                                    <source type="image/webp" srcset="{{ asset('/investment/property/thumbs/webp/'.$property->file2_webp) }}">
+                                    <source type="image/jpeg" srcset="{{ asset('/investment/property/thumbs/'.$property->file2) }}">
+                                    <img src="{{ asset('/investment/property/thumbs/'.$property->file2) }}" alt="{{$property->name}}">
+                                </picture>
+                            </a>
+                            @endif
                         </div>
                     </div>
                 </div>
