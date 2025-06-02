@@ -62,14 +62,78 @@ class PropertyService
         $file_thumb_path_webp = public_path('investment/property/thumbs/webp/' . $name_webp);
         $file_list_path_webp = public_path('investment/property/list/webp/' . $name_webp);
 
-        Image::make($file_path)->encode('webp', 90)->save($file_path_webp);
-        Image::make($file_thumb_path)->encode('webp', 90)->save($file_thumb_path_webp);
-        Image::make($file_list_path)->encode('webp', 90)->save($file_list_path_webp);
+        Image::make($file_path)->encode('webp', 100)->save($file_path_webp);
+        Image::make($file_thumb_path)->encode('webp', 100)->save($file_thumb_path_webp);
+        Image::make($file_list_path)->encode('webp', 100)->save($file_list_path_webp);
 
         // Update
         $model->update([
             'file' => $name,
             'file_webp' => $name_webp
+        ]);
+    }
+
+    public function upload2(string $title, UploadedFile $file, object $model, bool $delete = false)
+    {
+
+        if ($delete) {
+            if (File::isFile(public_path('investment/property/' . $model->file2))) {
+                File::delete(public_path('investment/property/' . $model->file2));
+            }
+            if (File::isFile(public_path('investment/property/thumbs/' . $model->file2))) {
+                File::delete(public_path('investment/property/thumbs/' . $model->file2));
+            }
+            if (File::isFile(public_path('investment/property/list/' . $model->file2))) {
+                File::delete(public_path('investment/property/list/' . $model->file2));
+            }
+
+            // WebP
+            if (File::isFile(public_path('investment/property/webp/' . $model->file2_webp))) {
+                File::delete(public_path('investment/property/webp/' . $model->file2_webp));
+            }
+            if (File::isFile(public_path('investment/property/thumbs/webp/' . $model->file2_webp))) {
+                File::delete(public_path('investment/property/thumbs/webp/' . $model->file2_webp));
+            }
+            if (File::isFile(public_path('investment/property/list/webp/' . $model->file2_webp))) {
+                File::delete(public_path('investment/property/list/webp/' . $model->file2_webp));
+            }
+        }
+
+        $name = date('His').'_'.Str::slug($title).'_3d.' . $file->getClientOriginalExtension();
+        $name_webp = date('His').'_'.Str::slug($title).'_3d.webp';
+        $file->storeAs('property', $name, 'investment_uploads');
+
+        // Property card image
+        $file_path = public_path('investment/property/' . $name);
+        Image::make($file_path)->resize(config('images.property_plan.width'), config('images.property_plan.height'), function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($file_path);
+
+        // Property card thumb image
+        $file_thumb_path = public_path('investment/property/thumbs/' . $name);
+        Image::make($file_path)->resize(config('images.property_thumb.width'), config('images.property_thumb.height'), function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($file_thumb_path);
+
+        // Property list image
+        $file_list_path = public_path('investment/property/list/' . $name);
+        Image::make($file_path)->resize(config('images.property_list.width'), config('images.property_list.height'), function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($file_list_path);
+
+        // WebP
+        $file_path_webp = public_path('investment/property/webp/' . $name_webp);
+        $file_thumb_path_webp = public_path('investment/property/thumbs/webp/' . $name_webp);
+        $file_list_path_webp = public_path('investment/property/list/webp/' . $name_webp);
+
+        Image::make($file_path)->encode('webp', 100)->save($file_path_webp);
+        Image::make($file_thumb_path)->encode('webp', 100)->save($file_thumb_path_webp);
+        Image::make($file_list_path)->encode('webp', 100)->save($file_list_path_webp);
+
+        // Update
+        $model->update([
+            'file2' => $name,
+            'file_webp2' => $name_webp
         ]);
     }
 

@@ -94,6 +94,9 @@ class PropertyController extends Controller
             $this->service->uploadPdf($request->name, $request->file('file_pdf'), $property);
         }
 
+        if ($request->hasFile('file2')) {
+            $this->service->upload2($request->name, $request->file('file2'), $property);
+        }
         return redirect(route('admin.developro.investment.properties.index', [$investment, $floor]))->with('success', 'Powierzchnia zapisana');
     }
 
@@ -126,7 +129,7 @@ class PropertyController extends Controller
     {
 
         if($property->client_id) {
-           
+
             $client = Client::find($property->client_id);
 
             if($property->type == PropertyAreaTypes::ROOM_APARTMENT) {
@@ -155,6 +158,10 @@ class PropertyController extends Controller
 
         if ($request->hasFile('file')) {
             $this->service->upload($request->name, $request->file('file'), $property, true);
+        }
+
+        if ($request->hasFile('file2')) {
+            $this->service->upload2($request->name, $request->file('file2'), $property, true);
         }
 
         if ($request->hasFile('file_pdf')) {
