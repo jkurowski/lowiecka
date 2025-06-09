@@ -344,18 +344,9 @@
                             <h2 class="text-start">Zaufany deweloper <br>- gwarancja solidnej inwestycji</h2>
                         </div>
                     </div>
-                    @if('false' == 'true')
-                    <div class="col-6">
-                        <div class="stats-container">
-                            <div class="number-box">
-                                <h3><span class="number">30</span> lat doświadczenia</h3>
-                            </div>
-                            <div class="number-box">
-                                <h3><span class="number">8</span> zrealizowanych inwestycji</h3>
-                            </div>
-                        </div>
+                    <div class="col-6 d-flex align-items-start justify-content-end">
+                        <img src="{{ asset('../images/eps-dev-logo.jpg') }}" alt="Logo EPS Development" width="245" height="135">
                     </div>
-                    @endif
                 </div>
             </div>
         </section>

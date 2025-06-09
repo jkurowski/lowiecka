@@ -17,7 +17,7 @@
     <main>
         <section>
             <div class="container">
-                <div class="row">
+                <div class="row pb-5">
                     <div class="col-6">
                         <div class="section-title justify-content-start">
                             <div class="sub-section-title">
@@ -28,11 +28,12 @@
                     </div>
                     <div class="col-6">
                         <div class="mt-4">
+                            <img src="{{ asset('../images/eps-dev-logo.jpg') }}" alt="Logo EPS Development" width="150" height="83" class="mb-3">
                             <p>Spółka powstała w 2021 roku z wizją realizacji szeregu budynków mieszkalnych na terenie całej Polski. Udziałowcami spółki EPS Development są osoby mające ponad 30 letnie, bogate doświadczenie w branży.</p>
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4">
+                <div class="row pt-5">
                     <div class="col-4">
                         <div class="icon-title-text-box text-center">
                             <img src="{{ asset('../images/kompleksowosc-icon.png') }}" alt="Kompleksowość ikonka" width="75" height="75">
