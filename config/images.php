@@ -139,7 +139,7 @@ return [
         'catalog_width' => 740,
         'catalog_height' => 530,
         'big_width' => 1360,
-        'big_height' => 765,
+        'big_height' => 1360,
         'thumb_width' => 520,
         'thumb_height' => 293,
         'thumb_width_2' => 386,
