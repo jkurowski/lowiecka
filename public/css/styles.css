@@ -9551,6 +9551,7 @@ html.swipebox-html.swipebox-touch {
   line-height: 1px;
   text-align: center;
   display: inline-block;
+  padding: 50px 0;
 }
 #swipebox-slider .slide:before {
   content: "";
