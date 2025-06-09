@@ -43,6 +43,11 @@
                         <li><a href="{{ route('static.page', ['page' => 'finansowanie']) }}">Finansowanie</a></li>
                         <li class="d-none"><a href="">Pod klucz</a></li>
                     </ul>
+                    <div class="mt-4">
+                        <a href="http://epsdevelopment.pl/" target="_blank">
+                            <img src="{{ asset('../images/eps-dev-logo.png') }}" alt="" width="150" height="83">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
