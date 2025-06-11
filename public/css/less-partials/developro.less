@@ -1,29 +1,25 @@
-.qtip-default .qtip-content {
-    border-width: 1px;
-    border-style: solid;
-    border-color: #183245;
-    background-color: #183245;
-}
-.qtip-tip{margin: 0 auto;overflow: hidden;z-index: 10;visibility: hidden}
-.qtip-tip, .qtip-tip canvas{position: absolute;color:var(--main-orange) !important;border: 0 dashed transparent !important}
+.qtip {position:absolute;left:-28000px;top:-28000px;display:none;width:190px;box-shadow:none;}
+.qtip-content {position:relative;overflow:hidden;text-align:left;word-wrap:break-word;color:white !important;font-size:13px !important;line-height:16px;padding:10px 10px;-webkit-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px}
+.qtip-default .qtip-content {background:#183a61}
+.qtip-tip{margin: 0 auto;overflow: hidden;z-index: 10;}
+.qtip-tip{visibility: hidden}
+.qtip-tip, .qtip-tip canvas{position: absolute;color:#222 !important;border: 0 dashed transparent !important}
 .qtip-tip canvas{ top: 0; left: 0; }
+.qtip-content h3 {color:white;font-weight:600;text-align:center;margin:0}
+.qtip-content li {border-bottom:1px solid #3f3f3f;padding:3px 0;font-weight:300}
+.qtip-content li b {font-weight:600}
 
-/* Kolory dymkow */
-/*
+/* Kolory dymkow
 '1' => 'Na sprzedaż',
 '2' => 'Rezerwacja',
 '3' => 'Sprzedane',
 '4' => 'Wynajęte'
- */
-
-.qtip.status-1 .qtip-content {background:#25690c;border:1px solid #25690c}
-.qtip-tip.status-1 canvas {background:#25690c !important}
-
-.qtip.status-2 .qtip-content {background:#1660b3;border:1px solid #1660b3}
-.qtip-tip.status-2 canvas {background:#1660b3 !important;color:black}
-
-.qtip.status-3 .qtip-content {background:#aa1215;border:1px solid #aa1215}
-.qtip-tip.status-3 canvas {background:#aa1215 !important}
-
+*/
+.qtip.status-1 .qtip-content {background:#3a9019;border:1px solid #3a9019}
+.qtip.status-1 .qtip-content canvas {background:#3a9019}
+.qtip.status-2 .qtip-content {background:#1788c9;border:1px solid #1788c9}
+.qtip.status-2 .qtip-content canvas {background:#1788c9;color:black}
+.qtip.status-3 .qtip-content {background:#ec2327;border:1px solid #ec2327}
+.qtip.status-3 .qtip-content canvas {background:#ec2327}
 .qtip.status-4 .qtip-content {background:#de8300;border:1px solid #de8300}
-.qtip-tip.status-4 canvas {background:#de8300 !important}
+.qtip.status-4 .qtip-content canvas {background:#de8300}
