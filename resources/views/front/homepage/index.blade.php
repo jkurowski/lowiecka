@@ -214,7 +214,7 @@
                                 <h3>Zasilanie do podłączenia ładowarki samochodów elektrycznych</h3>
                             </div>
                             <div class="icon-box">
-                                <img src="{{ asset('images/balcony@2x.png') }}" alt="" width="68" height="68">
+                                <img src="{{ asset('images/balcony@2x.png') }}" alt="" width="77" height="77">
                                 <h3>Balkon z oświetleniem zewnętrznym, gniazdem elektrycznym i posadzką</h3>
                             </div>
                             <div class="icon-box">
@@ -222,7 +222,7 @@
                                 <h3>Komórki lokatorskie</h3>
                             </div>
                             <div class="icon-box">
-                                <img src="{{ asset('images/parking-1@2x.png') }}" alt="" width="68" height="68">
+                                <img src="{{ asset('images/parking-1@2x.png') }}" alt="" width="77" height="77">
                                 <h3>Rowerownia, wózkownia</h3>
                             </div>
                         </div>
