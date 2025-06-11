@@ -250,7 +250,7 @@
                     <div class="col-3">
                         <a href="{{ route('front.developro.show') }}?rooms=1">
                             <div class="apartament-type apartament-type-1">
-                                <span class="area"><b>28 - 36 m<sup>2</sup></b></span>
+                                <span class="area"><b>28 m<sup>2</sup></b></span>
 
                                 <div class="apartament-type-footer">
                                     <h2><span>Apartament</span> 1-pokojowy</h2>
@@ -263,7 +263,7 @@
                     <div class="col-3">
                         <a href="{{ route('front.developro.show') }}?rooms=2">
                             <div class="apartament-type apartament-type-2">
-                                <span class="area"><b>43 - 48 m<sup>2</sup></b></span>
+                                <span class="area"><b>43 - 50 m<sup>2</sup></b></span>
 
                                 <div class="apartament-type-footer">
                                     <h2><span>Apartament</span> 2-pokojowy</h2>
@@ -289,7 +289,7 @@
                     <div class="col-3">
                         <a href="{{ route('front.developro.show') }}?rooms=4">
                             <div class="apartament-type apartament-type-4">
-                                <span class="area"><b>67 m<sup>2</sup></b></span>
+                                <span class="area"><b>78 m<sup>2</sup></b></span>
 
                                 <div class="apartament-type-footer">
                                     <h2><span>Apartament</span> 4-pokojowy</h2>
