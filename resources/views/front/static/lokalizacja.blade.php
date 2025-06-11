@@ -157,6 +157,12 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div id="map" class="map-contact"></div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -242,12 +248,31 @@
     </main>
 @endsection
 @push('scripts')
+    <link href="{{ asset('/css/leaflet.min.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
+    <script src="{{ asset('/js/leaflet.js') }}" charset="utf-8"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $("#slick-fluid .row").slick({
                 centerMode: true,
                 slidesToShow: 3,
             });
+
+            var map = L.map('map').setView([51.9739988, 20.1355875], 17);
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Define your custom icon
+            var myIcon = L.icon({
+                iconUrl: '{{ asset("images/marker-invest.png") }}', // replace with your actual path
+                iconSize: [64, 64],       // size of the icon
+                iconAnchor: [32, 64],     // point of the icon which will correspond to marker's location
+                popupAnchor: [0, -128]     // optional: point from which the popup should open relative to the iconAnchor
+            });
+
+            // Add marker with custom icon
+            L.marker([51.9739988, 20.1355875], { icon: myIcon }).addTo(map);
         });
     </script>
 @endpush
