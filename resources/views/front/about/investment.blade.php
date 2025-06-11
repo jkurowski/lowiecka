@@ -134,7 +134,7 @@
                                     </div>
                                     <div class="col-5">
                                         <div class="rooms-tab-detail">
-                                            <h3>43.06 <small>m<sup>2</sup></small></h3>
+                                            <h3>43.04 <small>m<sup>2</sup></small></h3>
                                             <p class="mt-4 mb-3">Zobaczysz u nas mieszkania 2-pokojowe, które są przestronne i gotowe na wszystkie Twoje pomysły. Wszystkie dostępne lokale są widoczne na liście!</p>
                                             <ul class="mb-0 list-unstyled">
                                                 <li>Pokoje<span>2</span></li>
@@ -162,7 +162,7 @@
                                                 <li>Pokoje<span>3</span></li>
                                                 <li>Sypialnie<span>2</span></li>
                                                 <li>Pokój + Aneks<span>24,78 m<sup>2</sup></span></li>
-                                                <li>Ogródek<span>83.51 m<sup>2</sup></span></li>
+                                                <li>Ogródek<span>83.79 m<sup>2</sup></span></li>
                                             </ul>
                                             <a href="/mieszkania/pietro/1,parter/m/13,mieszkanie-m16" class="bttn mt-5">ZOBACZ MIESZKANIA <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
                                         </div>
@@ -178,12 +178,12 @@
                                     </div>
                                     <div class="col-5">
                                         <div class="rooms-tab-detail">
-                                            <h3>67.48 <small>m<sup>2</sup></small></h3>
+                                            <h3>78.01 <small>m<sup>2</sup></small></h3>
                                             <p class="mt-4 mb-3">Zobaczysz u nas mieszkania 4-pokojowe, które są przestronne i gotowe na wszystkie Twoje pomysły. Wszystkie dostępne lokale są widoczne na liście!</p>
                                             <ul class="mb-0 list-unstyled">
                                                 <li>Pokoje<span>4</span></li>
                                                 <li>Sypialnie<span>3</span></li>
-                                                <li>Pokój + Aneks<span>21,82 m<sup>2</sup></span></li>
+                                                <li>Pokój + Aneks<span>32.81 m<sup>2</sup></span></li>
                                                 <li>Balkon<span>11.16 m<sup>2</sup></span></li>
                                             </ul>
                                             <a href="/mieszkania/pietro/5,pietro-3/m/41,mieszkanie-m44" class="bttn mt-5">ZOBACZ MIESZKANIA <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
