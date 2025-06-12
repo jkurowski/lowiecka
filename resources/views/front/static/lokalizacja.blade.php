@@ -257,7 +257,7 @@
                 slidesToShow: 3,
             });
 
-            var map = L.map('map').setView([51.9739988, 20.1355875], 17);
+            var map = L.map('map').setView([51.974251782493035, 20.13626805635853], 17);
 
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -272,7 +272,7 @@
             });
 
             // Add marker with custom icon
-            L.marker([51.9739988, 20.1355875], { icon: myIcon }).addTo(map);
+            L.marker([51.974251782493035, 20.13626805635853], { icon: myIcon }).addTo(map);
         });
     </script>
 @endpush
