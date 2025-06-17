@@ -8,6 +8,29 @@
   --bttn-hover-background: #fff;
   --bttn-radius: 4px;
 }
+/* Fonty
+================================================== */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/fontawesome-webfont.woff') format('woff'), url('../../fonts/fontawesome-webfont.ttf') format('truetype'), url('../../fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.fa-icons:before,
+.fa-icons:after {
+  display: inline-block;
+  font-family: "FontAwesome";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 /* Super Form Reset
 ================================================== */
 input,
@@ -9078,6 +9101,80 @@ button:focus {
 }
 .badge.room-list-status-4 {
   background: #e17f00;
+}
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+}
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+}
+.rslides img,
+.rslides a {
+  display: block;
+  margin: 0 auto;
+}
+.rslides_nav {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 90;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  -webkit-transition: all 100ms linear;
+  -moz-transition: all 100ms linear;
+  -o-transition: all 100ms linear;
+  transition: all 100ms linear;
+}
+.rslides i {
+  display: none;
+}
+.rslides_nav:hover {
+  background: #054a27;
+  width: 60px;
+  color: white;
+}
+.rslides_nav.prev {
+  left: 0;
+}
+.rslides_nav.next {
+  right: 0;
+}
+.rslides_nav.next:before {
+  font-family: 'FontAwesome';
+  content: "\f101";
+  font-size: 20px;
+}
+.rslides_nav.prev:after {
+  font-family: 'FontAwesome';
+  content: "\f100";
+  font-size: 20px;
 }
 /* Apartament types tabs
 ================================================== */
