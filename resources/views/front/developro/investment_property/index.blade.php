@@ -112,34 +112,45 @@
                             @endif
                         </div>
                         <div class="mt-5">
-                                @if($property->file_pdf)
+                            @if($property->file_pdf)
                                 <a href="{{ asset('/investment/property/pdf/'.$property->file_pdf) }}" class="bttn">Karta mieszkania PDF</a>
                             @endif
                         </div>
                     </div>
                     <div class="col-8">
                         <div class="property-plan ps-5">
-                            @if($property->file)
-                            <a href="{{ asset('/investment/property/'.$property->file) }}" class="swipebox">
-                                <picture>
-                                    <source type="image/webp" srcset="{{ asset('/investment/property/thumbs/webp/'.$property->file_webp) }}">
-                                    <source type="image/jpeg" srcset="{{ asset('/investment/property/thumbs/'.$property->file) }}">
-                                    <img src="{{ asset('/investment/property/thumbs/'.$property->file) }}" alt="{{$property->name}}">
-                                </picture>
-                            </a>
-                            @endif
-                            @if($property->file2)
-                            <a href="{{ asset('/investment/property/'.$property->file2) }}" class="swipebox">
-                                <picture>
-                                    <source type="image/webp" srcset="{{ asset('/investment/property/thumbs/webp/'.$property->file2_webp) }}">
-                                    <source type="image/jpeg" srcset="{{ asset('/investment/property/thumbs/'.$property->file2) }}">
-                                    <img src="{{ asset('/investment/property/thumbs/'.$property->file2) }}" alt="{{$property->name}}">
-                                </picture>
-                            </a>
-                            @endif
+                            <div class="mieszkanie-rzuty">
+                                @if($property->file)
+                                    <div class="mieszkanie-rzut">
+                                        <a href="{{ asset('/investment/property/'.$property->file) }}" class="swipebox">
+                                            <picture>
+                                                <source type="image/webp" srcset="{{ asset('/investment/property/thumbs/webp/'.$property->file_webp) }}">
+                                                <source type="image/jpeg" srcset="{{ asset('/investment/property/thumbs/'.$property->file) }}">
+                                                <img src="{{ asset('/investment/property/thumbs/'.$property->file) }}" alt="{{$property->name}}">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                @endif
+                                @if($property->file2)
+                                    <div class="mieszkanie-rzut">
+                                        <a href="{{ asset('/investment/property/'.$property->file2) }}" class="swipebox">
+                                            <picture>
+                                                <source type="image/webp" srcset="{{ asset('/investment/property/thumbs/webp/'.$property->file2_webp) }}">
+                                                <source type="image/jpeg" srcset="{{ asset('/investment/property/thumbs/'.$property->file2) }}">
+                                                <img src="{{ asset('/investment/property/thumbs/'.$property->file2) }}" alt="{{$property->name}}">
+                                            </picture>
+                                        </a>
+                                    </div>
+                                @endif
+                            </div>
                         </div>
+
+
+
+
                     </div>
                 </div>
+            </div>
             </div>
         </section>
 
@@ -166,7 +177,7 @@
 @endsection
 @push('scripts')
     <script>
-
+        $(".mieszkanie-rzuty").responsiveSlides({auto:true, pager:false, nav:true, timeout:5000, random:false, speed: 500});
     </script>
 @endpush
 
