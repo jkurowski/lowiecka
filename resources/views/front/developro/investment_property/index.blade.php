@@ -119,7 +119,7 @@
                     </div>
                     <div class="col-8">
                         <div class="property-plan ps-5">
-                            <div class="mieszkanie-rzuty">
+                            <div class="mieszkanie-rzuty position-relative">
                                 @if($property->file)
                                     <div class="mieszkanie-rzut">
                                         <a href="{{ asset('/investment/property/'.$property->file) }}" class="swipebox">
