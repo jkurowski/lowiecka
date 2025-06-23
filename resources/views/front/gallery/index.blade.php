@@ -15,7 +15,7 @@
     </div>
 
     <main>
-        <section class="pb-0">
+        <section class="pb-0 pt-first-lg">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -27,9 +27,9 @@
                         </div>
                     </div>
                 </div>
-                <div id="galleryList" class="mt-4 row justify-content-center">
+                <div id="galleryList" class="mt-0 mt-md-4 row justify-content-center">
                     @foreach($galleries as $gallery)
-                        <div class="@if($galleries->count() >= 3) col-4 @else col-6 @endif">
+                        <div class="@if($galleries->count() >= 3) col-4 @else col-12 col-md-6 @endif">
                             <a href="{{ route('front.gallery.show', [$gallery, Str::slug($gallery->name)]) }}">
                                 <div class="gallery-item-list">
                                     <div class="golden-lines">

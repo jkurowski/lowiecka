@@ -48,7 +48,7 @@
                             </div>
                         @endif
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="form-floating mb-4">
                             <input placeholder="Imię"
                                    name="name"
@@ -63,7 +63,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="form-floating mb-4">
                             <input placeholder="Nazwisko"
                                    name="lastname"
@@ -78,7 +78,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="form-floating mb-4">
                             <input placeholder="Adres e-mail"
                                    name="email"
@@ -93,7 +93,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-sm-6">
                         <div class="form-floating mb-4">
                             <input placeholder="Telefon"
                                    name="phone"

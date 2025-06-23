@@ -15,7 +15,7 @@
     </div>
 
     <main>
-        <section>
+        <section class="pt-first-lg">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -36,11 +36,11 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-7">
+                        <div class="col-12 col-lg-7">
                             <img src="{{ asset('./images/mapa.jpg') }}" alt="Mapa okolicy inwestycji" width="960" height="852">
                         </div>
-                        <div class="col-5 d-flex align-items-center">
-                            <div class="ps-5">
+                        <div class="col-12 col-lg-5 d-flex align-items-center">
+                            <div class="ps-0 ps-lg-5 mt-5 mt-lg-0">
                                 <div class="section-title justify-content-start mb-4">
                                     <div class="sub-section-title">
                                         <span>LOKALIZACJA</span>
@@ -131,7 +131,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-center mt-5">
+                <div class="row justify-content-center mt-3 mt-sm-5">
                     <div class="col-6 col-sm-3">
                         <div class="text-center jak-daleko">
                             <img src="{{ asset('images/car.svg') }}" alt="Ikonka roweru" width="41" height="41" loading="lazy">
@@ -219,8 +219,8 @@
         <section class="mt-section pt-0">
             <div class="container">
                 <div class="row">
-                    <div class="col-4">
-                        <div class="pe-5 me-5">
+                    <div class="col-12 col-xl-4">
+                        <div class="pe-0 pe-xl-5 me-0 me-xl-5">
                             <div class="section-title justify-content-start">
                                 <div class="sub-section-title">
                                     <span>KONTAKT</span>
@@ -239,7 +239,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-12 col-xl-8">
                         @include('components.contact-form', ['page' => '', 'back' => ''])
                     </div>
                 </div>

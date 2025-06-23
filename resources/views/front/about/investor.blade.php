@@ -15,10 +15,10 @@
     </div>
 
     <main>
-        <section>
+        <section class="pt-first-lg">
             <div class="container">
                 <div class="row pb-5">
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6">
                         <div class="section-title justify-content-start">
                             <div class="sub-section-title">
                                 <span>EPS DEVELOPMENT</span>
@@ -26,14 +26,14 @@
                             <h2 class="text-start">Zaufany deweloper <br>- gwarancja solidnej inwestycji</h2>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="mt-4">
+                    <div class="col-12 col-lg-6">
+                        <div class="mt-0 mt-lg-4">
                             <img src="{{ asset('../images/eps-dev-logo.jpg') }}" alt="Logo EPS Development" width="150" height="83" class="mb-3">
                             <p>Spółka powstała w 2021 roku z wizją realizacji szeregu budynków mieszkalnych na terenie całej Polski. Udziałowcami spółki EPS Development są osoby mające ponad 30 letnie, bogate doświadczenie w branży.</p>
                         </div>
                     </div>
                 </div>
-                <div class="row pt-5">
+                <div class="row pt-0 pt-lg-5">
                     <div class="col-4">
                         <div class="icon-title-text-box text-center">
                             <img src="{{ asset('../images/kompleksowosc-icon.png') }}" alt="Kompleksowość ikonka" width="75" height="75">
@@ -59,10 +59,10 @@
             </div>
         </section>
 
-        <section>
+        <section class="pt-at-lg">
             <div class="container">
                 <div class="row">
-                    <div class="col-3 position-relative">
+                    <div class="col-3 position-relative d-none d-xl-block">
                         <div class="big-number">
                             <div>
                                 <strong>20</strong>
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-7">
+                    <div class="col-12 col-xl-7">
                         <div class="section-title justify-content-start">
                             <div class="sub-section-title">
                                 <span>NASZE INWESTYCJE</span>
@@ -87,11 +87,11 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-7">
+                        <div class="col-12 col-lg-7">
                             <img src="{{ asset('./images/apartamenty-sucharskiego.jpg') }}" alt="Wizualizacja inwestycji Apartamenty Sucharskiego">
                         </div>
-                        <div class="col-5 d-flex align-items-center">
-                            <div class="ps-5">
+                        <div class="col-12 col-lg-5 d-flex align-items-center">
+                            <div class="ps-0 ps-lg-5 mt-5 mt-lg-0">
                                 <div class="section-title justify-content-start mb-4">
                                     <div class="sub-section-title">
                                         <span>SKIERNIEWICE</span>
@@ -117,11 +117,11 @@
             @endif
         </section>
 
-        <section>
+        <section class="pt-at-lg">
             <div class="container container-left-after">
                 <div class="row flex-row-reverse">
-                    <div class="col-7 d-flex justify-content-end">
-                        <div class="golden-lines">
+                    <div class="col-12 col-xl-7 d-flex justify-content-end">
+                        <div class="golden-lines mb-5 mb-xl-0">
                             <div class="golden-line-4">
                                 <img src="{{ asset('images/zote-linie-4-gold.png') }}" alt="">
                             </div>
@@ -131,7 +131,7 @@
                             <img src="{{ asset('../images/para-oglada-oferte-mieszkania.png') }}" alt="Młoda para ogląda ofertę mieszkania" width="740" height="530">
                         </div>
                     </div>
-                    <div class="col-5 d-flex align-items-center">
+                    <div class="col-12 col-xl-5 d-flex align-items-center">
                         <div class="section-text">
                             <div class="section-title justify-content-start mb-4">
                                 <div class="sub-section-title">
@@ -152,8 +152,8 @@
         <section class="mt-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-4">
-                        <div class="pe-5 me-5">
+                    <div class="col-12 col-xl-4">
+                        <div class="pe-0 pe-xl-5 me-0 me-xl-5">
                             <div class="section-title justify-content-start">
                                 <div class="sub-section-title">
                                     <span>KONTAKT</span>
@@ -172,7 +172,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-12 col-xl-8">
                         @include('components.contact-form', ['page' => '', 'back' => ''])
                     </div>
                 </div>

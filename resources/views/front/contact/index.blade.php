@@ -15,18 +15,18 @@
     </div>
 
     <main>
-        <section>
+        <section class="pt-first-lg">
             <div class="container">
                 <div class="row">
-                    <div class="col-4">
-                        <div class="pe-5 me-5">
+                    <div class="col-12 col-xl-4">
+                        <div class="pe-0 pe-xl-5 me-0 me-xl-5">
                             <div class="section-title justify-content-start">
                                 <div class="sub-section-title">
                                     <span>KONTAKT</span>
                                 </div>
                                 <h2 class="text-start mb-4">Masz pytania? <br>Zadzwoń lub napisz do nas!</h2>
                                 <p>Nasz zespół jest do Twojej dyspozycji, aby udzielić wszelkich informacji i odpowiedzieć na Twoje pytania. </p>
-                                <ul class="mb-0 contact-data list-unstyled mt-4">
+                                <ul class="mb-0 contact-data list-unstyled mt-2 mt-sm-4">
                                     <li class="contact-data-phone"><a href="tel:+48690256457">690-256-457</a></li>
                                     <li class="contact-data-mail"><a href="mailto:biuro@epsdevelopment.pl">biuro@epsdevelopment.pl</a></li>
                                     <li class="contact-data-location">
@@ -38,7 +38,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-12 col-xl-8">
                         @include('components.contact-form', ['page' => '', 'back' => ''])
                     </div>
                 </div>

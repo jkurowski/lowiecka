@@ -19,7 +19,7 @@
     </div>
 
     <main>
-        <section >
+        <section class="pt-first-lg">
             <div class="container">
                 <div class="row">
                     <div class="col-12">

@@ -7,19 +7,19 @@
 @section('content')
     <main>
         <section>
-            <div class="container mb-5">
+            <div class="container mb-4 mb-md-5">
                 <div id="planNav" class="row">
-                    <div class="col-12 col-sm-4 d-flex justify-content-start"><a href="" class="bttn bttn-sm">Poprzednie</a></div>
-                    <div class="col-12 col-sm-4 d-flex justify-content-center">
+                    <div class="col-12 col-md-4 d-flex justify-content-start"><a href="" class="bttn bttn-sm">Poprzednie</a></div>
+                    <div class="col-12 col-md-4 d-flex justify-content-center">
                         <a href="{{route('front.developro.floor', [$floor, Str::slug($floor->name)])}}" class="bttn bttn-sm">Plan piętra</a>
                     </div>
-                    <div class="col-12 col-sm-4 d-flex justify-content-end"><a href="" class="bttn bttn-sm">Następne</a></div>
+                    <div class="col-12 col-md-4 d-flex justify-content-end"><a href="" class="bttn bttn-sm">Następne</a></div>
                 </div>
             </div>
 
             <div class="container property-card">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-12 col-lg-4">
                         <div class="room-status room-status-{{ $property->status }}">
                             {{ roomStatus($property->status) }}
                         </div>
@@ -111,14 +111,14 @@
                                 </div>
                             @endif
                         </div>
-                        <div class="mt-5">
+                        <div class="mt-4 mt-sm-5">
                             @if($property->file_pdf)
                                 <a href="{{ asset('/investment/property/pdf/'.$property->file_pdf) }}" class="bttn">Karta mieszkania PDF</a>
                             @endif
                         </div>
                     </div>
-                    <div class="col-8">
-                        <div class="property-plan ps-5">
+                    <div class="col-12 col-lg-8">
+                        <div class="property-plan ps-0 ps-lg-5 mt-5 mt-lg-0">
                             <div class="position-relative">
                                 <div class="mieszkanie-rzuty">
                                     @if($property->file)
@@ -156,7 +156,7 @@
                 <div class="row flex-row-reverse">
                     <div class="col-12">
                         <div class="">
-                            <div class="section-title mb-5">
+                            <div class="section-title mb-4 mb-sm-5">
                                 <div class="sub-section-title">
                                     <span>KONTAKT</span>
                                 </div>

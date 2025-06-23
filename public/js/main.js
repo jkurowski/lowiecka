@@ -24,5 +24,16 @@ $(document).ready(function () {
 
 // Lightbox
 
+    $("#triggermenu, .closemenu").click(function(b){
+        b.preventDefault();
+        $('body').toggleClass('openmenu');
+    });
+    $("#megamenu-opacity").click(function (event) {
+        if ($('body').hasClass("openmenu")) {
+            $('body').removeClass("openmenu");
+        }
+        event.preventDefault();
+    });
+
 });
 $('.swipebox').swipebox({useSVG : false});

@@ -1,0 +1,473 @@
+.closemenu {
+    width: 40px;
+    height: 40px;
+    background: var(--main-color-blue);
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border-radius: 50%;
+    display: none;
+    z-index: 999;
+    color: var(--main-color-orange);
+}
+#triggermenu {
+    align-items: center;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    transition: all 200ms linear;
+    background: #ba8b41;
+    cursor: pointer;
+}
+#triggermenu i {
+    color: white;
+    font-size: 20px;
+}
+#triggermenu:hover {
+    background: #111154;
+    color: white;
+}
+.openmenu #triggermenu {
+    color: #fff;
+}
+.openmenu #triggermenu:hover {
+    color: white;
+}
+
+@media (max-width: 1939.98px) {
+
+}
+
+@media (max-width: 1669.98px) {
+    header nav ul {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 1399.98px) {
+    section {
+        padding: 70px 0;
+    }
+    .blue-mozaik {
+        padding: 70px 0;
+        margin: 70px 0;
+    }
+    section.mt-section {
+        margin-top: 70px;
+    }
+    .section-title {
+        h2 {
+            font-size: 34px;
+            line-height: 38px;
+        }
+    }
+
+    li, p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .contact-data li a,
+    .contact-data li p {
+        font-size: 16px;
+    }
+    .map-contact {
+        height: 230px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+
+    .golden-lines {
+        .golden-line-3 {
+            right: -36px;
+            bottom: 44px;
+            width: 160px;
+        }
+    }
+
+    header {
+        nav {
+            ul {
+                gap: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1199.98px) {
+    footer {
+        padding: 40px 0 0;
+
+        p, .copyright p {
+            font-size: 13px;
+            line-height: 19px;
+        }
+        li {
+            font-size: 13px;
+            line-height: 24px;
+        }
+        img {
+            width: 140px;
+        }
+        img.flogo {
+            margin: 0 auto;
+        }
+        h4 {
+            margin: 30px 0 10px;
+        }
+    }
+    .copyright {
+        border-top: 1px solid #d9b282;
+        margin-top: 40px;
+        padding: 15px 0;
+    }
+    .atut {
+        border: 1px solid #ececec;
+        border-radius: 4px;
+        padding: 30px 10px 30px;
+        text-align: center;
+        img {
+            width: 80px;
+        }
+        p {
+            font-size: 14px;
+            line-height: 21px;
+        }
+    }
+
+    .container-left-after:after {
+        right: 1000px;
+    }
+
+    .golden-lines {
+        display: block;
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+    .golden-line-4,
+    .golden-line-3 {
+        display: none;
+    }
+
+    .gallery-item-list {
+        padding: 0;
+    }
+
+    .section-title-xl {
+        margin-bottom: 20px;
+    }
+
+    header nav ul {
+        gap: 20px;
+    }
+    header nav ul a {
+        font-size: 15px;
+    }
+    header .top {
+        height: 30px;
+    }
+}
+/* end of 1199.98 */
+
+@media (max-width: 991.98px) {
+    .footer-box {
+        text-align: center;
+        img {
+            margin: 0 auto;
+        }
+        h4 {
+            padding: 0;
+            justify-content: center;
+            &:before {
+                display: none;
+            }
+        }
+    }
+
+    .section-title {
+        margin-bottom: 40px;
+    }
+
+    .split-bg {
+        padding: 70px 0;
+    }
+    .split .split-left {
+        width: 0;
+        height: 100%;
+    }
+    .split .split-right {
+        width: 100%;
+        height: 100%;
+    }
+
+    .pt-at-lg {
+        padding-top: 0;
+    }
+    .pt-first-lg {
+        padding-top: 30px;
+    }
+    section.mt-section {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .jak-daleko {
+        padding: 10px;
+        margin-top: 13px;
+        height: 110px;
+        p {
+            font-size: 13px;
+            line-height: 14px;
+        }
+        b {
+            font-size: 19px;
+        }
+        img {
+            margin: 0 auto 5px;
+            width: 23px;
+        }
+    }
+
+    header {
+        background: #030344 url(../images/footer.png);
+        padding: 20px 0;
+        .top {
+            display: none;
+        }
+    }
+    .breadcrumbs {
+        padding-top: 20px;
+    }
+    nav {
+        display: none;
+    }
+    #logo {
+        width: 130px;
+    }
+
+    .openmenu {
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+
+            nav {
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+
+                a {
+                    color: white;
+                    font-size: 20px;
+                }
+
+                ul {
+                    display: block;
+                    li {
+                        height: auto;
+                        position: relative;
+                        overflow: hidden;
+                        padding: 19px 0;
+                        text-align: center;
+                        &:before {
+                            height: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* end of 991.98 */
+
+@media (max-width: 767.98px) {
+    section {
+        padding: 50px 0;
+    }
+    #galleryList h3 {
+        padding-right: 0;
+    }
+    .gallery-item-list {
+        margin-bottom: 50px;
+    }
+    .jak-daleko {
+        height: 125px;
+    }
+
+    #roomsTabContent {
+        padding: 30px;
+        .rooms-tab-detail {
+            h3 {
+                font-size: 43px;
+                line-height: normal;
+            }
+            p {
+                font-size: 16px;
+                line-height: 24px;
+                margin: 15px 0 !important;
+            }
+            li {
+                font-size: 20px;
+                padding: 10px 0;
+            }
+        }
+    }
+
+    #planNav {
+        div {
+            padding-top: 2px;
+            padding-bottom: 2px;
+            a {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    }
+}
+/* end of 767.98 */
+
+@media (max-width: 575.98px) {
+    main {
+        padding: 0 15px;
+    }
+
+    .map-contact {
+        width: calc(100% + 30px);
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    .split-bg {
+        padding: 30px 15px;
+        width: calc(100% + 30px);
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    .section-title h2 {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 10px !important;
+    }
+
+    #photos-list {
+        padding: 0 5px;
+    }
+
+    #galleryList h3 {
+        font-size: 17px;
+        padding-top: 6px;
+    }
+    .gallery-item-list {
+        margin-bottom: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .blue-mozaik {
+        .blue-number-box {
+            p {
+                font-size: 15px;
+                line-height: 19px;
+            }
+            strong {
+                font-size: 47px;
+            }
+        }
+        margin: 30px -15px;
+        padding: 30px 0;
+        width: calc(100% + 30px);
+    }
+
+    .property-card h1 {
+        font-size: 31px;
+        margin-bottom: 10px;
+    }
+    .room-status {
+        font-size: 19px !important
+    }
+    .apartment-data {
+        padding: 6px 0;
+        font-size: 15px;
+    }
+}
+/* end of 575.98 */
+
+@media (max-width: 480px) {
+    footer {
+        padding: 30px 0 0;
+        p, li, .copyright p {
+            font-size: 11px;
+            line-height: 16px;
+        }
+        li {
+            line-height: 22px;
+        }
+        h4 {
+            font-size: 17px;
+            margin: 15px 0 5px;
+        }
+        img {
+            width: 90px;
+        }
+    }
+    .copyright {
+        margin-top: 30px;
+        padding: 10px 0;
+        text-align: center;
+    }
+    section {
+        padding: 30px 0;
+    }
+    .jak-daleko {
+        height: 110px;
+    }
+
+    .nav-rooms button {
+        font-size: 16px;
+    }
+    #roomsTabContent {
+        padding: 30px;
+        .rooms-tab-detail {
+            h3 {
+                font-size: 33px;
+                small {
+                    font-size: 25px;
+                }
+            }
+            p {
+                font-size: 14px;
+            }
+            li {
+                font-size: 17px;
+                padding: 7px 0;
+            }
+        }
+    }
+    .bttn {
+        padding: 22px 0;
+        width: 100%;
+        justify-content: center;
+    }
+    .blue-mozaik {
+        margin: 10px -15px;
+    }
+}
+
+/* end of 359.98 */
+@media (max-width: 359.98px) {
+
+}
+/* end of 359.98 */
