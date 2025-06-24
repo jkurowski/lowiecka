@@ -5,12 +5,12 @@
         <div id="slider">
             <div class="container h-100">
                 <div class="row h-100">
-                    <div class="col-5">
+                    <div class="col-12 col-sm-7 col-md-5">
                         <div class="slider-apla">
                             <span class="sub-header">Skierniewice</span>
                             <h1>Łowicka <span class="text-gold">100</span></h1>
                             <h2>nowoczesne miejsce do życia</h2>
-                            <a href="" class="bttn mt-5">SPRAWDŹ <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
+                            <a href="" class="bttn mt-3 mt-lg-5">SPRAWDŹ <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -23,12 +23,12 @@
                 <div class="col-12">
                     <div id="main-search">
                         <div class="row">
-                            <div class="col-12 mb-4">
+                            <div class="col-12 mb-3 mb-lg-4">
                                 <h3>Znajdź wymarzone mieszkanie</h3>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col dropdown">
+                            <div class="col-6 col-lg dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Powierzchnia</a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -38,7 +38,7 @@
                                     <li><a class="dropdown-item" href="#">Separated link</a></li>
                                 </ul>
                             </div>
-                            <div class="col dropdown">
+                            <div class="col-6 col-lg dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Piętro</a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -48,8 +48,8 @@
                                     <li><a class="dropdown-item" href="#">Separated link</a></li>
                                 </ul>
                             </div>
-                            <div class="col dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Liczba pokoi</a>
+                            <div class="col-6 col-lg dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pokoje</a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
                                     <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -58,7 +58,7 @@
                                     <li><a class="dropdown-item" href="#">Separated link</a></li>
                                 </ul>
                             </div>
-                            <div class="col dropdown">
+                            <div class="col-6 col-lg dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Status</a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -68,7 +68,7 @@
                                     <li><a class="dropdown-item" href="#">Separated link</a></li>
                                 </ul>
                             </div>
-                            <div class="col">
+                            <div class="col-12 col-lg">
                                 <button href="" class="bttn w-100">SZUKAJ <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></button>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
         <section>
             <div class="container">
                 <div class="row">
-                    <div class="col-4 d-flex align-items-center">
+                    <div class="col-12 col-mb-4 d-flex align-items-center">
                         <div class="section-title justify-content-start mb-0">
                             <div class="sub-section-title">
                                 <span>ATUTY</span>
@@ -88,35 +88,35 @@
                             <h2 class="text-start">Dlaczego warto zamieszkać <br>w Łowicka <span class="text-gold">100</span>?</h2>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-4 mt-4 mt-mb-0">
                         <div class="atut">
                             <img src="{{ asset('images/doskonala-lokalizacja.png') }}" alt="">
                             <h3>Doskonała lokalizacja</h3>
                             <p>Blisko centrum, sklepów, szkół i komunikacji miejskiej. Sąsiedztwo terenów zielonych i parku sprzyja relaksowi i aktywnemu wypoczynkowi.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-md-4 mt-4 mt-mb-0">
                         <div class="atut">
                             <img src="{{ asset('images/komfortowe-mieszkania.png') }}" alt="">
                             <h3>Komfortowe mieszkania</h3>
                             <p>Przemyślane układy, prywatne ogródki na parterze i przestronne balkony na wyższych piętrach. Idealna przestrzeń do życia i odpoczynku.</p>
                         </div>
                     </div>
-                    <div class="col-4 mt-4">
+                    <div class="col-12 col-md-4 mt-4 mt-mb-0">
                         <div class="atut">
                             <img src="{{ asset('images/ekologiczne-rozwiazania.png') }}" alt="">
                             <h3>Ekologiczne rozwiązania</h3>
                             <p>Fotowoltaika, filtry antysmogowe i smart home zmniejszają koszty energii i zapewniają zdrowe, ekologiczne warunki życia.</p>
                         </div>
                     </div>
-                    <div class="col-4 mt-4">
+                    <div class="col-12 col-md-4 mt-4 mt-mb-0">
                         <div class="atut">
                             <img src="{{ asset('images/nowoczesna-infrastruktura.png') }}" alt="">
                             <h3>Nowoczesna infrastruktura</h3>
                             <p>Podziemna hala garażowa, ładowarki do aut elektrycznych, rowerownia i windy zapewniają wygodę i funkcjonalność na co dzień.</p>
                         </div>
                     </div>
-                    <div class="col-4 mt-4">
+                    <div class="col-12 col-md-4 mt-4 mt-mb-0">
                         <div class="atut">
                             <img src="{{ asset('images/bezpieczenstwo-i-wspolnota.png') }}" alt="">
                             <h3>Bezpieczeństwo i wspólnota</h3>
@@ -127,18 +127,18 @@
             </div>
         </section>
 
-        <section class="pb-0">
+        <section class="pb-0 pt-at-lg">
             <div class="container">
                 <div class="row">
-                    <div class="col-6">
-                        <div class="section-title justify-content-start">
+                    <div class="col-12 col-xl-6">
+                        <div class="section-title justify-content-start section-title-xl">
                             <div class="sub-section-title">
                                 <span>O APARTAMENTACH</span>
                             </div>
                             <h2 class="text-start">Nowoczesne apartamenty stworzone z myślą o komforcie</h2>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-xl-6">
                         <div class="stats-container">
                             <div class="number-box">
                                 <h3><span class="number">66</span> apartamentów</h3>
@@ -155,10 +155,10 @@
             </div>
         </section>
 
-        <section class="mt-4">
+        <section class="mt-0 mt-xl-4">
             <div class="container container-right-after">
                 <div class="row">
-                    <div class="col-7">
+                    <div class="col-12 col-xl-7">
                         <div class="golden-lines">
                             <div class="golden-line-4">
                                 <img src="{{ asset('images/zote-linie-4.png') }}" alt="">
@@ -169,8 +169,8 @@
                             <img src="{{ asset('images/inwestycja-2.jpg') }}" alt="" width="740" height="530">
                         </div>
                     </div>
-                    <div class="col-5 d-flex align-items-center">
-                        <div class="section-text">
+                    <div class="col-12 col-xl-5 d-flex align-items-center">
+                        <div class="section-text mt-5 mt-xl-0">
                             <p>Łowicka 100 to nowoczesna inwestycja, która łączy komfort z ekologicznymi rozwiązaniami. Obejmuje 66 mieszkań o przemyślanych układach, dostosowanych do potrzeb singli i rodzin. Lokale na parterze posiadają prywatne ogródki, a na wyższych piętrach znajdują się przestronne balkony – idealne do relaksu i spędzania czasu na świeżym powietrzu.</p>
                             <p>&nbsp;</p>
                             <p>Budynek został wyposażony w innowacyjne technologie zwiększające wygodę i oszczędność. Panele fotowoltaiczne obniżają koszty energii, filtry antysmogowe dbają o jakość powietrza, a inteligentny system smart home umożliwia łatwe zarządzanie domem i optymalizację zużycia mediów. Łowicka 100 to przestrzeń stworzona z myślą o wygodnym, nowoczesnym i zdrowym stylu życia.</p>
@@ -183,7 +183,7 @@
         <section class="mt-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-12 col-lg-5">
                         <div class="section-title justify-content-start">
                             <div class="sub-section-title">
                                 <span>INFRASTRUKTURA</span>
@@ -198,8 +198,8 @@
                             <p>Dostępne liczne udogodnienia m.in. dwie windy, zewnętrzne miejsca postojowe, wysoki standard wykończenia balkonów - oświetlenie zewnętrzne, gniazdo elektryczne i wykończona posadzka, a także indywidualny smart home wewnątrz mieszkań.</p>
                         </div>
                     </div>
-                    <div class="col"></div>
-                    <div class="col-6">
+                    <div class="col-12 col-lg"></div>
+                    <div class="col-12 col-lg-6">
                         <div class="iconbox-container">
                             <div class="icon-box">
                                 <img src="{{ asset('images/car-parking@2x.png') }}" alt="" width="77" height="77">
@@ -235,7 +235,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="section-title">
+                        <div class="section-title section-title-xl">
                             <div class="sub-section-title">
                                 <span>TYPY MIESZKAŃ</span>
                             </div>
@@ -245,9 +245,9 @@
                 </div>
             </div>
 
-            <div class="container-fluid container-1730">
+            <div id="showrooms" class="container-fluid container-1730">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-12 col-sm-6 col-xl-3">
                         <a href="{{ route('front.developro.show') }}?rooms=1">
                             <div class="apartament-type apartament-type-1">
                                 <span class="area"><b>28 m<sup>2</sup></b></span>
@@ -260,7 +260,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-12 col-sm-6 col-xl-3">
                         <a href="{{ route('front.developro.show') }}?rooms=2">
                             <div class="apartament-type apartament-type-2">
                                 <span class="area"><b>43 - 50 m<sup>2</sup></b></span>
@@ -273,7 +273,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-12 col-sm-6 col-xl-3">
                         <a href="{{ route('front.developro.show') }}?rooms=3">
                             <div class="apartament-type apartament-type-3">
                                 <span class="area"><b>55 - 64 m<sup>2</sup></b></span>
@@ -286,7 +286,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-12 col-sm-6 col-xl-3">
                         <a href="{{ route('front.developro.show') }}?rooms=4">
                             <div class="apartament-type apartament-type-4">
                                 <span class="area"><b>78 m<sup>2</sup></b></span>
@@ -333,28 +333,28 @@
             </section>
         @endif
 
-        <section class="pb-0">
+        <section class="pb-0 pt-at-lg">
             <div class="container">
                 <div class="row">
-                    <div class="col-6">
-                        <div class="section-title justify-content-start">
+                    <div class="col-12 col-md-6">
+                        <div class="section-title justify-content-start section-title-xl">
                             <div class="sub-section-title">
                                 <span>EPS DEVELOPMENT</span>
                             </div>
                             <h2 class="text-start">Zaufany deweloper <br>- gwarancja solidnej inwestycji</h2>
                         </div>
                     </div>
-                    <div class="col-6 d-flex align-items-start justify-content-end">
+                    <div class="col-12 col-md-6 d-flex align-items-start justify-content-center justify-content-md-end mb-4 mb-lg-0">
                         <img src="{{ asset('../images/eps-dev-logo.jpg') }}" alt="Logo EPS Development" width="245" height="135">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="mt-4">
+        <section class="mt-0 mt-xl-4 pt-at-lg">
             <div class="container container-left-after">
                 <div class="row flex-row-reverse">
-                    <div class="col-7 d-flex justify-content-end">
+                    <div class="col-12 col-xl-7 d-flex justify-content-end">
                         <div class="golden-lines">
                             <div class="golden-line-4">
                                 <img src="{{ asset('images/zote-linie-4-gold.png') }}" alt="">
@@ -365,8 +365,8 @@
                             <img src="{{ asset('images/rodzina-w-nowym-mieszkaniu.jpg') }}" alt="" width="740" height="530">
                         </div>
                     </div>
-                    <div class="col-5 d-flex align-items-center">
-                        <div class="section-text">
+                    <div class="col-12 col-xl-5 d-flex align-items-center">
+                        <div class="section-text mt-5 mt-xl-0">
                             <p>Spółka powstała w 2021 roku z wizją realizacji szeregu budynków mieszkalnych na terenie całej Polski. Udziałowcami spółki EPS Development są osoby mające bogate i ponad 30 letnie doświadczenie w branży budowlanej, w tym Członkowie Zarządu spółki EL-INWEST ze Skierniewic działającej w całej Polsce od ponad 30 lat.</p>
                             <p>&nbsp;</p>
                             <p>Pomysł stworzenia spółki EPS Development narodził się w momencie, kiedy okazało się, że na skierniewickim rynku mieszkań brakuje małych, kameralnych inwestycji, a lokalni deweloperzy nastawieni są na realizacje wysokokubaturowych apartamentowców przeznaczonych do zamieszania przez znaczną liczbę mieszkańców.</p>
@@ -380,8 +380,8 @@
         <section class="mt-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-4">
-                        <div class="pe-5 me-5">
+                    <div class="col-12 col-xl-4">
+                        <div class="pe-0 pe-xl-5 me-0 me-xl-5">
                             <div class="section-title justify-content-start">
                                 <div class="sub-section-title">
                                     <span>KONTAKT</span>
@@ -400,7 +400,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-12 col-xl-8">
                         @include('components.contact-form', ['page' => '', 'back' => ''])
                     </div>
                 </div>

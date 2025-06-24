@@ -94,6 +94,72 @@
             }
         }
     }
+
+    #slider .slider-apla {
+        margin-top: 3vh;
+    }
+    #slider .slider-apla h1 {
+        font-size: 40px;
+        margin: 0;
+        line-height: normal;
+    }
+    #slider .slider-apla h2 {
+        font-size: 40px;
+        font-weight: 300;
+        line-height: 40px;
+    }
+    #slider .slider-apla span.sub-header {
+        font-size: 12px
+    }
+    #main-search {
+        padding: 20px;
+        margin-top: -40px;
+        h3 {
+            font-size: 26px
+        }
+        .dropdown-toggle {
+            font-size: 15px
+        }
+        .col-lg {
+            height: 50px;
+            .bttn {
+                padding: 17px 50px
+            }
+        }
+        .dropdown {
+            margin-bottom: 15px;
+        }
+    }
+
+    .stats-container {
+        display: flex;
+        justify-content: center;
+        gap: normal;
+        flex-wrap: wrap;
+    }
+    .number-box {
+        text-align: center;
+        max-width: initial;
+        flex: 0 0 auto;
+        width: 33.3333%;
+    }
+    .container-right-after:after {
+        display: none;
+    }
+
+    .iconbox-container {
+        .icon-box {
+            width: 220px;
+            img {
+                margin: 0 auto 15px;
+                width: 60px;
+            }
+            h3 {
+                font-size: 17px;
+                line-height: 24px;
+            }
+        }
+    }
 }
 
 @media (max-width: 1199.98px) {
@@ -169,6 +235,16 @@
     }
     header .top {
         height: 30px;
+    }
+    .iconbox-container .icon-box {
+        width: 175px;
+    }
+
+    #showrooms {
+        max-width: 840px;
+        .row {
+            gap: 24px 0;
+        }
     }
 }
 /* end of 1199.98 */
@@ -288,6 +364,34 @@
             }
         }
     }
+
+    .iconbox-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+        justify-content: space-between;
+        margin-top: 40px;
+        .icon-box {
+            width: 33.333%;
+            padding: 15px;
+            h3 {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    #showrooms {
+        max-width: 720px;
+    }
+
+    #slider .slider-apla h1 {
+        font-size: 29px;
+    }
+    #slider .slider-apla h2 {
+        font-size: 26px;
+        line-height: 29px;
+    }
 }
 /* end of 991.98 */
 
@@ -334,6 +438,29 @@
             }
         }
     }
+    .iconbox-container {
+        .icon-box {
+            width: 50%;
+        }
+    }
+    .apartament-type {
+        height: 360px;
+    }
+    .section-title {
+        br {
+            display: none;
+        }
+    }
+    #slider .slider-apla {
+        margin-top: 20px;
+    }
+    #slider .slider-apla h1 {
+        font-size: 25px;
+    }
+    #slider .slider-apla h2 {
+        font-size: 21px;
+        line-height: 24px;
+    }
 }
 /* end of 767.98 */
 
@@ -342,7 +469,7 @@
         padding: 0 15px;
     }
 
-    .map-contact {
+    .map-contact, #slider {
         width: calc(100% + 30px);
         margin-left: -15px;
         margin-right: -15px;
@@ -401,6 +528,56 @@
     .apartment-data {
         padding: 6px 0;
         font-size: 15px;
+    }
+
+    .iconbox-container {
+        .icon-box {
+            img {
+                margin: 0 auto 15px;
+                width: 50px;
+            }
+            h3 {
+                font-size: 13px;
+                line-height: 17px;
+            }
+        }
+    }
+    .number-box {
+        .number {
+            font-size: 62px;
+        }
+        h3 {
+            font-size: 13px;
+        }
+    }
+
+    .apartament-type {
+        background-size: cover !important;
+    }
+
+    #main-search {
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    #slider {
+        display: flex;
+        flex-wrap: wrap;
+        background: #dfdfdf;
+        padding-bottom: 30px;
+        .container {
+            display: flex;
+            order: 2;
+            position: static;
+            .row {
+                margin: 0 auto;
+            }
+        }
+        .slider-apla {
+            img {
+                width: 12px;
+            }
+        }
     }
 }
 /* end of 575.98 */
@@ -463,6 +640,15 @@
     }
     .blue-mozaik {
         margin: 10px -15px;
+    }
+
+    #main-search h3 {
+        font-size: 21px;
+    }
+    #main-search {
+        .col-6 {
+            width: 100%;
+        }
     }
 }
 

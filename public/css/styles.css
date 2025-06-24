@@ -9303,6 +9303,8 @@ button:focus {
   color: var(--main-color-blue);
   font-style: normal;
   line-height: normal;
+  position: relative;
+  z-index: 99;
 }
 .apartament-type-footer h2 span {
   font-size: 24px;
@@ -16659,6 +16661,67 @@ html.swipebox-html.swipebox-touch {
   header nav ul {
     gap: 20px;
   }
+  #slider .slider-apla {
+    margin-top: 3vh;
+  }
+  #slider .slider-apla h1 {
+    font-size: 40px;
+    margin: 0;
+    line-height: normal;
+  }
+  #slider .slider-apla h2 {
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 40px;
+  }
+  #slider .slider-apla span.sub-header {
+    font-size: 12px;
+  }
+  #main-search {
+    padding: 20px;
+    margin-top: -40px;
+  }
+  #main-search h3 {
+    font-size: 26px;
+  }
+  #main-search .dropdown-toggle {
+    font-size: 15px;
+  }
+  #main-search .col-lg {
+    height: 50px;
+  }
+  #main-search .col-lg .bttn {
+    padding: 17px 50px;
+  }
+  #main-search .dropdown {
+    margin-bottom: 15px;
+  }
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    gap: normal;
+    flex-wrap: wrap;
+  }
+  .number-box {
+    text-align: center;
+    max-width: initial;
+    flex: 0 0 auto;
+    width: 33.3333%;
+  }
+  .container-right-after:after {
+    display: none;
+  }
+  .iconbox-container .icon-box {
+    width: 220px;
+  }
+  .iconbox-container .icon-box img {
+    margin: 0 auto 15px;
+    width: 60px;
+  }
+  .iconbox-container .icon-box h3 {
+    font-size: 17px;
+    line-height: 24px;
+  }
 }
 @media (max-width: 1199.98px) {
   footer {
@@ -16728,6 +16791,15 @@ html.swipebox-html.swipebox-touch {
   }
   header .top {
     height: 30px;
+  }
+  .iconbox-container .icon-box {
+    width: 175px;
+  }
+  #showrooms {
+    max-width: 840px;
+  }
+  #showrooms .row {
+    gap: 24px 0;
   }
 }
 /* end of 1199.98 */
@@ -16836,6 +16908,31 @@ html.swipebox-html.swipebox-touch {
   .openmenu header nav ul li:before {
     height: 2px;
   }
+  .iconbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  .iconbox-container .icon-box {
+    width: 33.333%;
+    padding: 15px;
+  }
+  .iconbox-container .icon-box h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  #showrooms {
+    max-width: 720px;
+  }
+  #slider .slider-apla h1 {
+    font-size: 29px;
+  }
+  #slider .slider-apla h2 {
+    font-size: 26px;
+    line-height: 29px;
+  }
 }
 /* end of 991.98 */
 @media (max-width: 767.98px) {
@@ -16875,13 +16972,33 @@ html.swipebox-html.swipebox-touch {
     width: 100%;
     justify-content: center;
   }
+  .iconbox-container .icon-box {
+    width: 50%;
+  }
+  .apartament-type {
+    height: 360px;
+  }
+  .section-title br {
+    display: none;
+  }
+  #slider .slider-apla {
+    margin-top: 20px;
+  }
+  #slider .slider-apla h1 {
+    font-size: 25px;
+  }
+  #slider .slider-apla h2 {
+    font-size: 21px;
+    line-height: 24px;
+  }
 }
 /* end of 767.98 */
 @media (max-width: 575.98px) {
   main {
     padding: 0 15px;
   }
-  .map-contact {
+  .map-contact,
+  #slider {
     width: calc(100% + 30px);
     margin-left: -15px;
     margin-right: -15px;
@@ -16932,6 +17049,44 @@ html.swipebox-html.swipebox-touch {
   .apartment-data {
     padding: 6px 0;
     font-size: 15px;
+  }
+  .iconbox-container .icon-box img {
+    margin: 0 auto 15px;
+    width: 50px;
+  }
+  .iconbox-container .icon-box h3 {
+    font-size: 13px;
+    line-height: 17px;
+  }
+  .number-box .number {
+    font-size: 62px;
+  }
+  .number-box h3 {
+    font-size: 13px;
+  }
+  .apartament-type {
+    background-size: cover !important;
+  }
+  #main-search {
+    padding: 20px;
+    margin-top: 30px;
+  }
+  #slider {
+    display: flex;
+    flex-wrap: wrap;
+    background: #dfdfdf;
+    padding-bottom: 30px;
+  }
+  #slider .container {
+    display: flex;
+    order: 2;
+    position: static;
+  }
+  #slider .container .row {
+    margin: 0 auto;
+  }
+  #slider .slider-apla img {
+    width: 12px;
   }
 }
 /* end of 575.98 */
@@ -16992,6 +17147,12 @@ html.swipebox-html.swipebox-touch {
   }
   .blue-mozaik {
     margin: 10px -15px;
+  }
+  #main-search h3 {
+    font-size: 21px;
+  }
+  #main-search .col-6 {
+    width: 100%;
   }
 }
 /* end of 359.98 */
