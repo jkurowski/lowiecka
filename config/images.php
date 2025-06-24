@@ -56,12 +56,12 @@ return [
     */
 
     'property_plan' => [
-        'width' => 1200,
-        'height' => 1200
+        'width' => 2200,
+        'height' => 2200
     ],
     'property_thumb' => [
-        'width' => 830,
-        'height' => 830
+        'width' => 1480,
+        'height' => 1480
     ],
     'property_list' => [
         'width' => 200,
