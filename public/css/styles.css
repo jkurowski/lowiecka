@@ -16801,6 +16801,11 @@ html.swipebox-html.swipebox-touch {
   #showrooms .row {
     gap: 24px 0;
   }
+  #roomsList .badge {
+    font-size: 13px;
+    font-weight: 500;
+    width: 150px;
+  }
 }
 /* end of 1199.98 */
 @media (max-width: 991.98px) {
@@ -16819,6 +16824,9 @@ html.swipebox-html.swipebox-touch {
   }
   .section-title {
     margin-bottom: 40px;
+  }
+  .section-title-xl {
+    margin-bottom: 20px;
   }
   .split-bg {
     padding: 70px 0;
@@ -16991,6 +16999,13 @@ html.swipebox-html.swipebox-touch {
     font-size: 21px;
     line-height: 24px;
   }
+  #roomsList .badge {
+    width: 200px;
+  }
+  #roomsList .bttn.bttn-sm {
+    font-size: 11px;
+    padding: 12px 15px;
+  }
 }
 /* end of 767.98 */
 @media (max-width: 575.98px) {
@@ -17087,6 +17102,19 @@ html.swipebox-html.swipebox-touch {
   }
   #slider .slider-apla img {
     width: 12px;
+  }
+  #roomsList .row {
+    padding: 15px 0;
+  }
+  #roomsList h2 {
+    font-size: 13px;
+    line-height: 26px;
+  }
+  #roomsList h2 span {
+    font-size: 33px;
+  }
+  #roomsList .badge {
+    width: 100%;
   }
 }
 /* end of 575.98 */
