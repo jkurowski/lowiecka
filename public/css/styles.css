@@ -17006,6 +17006,13 @@ html.swipebox-html.swipebox-touch {
     font-size: 11px;
     padding: 12px 15px;
   }
+  .icon-title-text-box img {
+    width: 50px;
+  }
+  .icon-title-text-box h3 {
+    font-size: 19px;
+    margin: 15px 0 0;
+  }
 }
 /* end of 767.98 */
 @media (max-width: 575.98px) {

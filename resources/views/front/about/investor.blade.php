@@ -34,21 +34,21 @@
                     </div>
                 </div>
                 <div class="row pt-0 pt-lg-5">
-                    <div class="col-4">
+                    <div class="col-12 col-sm-4">
                         <div class="icon-title-text-box text-center">
                             <img src="{{ asset('../images/kompleksowosc-icon.png') }}" alt="Kompleksowość ikonka" width="75" height="75">
                             <h3>Kompleksowość</h3>
                             <p class="d-none">Mauris malesuada, dolor a cursus pretium, est orci ultrices ante, ac tempor arcu tellus sollicitudin risus. Maecenas egestas congue accumsan. Nullam ut arcu pellentesque, viverra turpis at.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-sm-4 mt-5 mt-sm-0 mb-5 mb-sm-0">
                         <div class="icon-title-text-box text-center">
                             <img src="{{ asset('../images/partnerstwo-icon.png') }}" alt="Partnerstwo ikonka" width="75" height="75">
                             <h3>Partnerstwo</h3>
                             <p class="d-none">Mauris malesuada, dolor a cursus pretium, est orci ultrices ante, ac tempor arcu tellus sollicitudin risus. Maecenas egestas congue accumsan. Nullam ut arcu pellentesque, viverra turpis at.</p>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12 col-sm-4">
                         <div class="icon-title-text-box text-center">
                             <img src="{{ asset('../images/jakosc-icon.png') }}" alt="Jakość ikonka" width="75" height="75">
                             <h3>Jakość</h3>

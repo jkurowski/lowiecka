@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 // CMS
 use App\Models\Gallery;
+use App\Models\RodoRules;
 use Illuminate\Support\Facades\Cookie;
 
 class IndexController extends Controller
@@ -26,13 +27,14 @@ class IndexController extends Controller
         } else {
             Cookie::queue('popup', null);
         }
-
+        $rules = RodoRules::orderBy('sort')->whereActive(1)->get();
         $isAdmin = auth()->check();
         $images = Gallery::find(2)->photos()->get();
         return view('front.homepage.index', compact(
             'popup',
             'isAdmin',
-            'images'
+            'images',
+            'rules'
         ));
     }
 }

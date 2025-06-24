@@ -15,7 +15,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/styles.min.css') }}?v=24406v1">
+    <link rel="stylesheet" href="{{ asset('/css/styles.min.css') }}?v=24406v2">
     <link rel="stylesheet" href="{{ asset('/css/slick.min.css') }}">
 
     <link rel="shortcut icon" href="/uploads/{{ settings()->get("page_favicon") }}">

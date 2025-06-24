@@ -7,6 +7,7 @@ use App\Models\Floor;
 use App\Models\Investment;
 use App\Models\Page;
 use App\Models\Property;
+use App\Models\RodoRules;
 
 class InvestmentPropertyController extends Controller
 {
@@ -22,10 +23,11 @@ class InvestmentPropertyController extends Controller
         $property->timestamps = false;
         $property->increment('views');
         $page = Page::where('id', $this->pageId)->first();
-
+        $rules = RodoRules::orderBy('sort')->whereActive(1)->get();
         return view('front.developro.investment_property.index', [
             'floor' => $floor,
-            'property' => $property
+            'property' => $property,
+            'rules' => $rules
         ]);
     }
 

@@ -29,9 +29,10 @@ class IndexController extends Controller
     public function pages($page)
     {
         $allowedPages = ['polityka-prywatnosci', 'regulamin', 'kontakt', 'finansowanie', 'lokalizacja'];
+        $rules = RodoRules::orderBy('sort')->whereActive(1)->get();
 
         if (in_array($page, $allowedPages)) {
-            return view('front.static.'.$page);
+            return view('front.static.'.$page, compact('rules'));
         }
 
         abort(404); // Return a 404 error if the page is not allowed

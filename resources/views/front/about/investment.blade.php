@@ -199,7 +199,7 @@
         <section>
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-mb-4 d-flex align-items-center">
+                    <div class="col-12 col-md-4 d-flex align-items-center">
                         <div class="section-title justify-content-start mb-0">
                             <div class="sub-section-title">
                                 <span>ATUTY</span>
@@ -207,35 +207,35 @@
                             <h2 class="text-start">Dlaczego warto zamieszkać <br>w Łowicka <span class="text-gold">100</span>?</h2>
                         </div>
                     </div>
-                    <div class="col-12 col-mb-4 mt-4 mt-mb-0">
+                    <div class="col-12 col-md-4 mt-4 mt-mb-0">
                         <div class="atut">
                             <img src="{{ asset('images/doskonala-lokalizacja.png') }}" alt="">
                             <h3>Doskonała lokalizacja</h3>
                             <p>Blisko centrum, sklepów, szkół i komunikacji miejskiej. Sąsiedztwo terenów zielonych i parku sprzyja relaksowi i aktywnemu wypoczynkowi.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-mb-4 mt-4 mt-mb-0">
+                    <div class="col-12 col-md-4 mt-4 mt-mb-0">
                         <div class="atut">
                             <img src="{{ asset('images/komfortowe-mieszkania.png') }}" alt="">
                             <h3>Komfortowe mieszkania</h3>
                             <p>Przemyślane układy, prywatne ogródki na parterze i przestronne balkony na wyższych piętrach. Idealna przestrzeń do życia i odpoczynku.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-mb-4 mt-4 mt-mb-0">
+                    <div class="col-12 col-md-4 mt-4 mt-mb-0">
                         <div class="atut">
                             <img src="{{ asset('images/ekologiczne-rozwiazania.png') }}" alt="">
                             <h3>Ekologiczne rozwiązania</h3>
                             <p>Fotowoltaika, filtry antysmogowe i smart home zmniejszają koszty energii i zapewniają zdrowe, ekologiczne warunki życia.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-mb-4 mt-4 mt-mb-0">
+                    <div class="col-12 col-md-4 mt-4 mt-mb-0">
                         <div class="atut">
                             <img src="{{ asset('images/nowoczesna-infrastruktura.png') }}" alt="">
                             <h3>Nowoczesna infrastruktura</h3>
                             <p>Podziemna hala garażowa, ładowarki do aut elektrycznych, rowerownia i windy zapewniają wygodę i funkcjonalność na co dzień.</p>
                         </div>
                     </div>
-                    <div class="col-12 col-mb-4 mt-4 mt-mb-0">
+                    <div class="col-12 col-md-4 mt-4 mt-mb-0">
                         <div class="atut">
                             <img src="{{ asset('images/bezpieczenstwo-i-wspolnota.png') }}" alt="">
                             <h3>Bezpieczeństwo i wspólnota</h3>
