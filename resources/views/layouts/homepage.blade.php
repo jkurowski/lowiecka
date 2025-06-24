@@ -21,7 +21,8 @@
     <link rel="shortcut icon" href="/uploads/{{ settings()->get("page_favicon") }}">
 
     <!-- Preloads -->
-    <link rel="preload" href="{{ asset('/images/logo.svg') }}" as="image" />
+    <link rel="preload" href="{{ asset('/images/logo.png') }}" as="image" />
+    <link rel="preload" href="{{ asset('/images/logo-footer.png') }}" as="image" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- /Preloads -->
