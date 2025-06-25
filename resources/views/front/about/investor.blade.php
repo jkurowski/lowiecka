@@ -173,7 +173,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-xl-8">
-                        @include('components.contact-form', ['page' => '', 'back' => ''])
+                        @include('components.contact-form', ['page' => '', 'back' => 'true'])
                     </div>
                 </div>
             </div>
