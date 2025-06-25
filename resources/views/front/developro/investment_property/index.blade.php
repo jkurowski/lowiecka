@@ -9,11 +9,21 @@
         <section>
             <div class="container mb-4 mb-md-5">
                 <div id="planNav" class="row">
-                    <div class="col-12 col-md-4 d-flex justify-content-start"><a href="" class="bttn bttn-sm">Poprzednie</a></div>
+                    <div class="col-12 col-md-4 d-flex justify-content-start">
+                        @if($prev)
+                        <a href="{{route('front.developro.property', [$property->floor, Str::slug($property->floor->name), $prev, Str::slug($prev->name) ])}}" class="bttn bttn-sm">Poprzednie</a>
+                        @endif
+                    </div>
+
                     <div class="col-12 col-md-4 d-flex justify-content-center">
                         <a href="{{route('front.developro.floor', [$floor, Str::slug($floor->name)])}}" class="bttn bttn-sm">Plan piętra</a>
                     </div>
-                    <div class="col-12 col-md-4 d-flex justify-content-end"><a href="" class="bttn bttn-sm">Następne</a></div>
+
+                    <div class="col-12 col-md-4 d-flex justify-content-end">
+                        @if($next)
+                        <a href="{{route('front.developro.property', [$property->floor, Str::slug($property->floor->name), $next, Str::slug($next->name) ])}}" class="bttn bttn-sm">Następne</a>
+                        @endif
+                    </div>
                 </div>
             </div>
 
