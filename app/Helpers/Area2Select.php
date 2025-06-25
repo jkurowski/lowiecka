@@ -6,14 +6,10 @@ if (! function_exists('area2Select')) {
         $var = explode(',', $range);
         $html = '';
         foreach ($var as $pozycja) {
-            $html .= '<option value="'.$pozycja.'"';
-            if (request()->input('area') == $pozycja) {
-                $html .= ' selected';
-            }
-            $html .= '>';
-            $html .= $pozycja.' m²';
-            $html .= '</option>';
+            $html .= '<li data-value="'.$pozycja.'"><a class="dropdown-item" href="#">'.$pozycja.' m<sup>2</sup></a></li>';
         }
         return $html;
     }
 }
+
+

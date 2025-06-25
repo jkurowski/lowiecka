@@ -32,10 +32,10 @@
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Powierzchnia</a>
                                 <ul class="dropdown-menu">
                                     <li data-value=""><a class="dropdown-item" href="#">Wszystkie</a></li>
-                                    <li data-value="29-40"><a class="dropdown-item" href="#">29 - 40 m<sup>2</sup></a></li>
-                                    <li data-value="41-60"><a class="dropdown-item" href="#">41 - 60 m<sup>2</sup></a></li>
-                                    <li data-value="61-80"><a class="dropdown-item" href="#">61 - 80 m<sup>2</sup></a></li>
-                                    <li data-value="81-110"><a class="dropdown-item" href="#">81 - 110 m<sup>2</sup></a></li>
+                                    <li data-value="29-40"><a class="dropdown-item" href="#">29-40 m<sup>2</sup></a></li>
+                                    <li data-value="41-60"><a class="dropdown-item" href="#">41-60 m<sup>2</sup></a></li>
+                                    <li data-value="61-80"><a class="dropdown-item" href="#">61-80 m<sup>2</sup></a></li>
+                                    <li data-value="81-110"><a class="dropdown-item" href="#">81-110 m<sup>2</sup></a></li>
                                 </ul>
                                 <input type="hidden" name="area" value="">
                             </div>
