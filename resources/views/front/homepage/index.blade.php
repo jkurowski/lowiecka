@@ -27,51 +27,57 @@
                                 <h3>Znajdź wymarzone mieszkanie</h3>
                             </div>
                         </div>
-                        <div class="row">
+                        <form class="row" method="get" action="{{ route('front.developro.show') }}">
                             <div class="col-6 col-lg dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Powierzchnia</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                    <li data-value=""><a class="dropdown-item" href="#">Wszystkie</a></li>
+                                    <li data-value="29-40"><a class="dropdown-item" href="#">29 - 40 m<sup>2</sup></a></li>
+                                    <li data-value="41-60"><a class="dropdown-item" href="#">41 - 60 m<sup>2</sup></a></li>
+                                    <li data-value="61-80"><a class="dropdown-item" href="#">61 - 80 m<sup>2</sup></a></li>
+                                    <li data-value="81-110"><a class="dropdown-item" href="#">81 - 110 m<sup>2</sup></a></li>
                                 </ul>
+                                <input type="hidden" name="area" value="">
                             </div>
                             <div class="col-6 col-lg dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Piętro</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                    <li data-value=""><a class="dropdown-item" href="#">Wszystkie</a></li>
+                                    <li data-value="1"><a class="dropdown-item" href="#">Parter</a></li>
+                                    <li data-value="2"><a class="dropdown-item" href="#">Piętro 1</a></li>
+                                    <li data-value="3"><a class="dropdown-item" href="#">Piętro 2</a></li>
+                                    <li data-value="4"><a class="dropdown-item" href="#">Piętro 3</a></li>
+                                    <li data-value="5"><a class="dropdown-item" href="#">Piętro 4</a></li>
+                                    <li data-value="6"><a class="dropdown-item" href="#">Piętro 5</a></li>
                                 </ul>
+                                <input type="hidden" name="floor" value="">
                             </div>
                             <div class="col-6 col-lg dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pokoje</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                    <li data-value=""><a class="dropdown-item" href="#">Wszystkie</a></li>
+                                    <li data-value="1"><a class="dropdown-item" href="#">1</a></li>
+                                    <li data-value="2"><a class="dropdown-item" href="#">2</a></li>
+                                    <li data-value="3"><a class="dropdown-item" href="#">3</a></li>
+                                    <li data-value="4"><a class="dropdown-item" href="#">4</a></li>
+                                    <li data-value="5"><a class="dropdown-item" href="#">5</a></li>
                                 </ul>
+                                <input type="hidden" name="rooms" value="">
                             </div>
                             <div class="col-6 col-lg dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Status</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                    <li data-value=""><a class="dropdown-item" href="#">Wszystkie</a></li>
+                                    <li data-value="1"><a class="dropdown-item" href="#">Dostępne</a></li>
+                                    <li data-value="2"><a class="dropdown-item" href="#">Rezerwacja</a></li>
+                                    <li data-value="3"><a class="dropdown-item" href="#">Sprzedane</a></li>
                                 </ul>
+                                <input type="hidden" name="status" value="">
                             </div>
                             <div class="col-12 col-lg">
-                                <button href="" class="bttn w-100">SZUKAJ <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></button>
+                                <button type="submit" class="bttn w-100">SZUKAJ <img src="{{ asset('images/bttn_arrow.svg') }}" alt=""></button>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -408,4 +414,33 @@
         </section>
     </main>
 @endsection
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownItems = document.querySelectorAll('.dropdown-menu .dropdown-item');
+
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const li = this.closest('li');
+                    const dropdown = this.closest('.dropdown');
+                    const toggleButton = dropdown.querySelector('.dropdown-toggle');
+                    const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+
+                    const selectedValue = li.getAttribute('data-value');
+                    const selectedText = this.innerHTML.trim();
+
+                    if (toggleButton) {
+                        toggleButton.innerHTML = selectedText;
+                    }
+
+                    if (hiddenInput) {
+                        hiddenInput.value = selectedValue;
+                    }
+                });
+            });
+        });
+    </script>
+@endpush
 
