@@ -74,7 +74,7 @@
                                 </ul>
                                 <input type="hidden" name="area" value="">
 
-                                {!! area2Select($area_range) !!}
+                                {!! area2Select($investment->floor->area_range) !!}
                             </div>
                             <div class="col-6 col-lg dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pokoje</a>
