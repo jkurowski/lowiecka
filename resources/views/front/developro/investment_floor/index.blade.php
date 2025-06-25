@@ -73,6 +73,8 @@
                                     <li data-value="81-110"><a class="dropdown-item" href="#">81 - 110 m<sup>2</sup></a></li>
                                 </ul>
                                 <input type="hidden" name="area" value="">
+
+                                {!! area2Select($area_range) !!}
                             </div>
                             <div class="col-6 col-lg dropdown">
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pokoje</a>
@@ -111,4 +113,68 @@
     <script src="{{ asset('/js/plan/imagemapster.js') }}" charset="utf-8"></script>
     <script src="{{ asset('/js/plan/tip.js') }}" charset="utf-8"></script>
     <script src="{{ asset('/js/plan/floor.js') }}" charset="utf-8"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownItems = document.querySelectorAll('.dropdown-menu .dropdown-item');
+
+            // Update dropdowns on click
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const li = this.closest('li');
+                    const dropdown = this.closest('.dropdown');
+                    const toggleButton = dropdown.querySelector('.dropdown-toggle');
+                    const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+
+                    const selectedValue = li.getAttribute('data-value');
+                    const selectedText = this.innerHTML.trim();
+
+                    if (toggleButton) {
+                        if (selectedValue === "") {
+                            toggleButton.textContent = toggleButton.dataset.default || 'Wszystkie';
+                        } else {
+                            toggleButton.innerHTML = selectedText;
+                        }
+                    }
+
+                    if (hiddenInput) {
+                        hiddenInput.value = selectedValue;
+                    }
+                });
+            });
+
+            // Restore state from URL on load
+            const params = new URLSearchParams(window.location.search);
+            const allDropdowns = document.querySelectorAll('.dropdown');
+
+            allDropdowns.forEach(dropdown => {
+                const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+                const toggleButton = dropdown.querySelector('.dropdown-toggle');
+                const name = hiddenInput?.name;
+
+                if (!name) return;
+
+                const valueFromUrl = params.get(name);
+
+                if (valueFromUrl !== null) {
+                    hiddenInput.value = valueFromUrl;
+
+                    const matchedItem = dropdown.querySelector(`li[data-value="${valueFromUrl}"] .dropdown-item`);
+                    if (matchedItem && toggleButton) {
+                        if (valueFromUrl === "") {
+                            toggleButton.textContent = toggleButton.dataset.default || 'Wszystkie';
+                        } else {
+                            toggleButton.innerHTML = matchedItem.innerHTML.trim();
+                        }
+                    }
+
+                    // Fallback if no item matched
+                    if (!matchedItem && toggleButton) {
+                        toggleButton.textContent = toggleButton.dataset.default || 'Wszystkie';
+                    }
+                }
+            });
+        });
+    </script>
 @endpush
