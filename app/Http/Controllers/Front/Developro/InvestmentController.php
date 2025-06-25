@@ -48,7 +48,7 @@ class InvestmentController extends Controller
             // Parse area range
             if ($area) {
                 [$minArea, $maxArea] = explode('-', $area);
-                if ($property->area < $minArea || $property->area > $maxArea) {
+                if ($property->area_search < $minArea || $property->area_search > $maxArea) {
                     return false;
                 }
             }
