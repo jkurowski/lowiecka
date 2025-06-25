@@ -59,7 +59,7 @@ class InvestmentController extends Controller
             }
 
             // Filter by floor
-            if ($floor && $property->floor->number != $floor) {
+            if ($floor && $property->floor->position != $floor) {
                 return false;
             }
 
