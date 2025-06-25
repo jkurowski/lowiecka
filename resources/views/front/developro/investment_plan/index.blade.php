@@ -131,7 +131,11 @@
                     const selectedText = this.innerHTML.trim();
 
                     if (toggleButton) {
-                        toggleButton.innerHTML = selectedText;
+                        if (selectedValue === "") {
+                            toggleButton.textContent = toggleButton.dataset.default || 'Wszystkie';
+                        } else {
+                            toggleButton.innerHTML = selectedText;
+                        }
                     }
 
                     if (hiddenInput) {
@@ -154,16 +158,18 @@
                 const valueFromUrl = params.get(name);
 
                 if (valueFromUrl !== null) {
-                    // Update hidden input
                     hiddenInput.value = valueFromUrl;
 
-                    // Try to find matching dropdown item
                     const matchedItem = dropdown.querySelector(`li[data-value="${valueFromUrl}"] .dropdown-item`);
                     if (matchedItem && toggleButton) {
-                        toggleButton.innerHTML = matchedItem.innerHTML.trim();
+                        if (valueFromUrl === "") {
+                            toggleButton.textContent = toggleButton.dataset.default || 'Wszystkie';
+                        } else {
+                            toggleButton.innerHTML = matchedItem.innerHTML.trim();
+                        }
                     }
 
-                    // Optional: if nothing matched, set to "Wszystkie" or default
+                    // Fallback if no item matched
                     if (!matchedItem && toggleButton) {
                         toggleButton.textContent = toggleButton.dataset.default || 'Wszystkie';
                     }
