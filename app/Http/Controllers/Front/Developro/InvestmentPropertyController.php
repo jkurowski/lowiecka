@@ -25,10 +25,8 @@ class InvestmentPropertyController extends Controller
         $page = Page::where('id', $this->pageId)->first();
         $rules = RodoRules::orderBy('sort')->whereActive(1)->get();
 
-
-        $next = $property->findNext($property->investment_id, $property->number_order);
-        $prev = $property->findPrev($property->investment_id, $property->number_order);
-
+        $next = $property->findNext($property->investment_id, $property->number_order, null, $property->floor_id);
+        $prev = $property->findPrev($property->investment_id, $property->number_order, null, $property->floor_id);
 
         return view('front.developro.investment_property.index', [
             'floor' => $floor,

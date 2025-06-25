@@ -11,7 +11,7 @@
                 <div id="planNav" class="row">
                     <div class="col-12 col-md-4 d-flex justify-content-start">
                         @if($prev)
-                        <a href="{{route('front.developro.property', [$property->floor, Str::slug($property->floor->name), $prev, Str::slug($prev->name) ])}}" class="bttn bttn-sm">Poprzednie</a>
+                        <a href="{{route('front.developro.property', [$prev->floor, Str::slug($prev->floor->name), $prev, Str::slug($prev->name) ])}}" class="bttn bttn-sm">Poprzednie</a>
                         @endif
                     </div>
 
@@ -21,7 +21,7 @@
 
                     <div class="col-12 col-md-4 d-flex justify-content-end">
                         @if($next)
-                        <a href="{{route('front.developro.property', [$property->floor, Str::slug($property->floor->name), $next, Str::slug($next->name) ])}}" class="bttn bttn-sm">Następne</a>
+                        <a href="{{route('front.developro.property', [$next->floor, Str::slug($next->floor->name), $next, Str::slug($next->name) ])}}" class="bttn bttn-sm">Następne</a>
                         @endif
                     </div>
                 </div>
