@@ -52,7 +52,7 @@
                     <div id="main-search" class="mt-0">
                         <form class="row" method="get" action="">
                             <div class="col-6 col-lg dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Powierzchnia</a>
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" data-default="Powierzchnia">Powierzchnia</a>
                                 <ul class="dropdown-menu">
                                     <li data-value=""><a class="dropdown-item" href="#">Wszystkie</a></li>
                                     <li data-value="29-40"><a class="dropdown-item" href="#">29 - 40 m<sup>2</sup></a></li>
@@ -63,7 +63,7 @@
                                 <input type="hidden" name="area" value="">
                             </div>
                             <div class="col-6 col-lg dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Piętro</a>
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" data-default="Piętro">Piętro</a>
                                 <ul class="dropdown-menu">
                                     <li data-value=""><a class="dropdown-item" href="#">Wszystkie</a></li>
                                     <li data-value="1"><a class="dropdown-item" href="#">Parter</a></li>
@@ -76,7 +76,7 @@
                                 <input type="hidden" name="floor" value="">
                             </div>
                             <div class="col-6 col-lg dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pokoje</a>
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" data-default="Pokoje">Pokoje</a>
                                 <ul class="dropdown-menu">
                                     <li data-value=""><a class="dropdown-item" href="#">Wszystkie</a></li>
                                     <li data-value="1"><a class="dropdown-item" href="#">1</a></li>
@@ -88,7 +88,7 @@
                                 <input type="hidden" name="rooms" value="">
                             </div>
                             <div class="col-6 col-lg dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Status</a>
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" data-default="Status">Status</a>
                                 <ul class="dropdown-menu">
                                     <li data-value=""><a class="dropdown-item" href="#">Wszystkie</a></li>
                                     <li data-value="1"><a class="dropdown-item" href="#">Dostępne</a></li>
@@ -113,4 +113,62 @@
 @push('scripts')
     <script src="{{ asset('/js/plan/imagemapster.js') }}" charset="utf-8"></script>
     <script src="{{ asset('/js/plan/plan.js') }}" charset="utf-8"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownItems = document.querySelectorAll('.dropdown-menu .dropdown-item');
+
+            // Update dropdowns on click
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const li = this.closest('li');
+                    const dropdown = this.closest('.dropdown');
+                    const toggleButton = dropdown.querySelector('.dropdown-toggle');
+                    const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+
+                    const selectedValue = li.getAttribute('data-value');
+                    const selectedText = this.innerHTML.trim();
+
+                    if (toggleButton) {
+                        toggleButton.innerHTML = selectedText;
+                    }
+
+                    if (hiddenInput) {
+                        hiddenInput.value = selectedValue;
+                    }
+                });
+            });
+
+            // Restore state from URL on load
+            const params = new URLSearchParams(window.location.search);
+            const allDropdowns = document.querySelectorAll('.dropdown');
+
+            allDropdowns.forEach(dropdown => {
+                const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+                const toggleButton = dropdown.querySelector('.dropdown-toggle');
+                const name = hiddenInput?.name;
+
+                if (!name) return;
+
+                const valueFromUrl = params.get(name);
+
+                if (valueFromUrl !== null) {
+                    // Update hidden input
+                    hiddenInput.value = valueFromUrl;
+
+                    // Try to find matching dropdown item
+                    const matchedItem = dropdown.querySelector(`li[data-value="${valueFromUrl}"] .dropdown-item`);
+                    if (matchedItem && toggleButton) {
+                        toggleButton.innerHTML = matchedItem.innerHTML.trim();
+                    }
+
+                    // Optional: if nothing matched, set to "Wszystkie" or default
+                    if (!matchedItem && toggleButton) {
+                        toggleButton.textContent = toggleButton.dataset.default || 'Wszystkie';
+                    }
+                }
+            });
+        });
+    </script>
 @endpush
