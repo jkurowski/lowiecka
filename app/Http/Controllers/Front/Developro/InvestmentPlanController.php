@@ -49,7 +49,7 @@ class InvestmentPlanController extends Controller
                         $area_param = explode('-', $request->input('area'));
                         $min = $area_param[0];
                         $max = $area_param[1];
-                        $query->whereBetween('area', [$min, $max]);
+                        $query->whereBetween('area_search', [$min, $max]);
                     }
                     if ($request->input('sort')) {
                         $order_param = explode(':', $request->input('sort'));
