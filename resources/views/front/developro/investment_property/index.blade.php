@@ -165,7 +165,7 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        @include('components.contact-form', ['page' => '', 'back' => ''])
+                        @include('components.contact-form', ['pageTitle' => $property->name, 'back' => 'true' , 'investmentId' => $property->investment->id, 'investmentName' => $property->investment->name, 'propertyId' => $property->id])
                     </div>
                 </div>
             </div>
