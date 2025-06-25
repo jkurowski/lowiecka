@@ -9,6 +9,7 @@
 
 @if($propertyId)
     <form id="contact-form" autocomplete="off" action="" method="{{ $method }}" class="contact-form validateForm">
+        @csrf
         @else
             <form id="contact-form" autocomplete="off" action="" method="post" class="validateForm">
                 @endif
