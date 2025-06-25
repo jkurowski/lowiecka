@@ -42,8 +42,7 @@ class ChatSend extends Mailable
             [
                 'request' => $this->request,
                 'client' => $this->client,
-                'property' => $this->property,
-                'signature' => Auth::user()->signature
+                'property' => $this->property
             ]);
     }
 }
