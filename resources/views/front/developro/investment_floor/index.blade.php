@@ -78,11 +78,9 @@
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Pokoje</a>
                                 <ul class="dropdown-menu">
                                     <li data-value=""><a class="dropdown-item" href="#">Wszystkie</a></li>
-                                    <li data-value="1"><a class="dropdown-item" href="#">1</a></li>
-                                    <li data-value="2"><a class="dropdown-item" href="#">2</a></li>
-                                    <li data-value="3"><a class="dropdown-item" href="#">3</a></li>
-                                    <li data-value="4"><a class="dropdown-item" href="#">4</a></li>
-                                    <li data-value="5"><a class="dropdown-item" href="#">5</a></li>
+                                    @foreach($uniqueRooms as $room)
+                                        <li data-value="{{ $room }}"><a class="dropdown-item" href="#">{{ $room }}</a></li>
+                                    @endforeach
                                 </ul>
                                 <input type="hidden" name="rooms" value="">
                             </div>
