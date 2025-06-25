@@ -8,8 +8,7 @@
 ])
 
 @if($propertyId)
-    <form id="contact-form" autocomplete="off" action="{{ route('front.contact.property') }}" method="{{ $method }}" class="contact-form validateForm">
-        @csrf
+    <form id="contact-form" autocomplete="off" action="{{ route('front.contact.property', $propertyId) }}" method="{{ $method }}" class="contact-form validateForm">
         @else
             <form id="contact-form" autocomplete="off" action="{{ route('front.contact.send') }}" method="post" class="validateForm">
                 @endif
