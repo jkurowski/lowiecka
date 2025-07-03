@@ -81,8 +81,8 @@
                     </div>
                     <div class="col-6 col-sm-4 col-xl-2 mb-4 mb-sm-0">
                         <div class="blue-number-box">
-                            <strong>10</strong>
-                            <p>mieszkań <br>z ogródkami</p>
+                            <strong>4</strong>
+                            <p>mieszkania <br>z ogródkami</p>
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-xl-2">
