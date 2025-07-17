@@ -43,12 +43,12 @@
                                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Piętro</a>
                                 <ul class="dropdown-menu">
                                     <li data-value=""><a class="dropdown-item" href="#">Wszystkie</a></li>
-                                    <li data-value="1"><a class="dropdown-item" href="#">Parter</a></li>
-                                    <li data-value="2"><a class="dropdown-item" href="#">Piętro 1</a></li>
-                                    <li data-value="3"><a class="dropdown-item" href="#">Piętro 2</a></li>
-                                    <li data-value="4"><a class="dropdown-item" href="#">Piętro 3</a></li>
-                                    <li data-value="5"><a class="dropdown-item" href="#">Piętro 4</a></li>
-                                    <li data-value="6"><a class="dropdown-item" href="#">Piętro 5</a></li>
+                                    <li data-value="3"><a class="dropdown-item" href="#">Parter</a></li>
+                                    <li data-value="4"><a class="dropdown-item" href="#">Piętro 1</a></li>
+                                    <li data-value="5"><a class="dropdown-item" href="#">Piętro 2</a></li>
+                                    <li data-value="6"><a class="dropdown-item" href="#">Piętro 3</a></li>
+                                    <li data-value="7"><a class="dropdown-item" href="#">Piętro 4</a></li>
+                                    <li data-value="8"><a class="dropdown-item" href="#">Piętro 5</a></li>
                                 </ul>
                                 <input type="hidden" name="floor" value="">
                             </div>
