@@ -66,7 +66,14 @@ class Property extends Model
         'promotion_price',
         'client_id',
         'saled_at',
-        'reservation_until'
+        'reservation_until',
+
+
+        'highlighted',
+        'promotion_end_date',
+        'promotion_price',
+        'promotion_price_show',
+        'visitor_related_type'
     ];
 
     /**

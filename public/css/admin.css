@@ -122,6 +122,48 @@ p {
   border-color: #00acc1;
   color: white;
 }
+/* Price components form
+================================================== */
+.price-component {
+  border: 1px solid #d5d5d5;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 4px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 10px;
+  background: #f2f2f2;
+}
+.price-component label {
+  display: block;
+  margin-bottom: 4px;
+}
+.control-col12 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.control-col12 .control-label {
+  flex: 25%;
+}
+.control-col12 .control-input {
+  flex: 75%;
+}
+.control-col12 .control-input .btn {
+  font-size: 12px;
+}
+.control-col12 .control-input .input-group-append .btn {
+  font-size: 15px;
+}
+.control-col12 .col-form-label {
+  font-weight: 500;
+  display: flex;
+  font-size: 16px;
+  text-align: start;
+  color: #424242;
+  justify-content: start;
+  padding: 11px 0;
+}
 /* Regex list
 ================================================== */
 .regex-list {

@@ -374,8 +374,12 @@ Route::group([
         Route::get('investment/fix-position', 'Investment\IndexController@fixPosition')->name('fix-position');
 
         Route::resources([
-            'investment' => 'Investment\IndexController'
+            'investment' => 'Investment\IndexController',
+            'property-price-components' => 'PropertyPrice\IndexController',
+            'investment-company' => 'Company\IndexController',
+            'investment-sale-point' => 'Investment\SalePointController'
         ]);
+
         Route::get('property-details/{property}', 'Investment\IndexController@propertyDetails')->name('property-details');
 
 
@@ -397,7 +401,9 @@ Route::group([
                 '{investment}/buildings' => 'Building\BuildingController',
                 '{investment}/building.floors' => 'Building\BuildingFloorController',
                 '{investment}/building.floor.properties' => 'Building\BuildingPropertyController',
-                '{investment}/property/{property}/message' => 'Property\InboxController'
+                '{investment}/property/{property}/message' => 'Property\InboxController',
+                '{investment}/floor/{floor}/others' => 'Property\OthersController',
+                '{investment}/building.floor.others' => 'Building\BuildingOthersController',
             ]);
 
             Route::get('{investment}/popup', 'Popup\IndexController@index')->name('popup.index');

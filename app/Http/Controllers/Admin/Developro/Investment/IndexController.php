@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin\Developro\Investment;
 
+use App\Helpers\InvestmentHelpers;
+use App\Helpers\ProvinceTypes;
 use App\Helpers\TemplateTypes;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\InvestmentFormRequest;
@@ -85,6 +87,9 @@ class IndexController extends Controller
             'investmentTemplates' => $investmentTemplates,
             'offerTemplates' => ['' => 'Brak'] + $templatesForOffer,
             'emailTemplates' => ['' => 'Brak'] + $templatesForEmail,
+            'companies' => InvestmentHelpers::getCompanies(),
+            'salePoints' => InvestmentHelpers::getSalePoints(),
+            'provinces' => ProvinceTypes::getProvinces()
 
         ])->with('entry', $emptyInvestment);
     }
@@ -134,7 +139,10 @@ class IndexController extends Controller
             'offerTemplates' => ['' => 'Brak'] + $templatesForOffer,
             'emailTemplates' => ['' => 'Brak'] + $templatesForEmail,
             'investmentTemplates' => $offer->investmentTemplates()->first(),
-            'selectedOfferTemplate' => $offer->template_id
+            'selectedOfferTemplate' => $offer->template_id,
+            'companies' => InvestmentHelpers::getCompanies(),
+            'salePoints' => InvestmentHelpers::getSalePoints(),
+            'provinces' => ProvinceTypes::getProvinces()
         ]);
     }
 

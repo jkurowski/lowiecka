@@ -40,20 +40,6 @@
                 </div>
             </div>
             @endif
-            @isset($count_property_status[5])
-            <div class="col-3">
-                <div class="floor-status floor-status-5 rounded">
-                    Umowa deweloperska<b class="float-end">{{$count_property_status[5]}}</b>
-                </div>
-            </div>
-            @endisset
-            @isset($count_property_status[6])
-            <div class="col-3">
-                <div class="floor-status floor-status-6 rounded">
-                    Umowa przedsprzedażowa<b class="float-end">{{$count_property_status[6]}}</b>
-                </div>
-            </div>
-            @endisset
         </div>
 
         <div class="card mt-3">
@@ -63,6 +49,7 @@
                         <thead class="thead-default">
                         <tr>
                             <th>#</th>
+                            <th></th>
                             <th>Nazwa</th>
                             <th class="text-center">Status</th>
                             <th class="text-center">Pokoje</th>
@@ -72,7 +59,6 @@
                             <th class="text-center">Widoczność</th>
                             <th class="text-center">Data modyfikacji</th>
                             <th class="text-center">Data sprzedaży</th>
-                            <th class="text-center">Klient</th>
                             <th></th>
                         </tr>
                         </thead>
@@ -80,6 +66,17 @@
                         @foreach ($list->floorRooms as $index => $p)
                             <tr id="recordsArray_{{ $p->id }}">
                                 <th class="position" scope="row">{{ $index+1 }}</th>
+                                <td class="option-120">
+                                    <a href="{{ asset('/investment/property/'.$p->file) }}" target="_blank">
+                                    <picture>
+                                        @if($p->file_webp)
+                                            <source type="image/webp" srcset="{{ asset('/investment/property/thumbs/webp/'.$p->file_webp) }}">
+                                        @endif
+                                        <source type="image/jpeg" srcset="{{ asset('/investment/property/thumbs/'.$p->file) }}">
+                                        <img src="{{ asset('/investment/property/thumbs/'.$p->file) }}" alt="{{$p->name}}" class="w-100">
+                                    </picture>
+                                    </a>
+                                </td>
                                 <td>{{ $p->name }}</td>
                                 <td><span class="badge room-list-status-{{ $p->status }}">{{ roomStatus($p->status) }}</span></td>
                                 <td class="text-center">{{ $p->rooms }}</td>
@@ -88,20 +85,25 @@
                                 <td class="text-center">{{ $p->roomsNotifications()->count() }}</td>
                                 <td class="text-center">{!! status($p->active) !!}</td>
                                 <td class="text-center">{!! tableDate($p->updated_at) !!}</td>
-                                <td class="text-center">{!! tableDate($p->saled_at) !!}</td>
                                 <td class="text-center">
-                                    @if($p->client_id != null)
+                                    {!! tableDate($p->saled_at) !!}
+                                    @if($p->status == 3 && $p->client_id != null)
+                                        <br>
                                         <a href="{{ route('admin.crm.clients.show', $p->client->id) }}">{{ $p->client->name }} {{ $p->client->lastname }}</a>
                                     @endif
                                 </td>
-                                <td class="option-120">
+                                <td class="option-120 text-end">
                                     <div class="btn-group">
-                                        <a href="{{ route('admin.crm.handover', $p) }}" class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top" data-bs-title="Odbiór" data-id="{{ $p->id }}"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg></a>
-
+                                        @if($p->type ==1)
                                         <a href="#" class="btn action-button me-1 btn-activity" data-bs-toggle="tooltip" data-placement="top" data-bs-title="Historia" data-id="{{ $p->id }}"><i class="fe-activity"></i></a>
 
                                         <a href="{{route('admin.developro.investment.message.index', [$investment, $p])}}" class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top" data-bs-title="Pokaż wiadomości"><i class="fe-mail"></i></a>
-                                        <a href="{{route('admin.developro.investment.properties.edit', [$investment, $floor, $p])}}" class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top" data-bs-title="Edytuj"><i class="fe-edit"></i></a>
+                                        @endif
+                                        @if($p->type ==1)
+                                            <a href="{{route('admin.developro.investment.properties.edit', [$investment, $floor, $p])}}" class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top" data-bs-title="Edytuj"><i class="fe-edit"></i></a>
+                                        @else
+                                                <a href="{{route('admin.developro.investment.others.edit', [$investment, $floor, $p])}}" class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top" data-bs-title="Edytuj"><i class="fe-edit"></i></a>
+                                        @endif
                                         <form method="POST" action="{{route('admin.developro.investment.properties.destroy', [$investment, $floor, $p])}}">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
@@ -121,7 +123,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 d-flex justify-content-end">
-                    <a href="{{route('admin.developro.investment.properties.create', [$investment, $floor])}}" class="btn btn-primary">Dodaj</a>
+                    <a href="{{route('admin.developro.investment.properties.create', [$investment, $floor])}}" class="btn btn-primary me-2">Dodaj lokal mieszkalny / usługowy</a>
+                    <a href="{{route('admin.developro.investment.others.create', [$investment, $floor])}}" class="btn btn-primary">Dodaj inną powierzchnię</a>
                 </div>
             </div>
         </div>
@@ -135,37 +138,6 @@
                 return new bootstrap.Tooltip(tooltipTriggerEl)
             });
             @if (session('success')) toastr.options={closeButton:!0,progressBar:!0,positionClass:"toast-menu-bottom-right",timeOut:"3000"};toastr.success("{{ session('success') }}"); @endif
-
-            $(document).ready(function() {
-                $(".btn-activity").click((event) => {
-                    event.preventDefault();
-                    const modalHolder = $('#modalHistory');
-                    const dataId = event.currentTarget.dataset.id;
-                    modalHolder.empty();
-
-                    jQuery.ajax({
-                        url: route('admin.developro.investment.property.history', {
-                            investment: '{{ $investment->id }}',
-                            property: dataId,
-                        }),
-                        success: function(response) {
-                            if (response) {
-                                modalHolder.append(response);
-
-                                const modalElement = document.getElementById('portletModal');
-                                const bootstrapModal = new bootstrap.Modal(modalElement);
-                                bootstrapModal.show();
-
-                                modalElement.addEventListener('hidden.bs.modal', function() {
-                                    modalHolder.empty();
-                                }, { once: true });
-                            } else {
-                                alert('Error');
-                            }
-                        }
-                    });
-                });
-            });
         </script>
     @endpush
 @endsection
