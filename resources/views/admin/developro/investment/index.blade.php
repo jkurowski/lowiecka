@@ -78,6 +78,11 @@
                                                 <i class="fe-archive" aria-hidden="true"></i>
                                             </a>
                                         @endif
+                                        <a href="{{ route('admin.developro.investment.edit', $p) }}"
+                                           class="btn action-button me-1" data-bs-toggle="tooltip" data-placement="top"
+                                           data-bs-title="Edytuj">
+                                            <i class="fe-edit" aria-hidden="true"></i>
+                                        </a>
                                     </div>
                                 </td>
                             </tr>

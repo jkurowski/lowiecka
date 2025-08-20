@@ -11,7 +11,8 @@ return [
         'thumb_height' => 1080,
         'file_path' => 'investment/',
         'thumb_file_path' => 'investment/thumbs/',
-        'preview_file_path' => 'investment/thumbs/'
+        'preview_file_path' => 'investment/thumbs/',
+        'brochure_file_path' => 'investment/brochure/'
     ],
 
     /*

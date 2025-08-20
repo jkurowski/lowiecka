@@ -99,16 +99,12 @@ class IndexController extends Controller
 
         $investment = $this->repository->create($request->validated());
 
-        $validatedData = $request->validated();
-
-        if (array_key_exists('investmentTemplates', $validatedData)) {
-            $investmentTemplates = InvestmentTemplates::make($validatedData['investmentTemplates']);
-            $investmentTemplates->investment()->associate($investment);
-            $investmentTemplates->save();
-        }
-
         if ($request->hasFile('file')) {
             $this->service->uploadThumb($request->name, $request->file('file'), $investment);
+        }
+
+        if ($request->hasFile('file_brochure')) {
+            $this->service->uploadBrochure($request->name, $request->file('file_brochure'), $investment);
         }
 
         $this->repository->createPermissionName($investment->id);
@@ -124,7 +120,6 @@ class IndexController extends Controller
         } else {
             $users = collect(); // Empty collection if the role is not found
         }
-
 
         $templatesForOffer = $this->getEmailTemplates(TemplateTypes::OFFER);
         $templatesForEmail = $this->getEmailTemplates(TemplateTypes::EMAIL);
@@ -282,30 +277,14 @@ class IndexController extends Controller
 
         $investment = $this->repository->find($id);
 
-
         $this->repository->update($request->validated(), $investment);
 
         if ($request->hasFile('file')) {
             $this->service->uploadThumb($request->name, $request->file('file'), $investment, true);
         }
 
-        $this->repository->addPermissionToSupervisor($investment->id, $request->input('users', []));
-
-        $this->repository->sendMessageToInvestmentSupervisors($investment, 'Zmiana ustawień inwestycji');
-
-        $validatedData = $request->validated();
-
-        if (array_key_exists('investmentTemplates', $validatedData)) {
-            // Update associated investment templates
-            $investmentTemplates = $investment->investmentTemplates()->first();
-
-            if ($investmentTemplates) {
-                $investmentTemplates->update($validatedData['investmentTemplates']);
-            } else {
-                $investmentTemplates = InvestmentTemplates::make($validatedData['investmentTemplates']);
-                $investmentTemplates->investment()->associate($investment);
-                $investmentTemplates->save();
-            }
+        if ($request->hasFile('file_brochure')) {
+            $this->service->uploadBrochure($request->name, $request->file('file_brochure'), $investment, true);
         }
 
         return redirect(route('admin.developro.investment.index'))->with('success', 'Inwestycja zaktualizowana');
