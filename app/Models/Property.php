@@ -68,7 +68,6 @@ class Property extends Model
         'saled_at',
         'reservation_until',
 
-
         'highlighted',
         'promotion_end_date',
         'promotion_price',
@@ -208,6 +207,13 @@ class Property extends Model
     public function investmentPayments()
     {
         return $this->hasManyThrough(InvestmentPayment::class, Investment::class, 'id', 'investment_id', 'investment_id', 'id');
+    }
+
+    public function priceComponents()
+    {
+        return $this->belongsToMany(PropertyPriceComponent::class, 'property_price_component_property')
+            ->withPivot('value', 'value_m2', 'category')
+            ->withTimestamps();
     }
 
     // Define an accessor for the URL

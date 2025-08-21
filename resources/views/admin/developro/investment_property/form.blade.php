@@ -92,7 +92,10 @@
                                                    ])
                                             </div>
                                             <div class="col-4 mb-4">
-                                                @include('form-elements.html-select', ['label' => 'Typ powierzchni', 'name' => 'type', 'selected' => $entry->type, 'select' => \App\Helpers\PropertyAreaTypes::getAll()])
+                                                @include('form-elements.html-select', ['label' => 'Typ powierzchni', 'name' => 'type', 'selected' => $entry->type, 'select' => [
+                                                    '1' => 'Mieszkanie / Apartament'
+                                                    ]
+                                                ])
                                             </div>
                                             <div class="col-4 mb-4">
                                                 @include('form-elements.html-select', [
@@ -119,38 +122,6 @@
                                                 @include('form-elements.html-input-date', ['label' => 'Data zakończenia rezerwacji', 'sublabel'=> '', 'name' => 'reservation_until', 'value' => $entry->reservation_until ? \Illuminate\Support\Carbon::parse($entry->reservation_until)->format('Y-m-d') : ''])
                                             </div>
                                             <div class="col-12" id="statusAlertPlaceholder"></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row w-100 form-group">
-                                    <div class="container">
-                                        <div class="row">
-                                                <label for="inputClient" class="col-3 col-form-label control-label required text-end">Klient</label>
-                                                <div class="col-9 modal-ahead">
-                                                    <input type="text"
-                                                           class="validate[required] form-control @error('client') is-invalid @enderror"
-                                                           id="inputClient"
-                                                           name="client"
-                                                           autocomplete="off">
-                                                    <input type="hidden" name="client_id" value="{{ $entry->client_id }}" id="inputClientId">
-                                                    <div id="selectedClientItem">
-
-                                                        @if($entry->client_id != 0)
-                                                            <div class="row">
-                                                                <div class="col-12">
-                                                                    <h4><a href="{{ route('admin.crm.clients.show', $entry->client->id) }}">{{ $entry->client->name }} {{ $entry->client->lastname }}</a> <button type="button" id="btn-confirm" class="btn btn-primary btn-sm action-button"><i class="las la-trash-alt"></i></button></h4>
-                                                                    @if($entry->client->mail)<span>E: {{$entry->client->mail}}</span>@endif
-                                                                    @if($entry->client->phone)<span>T: {{$entry->client->phone}}</span>@endif
-                                                                </div>
-                                                            </div>
-                                                        @endif
-
-                                                    </div>
-                                                    @if($errors->first('client'))
-                                                        <div class="invalid-feedback d-block">{{ $errors->first('client') }}</div>
-                                                    @endif
-                                                </div>
                                         </div>
                                     </div>
                                 </div>
@@ -309,6 +280,56 @@
                                 <div class="row w-100 form-group">
                                     @include('form-elements.input-text', ['label' => 'Cena netto', 'sublabel'=> 'Tylko liczby', 'name' => 'price', 'value' => $entry->price])
                                 </div>
+
+                                <div class="row w-100 form-group">
+                                    <button id="add-price-component"
+                                            class="btn btn-primary mt-2"
+                                            type="button"
+                                            data-price-components='@json($priceComponents)'>
+                                        Dodaj dodatkowy składnik ceny
+                                    </button>
+                                    <div id="price-components">
+                                        @foreach(($entry->priceComponents ?? []) as $index => $component)
+                                            <div class="row price-component mb-3" data-price-component-id="{{ $component->id }}">
+                                                <div class="col-4">
+                                                    <label class="control-label">Typ składnika ceny mieszkania:</label>
+                                                    <select class="form-select" name="price-component-type[]">
+                                                        @foreach($priceComponents as $pc)
+                                                            <option value="{{ $pc->id }}" {{ $pc->id == $component->id ? 'selected' : '' }}>
+                                                                {{ $pc->name }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="col-3">
+                                                    <label class="control-label">Rodzaj składnika ceny:</label>
+                                                    <select class="form-select" name="price-component-category[]">
+                                                        <option value="1" {{ $component->pivot->category == 1 ? 'selected' : '' }}>Obowiązkowy</option>
+                                                        <option value="2" {{ $component->pivot->category == 2 ? 'selected' : '' }}>Opcjonalny</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-2">
+                                                    <label class="control-label">Cena za m2 w PLN:</label>
+                                                    <input class="form-control" name="price-component-m2-value[]" type="text" value="{{ $component->pivot->value_m2 }}">
+                                                </div>
+                                                <div class="col-2">
+                                                    <label class="control-label">Cena całkowita w PLN:</label>
+                                                    <input class="form-control" name="price-component-value[]" type="text" value="{{ $component->pivot->value }}">
+                                                </div>
+                                                <div class="col-1 text-end">
+                                                    <label class="control-label d-block">&nbsp;</label>
+                                                    <button class="btn action-button w-100" type="button"><i class="fe-trash-2"></i></button>
+                                                </div>
+                                                @error('price-component-m2-value.' . $index)
+                                                <div class="col-12">
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                </div>
+                                                @enderror
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+
                                 <div class="row w-100 form-group">
                                     @include('form-elements.input-text', ['label' => 'Wielkość działki', 'sublabel'=> 'Pow. w m<sup>2</sup>, tylko liczby', 'name' => 'plot_area', 'value' => $entry->plot_area])
                                 </div>
@@ -369,7 +390,6 @@
                 </form>
                 @endsection
 @push('scripts')
-<script src="{{ asset('/js/typeahead.min.js') }}" charset="utf-8"></script>
 <script src="{{ asset('/js/plan/underscore.js') }}" charset="utf-8"></script>
 <script src="{{ asset('/js/plan/mappa-backbone.js') }}" charset="utf-8"></script>
 <script src="{{ asset('/js/datepicker/bootstrap-datepicker.min.js') }}" charset="utf-8"></script>
@@ -401,72 +421,6 @@
     }
     document.getElementById('form_area').addEventListener('input', roundAreaValue);
     window.addEventListener('load', roundAreaValue);
-
-    const users = new Bloodhound({
-            datumTokenizer: Bloodhound.tokenizers.obj.nonword(['name', 'lastname', 'mail', 'phone']),
-            queryTokenizer: Bloodhound.tokenizers.whitespace,
-            prefetch: {
-                url: "/admin/rodo/clients"
-            }
-        }),
-        inputClientId = $('#inputClientId'),
-        inputClient = $('#inputClient'),
-        clientItem = document.querySelector('#selectedClientItem');
-
-    users.clearPrefetchCache();
-    users.initialize();
-    inputClient.typeahead({
-            hint: true,
-            highlight: true,
-            minLength: 3
-        },
-        {
-            name: 'users',
-            templates: {
-                suggestion: function (data) {
-                    return '<div class="item">' +
-                        '<div class="row">' +
-                        '<div class="col-12"><h4>'+ data.name +' '+ data.lastname +'</h4></div>' +
-                        '<div class="col-12">' + (data.mail ? '<span>E: ' + data.mail + '</span>' : '') + '</div>' +
-                        '<div class="col-12">' + (data.phone ? '<span>T: ' + data.phone + '</span>' : '') + '</div>' +
-                        '</div>' +
-                        '</div>';
-                }
-            },
-            display: 'value',
-            source: users
-        });
-    inputClient.on('typeahead:select', function (ev, suggestion) {
-        //console.log('Selected suggestion:', suggestion);
-        //console.log('Before setting inputClient value:', inputClient.val());
-
-        inputClientId.val(suggestion.id);
-        inputClient.val(suggestion.name);
-
-        inputClient.typeahead('val', suggestion.name)
-
-        //console.log('After setting inputClient value:', inputClient.val());
-
-        clientItem.innerHTML = '<div class="row"><div class="col-12">' +
-            '<h4><a href="/admin/crm/clients/' + suggestion.id + '">' + suggestion.name + ' ' + suggestion.lastname + '</a> <button type="button" id="btn-confirm" class="btn btn-primary btn-sm action-button"><i class="las la-trash-alt"></i></button></h4>' +
-            (suggestion.mail ? '<span>E: ' + suggestion.mail + '</span>\n' : '') +
-            (suggestion.phone ? '<span>T: ' + suggestion.phone + '</span>\n' : '') +
-            '</div></div>';
-
-        $("#inputInvestment").focus();
-    });
-
-    clientItem.addEventListener('click', function(event) {
-        if (event.target && (event.target.id === 'btn-confirm' || event.target.closest('#btn-confirm'))) {
-            clientItem.innerHTML = '';
-            inputClientId.val(0);
-            inputClient.typeahead('val', '')
-        }
-    });
-
-    document.getElementById('inputClient').addEventListener('input', () => {
-        inputClientId.val(0);
-    })
 
     const appendStatusAlert = (message, type, duration = 4000) => {
         const wrapper = document.createElement('div')
@@ -680,4 +634,5 @@
         ibanMask.mask(document.getElementById('bank_account'));
     });
 </script>
+<script>const addButton=document.getElementById("add-price-component"),priceComponents=JSON.parse(addButton.dataset.priceComponents);addButton.addEventListener("click",()=>{const e=Math.floor(1e3*Math.random()),t=priceComponents.map(e=>`<option value="${e.id}">${e.name}</option>`).join("");document.getElementById("price-components").insertAdjacentHTML("beforeend",`<div class="row price-component mb-3" data-price-component-id="${e}"><div class="col-4"><label class="control-label">Typ składnika ceny mieszkania:</label><select class="form-select" name="price-component-type[]">${t}</select></div><div class="col-3"><label class="control-label">Rodzaj składnika ceny:</label><select class="form-select" name="price-component-category[]"><option value="1">Obowiązkowy</option><option value="2">Opcjonalny</option><option value="3">Zmienny</option></select></div><div class="col-2"><label class="control-label">Cena za m² w PLN:</label><input class="form-control" name="price-component-m2-value[]" type="text" autocomplete="off"></div><div class="col-2"><label class="control-label">Cena całkowita w PLN:</label><input class="form-control" name="price-component-value[]" type="text" autocomplete="off"></div><div class="col-1 text-end"><label class="control-label d-block">&nbsp;</label><button class="btn action-button w-100" type="button"><i class="fe-trash-2"></i></button></div></div>`)}),document.addEventListener("click",function(e){if(e.target.closest(".action-button")){const t=e.target.closest(".price-component");t&&t.remove()}}),document.addEventListener("input",function(e){const t=document.getElementById("form_area"),o=parseFloat(t.value.replace(",","."));if(!(isNaN(o)||o<=0)){if(e.target.matches('input[name="price-component-value[]"]')){const t=n(e.target.value),a=e.target.closest(".row.price-component");if(!a)return;const c=a.querySelector('input[name="price-component-m2-value[]"]');if(!c)return;const l=t/o;c.value=l>0?l.toFixed(2):""}if(e.target.matches('input[name="price-component-m2-value[]"]')){const t=n(e.target.value),a=e.target.closest(".row.price-component");if(!a)return;const c=a.querySelector('input[name="price-component-value[]"]');if(!c)return;const l=t*o;c.value=l>0?l.toFixed(2):""}}function n(e){return parseFloat(e.replace(",","."))||0}});</script>
 @endpush
