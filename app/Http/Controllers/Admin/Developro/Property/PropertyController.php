@@ -124,11 +124,16 @@ class PropertyController extends Controller
     public function edit(Investment $investment, Floor $floor, Property $property)
     {
         // Get all properties for the investment except the current property
-        $others = Property::where('investment_id', '=', $investment->id)
+        $allOthers = Property::with(
+        //'building',
+            'floor'
+        )
+            ->where('investment_id', $investment->id)
             ->where('id', '<>', $property->id)
-            ->where('status', '=', 1)
-            ->whereNull('client_id')
-            ->pluck('name', 'id');
+            ->where('status', 1)
+            ->where('type', '!=', 1)
+            //->whereNull('client_id')
+            ->get();
 
         $related = $property->relatedProperties;
 
@@ -142,7 +147,7 @@ class PropertyController extends Controller
             'floor' => $floor,
             'investment' => $investment,
             'entry' => $property,
-            'others' => $others,
+            'others' => $allOthers->pluck('name', 'id'),
             'related' => $related,
             'isRelated' => $isRelated,
             'priceComponents' => $priceComponents
