@@ -67,6 +67,7 @@ class PropertyFormRequest extends FormRequest
             'window' => 'sometimes|nullable',
             'area' => '',
             'area_search' => '',
+            'area_sales' => '',
             'garden_area' => '',
             'balcony_area' => '',
             'balcony_area_2' => '',

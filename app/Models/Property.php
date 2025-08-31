@@ -36,6 +36,7 @@ class Property extends Model
         'rooms',
         'area',
         'area_search',
+        'area_sales',
         'price',
         'price_brutto',
         'vat',
