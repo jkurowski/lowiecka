@@ -80,6 +80,9 @@
                         <p>telefon: <a href="tel:+48533600233">533600233</a></p>
                         <p>e-mail: <a href="mailto:tomasz.zientala@mfinanse.pl">tomasz.zientala@mfinanse.pl</a></p>
                     </div>
+                    <div class="col-12 text-center">
+                        <a href="https://mfinanse.pl/formularz-biznespartner/?fn=eps&f=FBP-0685&e=108882" class="bttn mt-5" target="_blank">FORMULARZ KONTAKTOWY <img src="{{ asset('../images/bttn_arrow.svg') }}" alt=""></a>
+                    </div>
                 </div>
             </div>
         </section>
