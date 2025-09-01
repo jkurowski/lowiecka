@@ -253,8 +253,13 @@
 
                         <div class="mt-4 mt-sm-5">
                             @if($property->file_pdf)
-                                <a href="{{ asset('/investment/property/pdf/'.$property->file_pdf) }}" class="bttn">Karta mieszkania PDF</a>
+                                <a href="{{ asset('/investment/property/pdf/'.$property->file_pdf) }}" class="bttn" target="_blank">Karta mieszkania PDF</a>
                             @endif
+                            @auth
+                                @if($property->investment->file_brochure)
+                                    <a href="{{ asset('/investment/brochure/'.$investment->file_brochure) }}" target="_blank">Prospekt informacyjny</a>
+                                @endif
+                            @endauth
                         </div>
                     </div>
                     <div class="col-12 col-lg-8">
