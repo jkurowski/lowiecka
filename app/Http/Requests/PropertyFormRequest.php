@@ -77,7 +77,7 @@ class PropertyFormRequest extends FormRequest
             'parking_space' => '',
             'garage' => '',
             'price' => '',
-            'price_brutto' => '',
+            'price_brutto' => ['nullable', 'regex:/^\d+(\.\d{1,2})?$/'],
             'vat' => '',
             'bank_account' => '',
             'cords' => '',
