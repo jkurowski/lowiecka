@@ -224,7 +224,7 @@
                                                 @include('form-elements.input-text', ['label' => 'Powierzchnia użytkowa', 'name' => 'area', 'value' => $entry->area, 'required' => 1])
                                             </div>
                                             <div class="col-3">
-                                                @include('form-elements.input-text', ['label' => 'Powierzchnia sprzedażowa', 'name' => 'area', 'value' => $entry->area_sales, 'required' => 1])
+                                                @include('form-elements.input-text', ['label' => 'Powierzchnia sprzedażowa', 'name' => 'area_sales', 'value' => $entry->area_sales, 'required' => 1])
                                             </div>
                                             <div class="col-3">
                                                 @include('form-elements.input-text', ['label' => 'Powierzchnia (szukana)', 'name' => 'area_search', 'value' => $entry->area_search, 'required' => 1])
