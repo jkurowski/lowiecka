@@ -189,7 +189,18 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Blade::directive('money', function ($amount) {
-            return "<?php echo number_format((float) $amount, 0, '.', ' ') . ' zł'; ?>";
+            return "<?php
+        if (empty($amount)) {
+            echo '';
+        } else {
+            \$amount = (float) $amount;
+            if (intval(\$amount) == \$amount) {
+                echo number_format(\$amount, 0, '.', ' ') . ' zł';
+            } else {
+                echo number_format(\$amount, 2, '.', ' ') . ' zł';
+            }
+        }
+    ?>";
         });
 
         Image::observe(ImageObserver::class);
