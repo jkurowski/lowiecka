@@ -257,7 +257,7 @@
                             @endif
                             @auth
                                 @if($property->investment->file_brochure)
-                                    <a href="{{ asset('/investment/brochure/'.$investment->file_brochure) }}" target="_blank">Prospekt informacyjny</a>
+                                    <a href="{{ asset('/investment/brochure/'.$property->investment->file_brochure) }}" target="_blank">Prospekt informacyjny</a>
                                 @endif
                             @endauth
                         </div>
