@@ -190,7 +190,7 @@ class AppServiceProvider extends ServiceProvider
 
         Blade::directive('money', function ($amount) {
             return "<?php
-        if (empty($amount)) {
+        if ($amount === null || $amount === '' || !is_numeric($amount)) {
             echo '';
         } else {
             \$amount = (float) $amount;
