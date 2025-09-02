@@ -27,7 +27,9 @@
                             @if($room->price_brutto && $room->status == 1)
                                 <li>cena: <b>@money($room->price_brutto)</b></li>
                             @endif
+                            @if($room->type == 1)
                             <li>pokoje: <b>{{$room->rooms}}</b></li>
+                            @endif
                             <li>pow.: <b>{{$room->area}} m<sup>2</sup></b></li>
                         </ul>
                     </div>
