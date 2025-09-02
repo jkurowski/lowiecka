@@ -255,12 +255,14 @@
                             @if($property->file_pdf)
                                 <a href="{{ asset('/investment/property/pdf/'.$property->file_pdf) }}" class="bttn" target="_blank">Karta mieszkania PDF</a>
                             @endif
-                            @auth
-                                @if($property->investment->file_brochure)
-                                    <a href="{{ asset('/investment/brochure/'.$property->investment->file_brochure) }}" target="_blank">Prospekt informacyjny</a>
-                                @endif
-                            @endauth
                         </div>
+                        @auth
+                            @if($property->investment->file_brochure)
+                                <div>
+                                    <a href="{{ asset('/investment/brochure/'.$property->investment->file_brochure) }}" target="_blank">Prospekt informacyjny</a>
+                                </div>
+                            @endif
+                        @endauth
                     </div>
                     <div class="col-12 col-lg-8">
                         <div class="property-plan ps-0 ps-lg-5 mt-5 mt-lg-0">
