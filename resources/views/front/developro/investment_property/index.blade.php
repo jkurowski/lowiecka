@@ -34,7 +34,7 @@
                             {{ roomStatus($property->status) }}
                         </div>
                         <h1>{{$property->name}}</h1>
-                        @auth()
+
                             <div class="row mb-3">
                                 @if($property->price_brutto && $property->status == 1)
                                     <div class="col-12 col-sm-6 @if($property->highlighted) promotion-price order-2 text-center text-sm-end @endif">
@@ -48,6 +48,7 @@
                                         <p>@money(($property->promotion_price / $property->area)) / m<sup>2</sup></p>
                                     </div>
                                 @endif
+                                    @auth()
                                 <div class="col-12 order-3">
                                     @auth
                                         @if($property->has_price_history)
@@ -56,8 +57,9 @@
                                         @endif
                                     @endauth
                                 </div>
+                                    @endauth
                             </div>
-                        @endauth
+
                         <div class="pb-60px">
                             @if($property->type == 1)
                             <div class="apartment-data">
