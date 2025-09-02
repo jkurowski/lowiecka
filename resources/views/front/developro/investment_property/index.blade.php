@@ -210,20 +210,20 @@
                                                     </div>
                                                 @endif
                                             </div>
-                                            @if($property->highlighted && $property->promotion_price_show)
-                                                <div class="property-summary fs-5 d-flex" data-totalprice="{{ ($property->promotion_price + $property->relatedProperties->sum('price_brutto')) }}">
-                                                    Cena za całość: <span class="ms-auto"><b class="fw-bold" id="totalDisplay">@money(($property->promotion_price + $property->relatedProperties->sum('price_brutto')))</b></span>
-                                                </div>
-                                            @else
-                                                @if($property->price_brutto)
-                                                    <div class="property-summary fs-5 d-flex" data-totalprice="{{ ($property->price_brutto + $property->relatedProperties->sum('price_brutto')) }}">
-                                                        Cena za całość: <span class="ms-auto"><b class="fw-bold" id="totalDisplay">@money(($property->price_brutto + $property->relatedProperties->sum('price_brutto')))</b></span>
-                                                    </div>
-                                                @endif
-                                            @endif
                                         @endif
                                         <div class="mb-3"></div>
                                     @endauth
+                                    @if($property->highlighted && $property->promotion_price_show)
+                                        <div class="property-summary fs-5 d-flex" data-totalprice="{{ ($property->promotion_price + $property->relatedProperties->sum('price_brutto')) }}">
+                                            Cena za całość: <span class="ms-auto"><b class="fw-bold" id="totalDisplay">@money(($property->promotion_price + $property->relatedProperties->sum('price_brutto')))</b></span>
+                                        </div>
+                                    @else
+                                        @if($property->price_brutto)
+                                            <div class="property-summary fs-5 d-flex" data-totalprice="{{ ($property->price_brutto + $property->relatedProperties->sum('price_brutto')) }}">
+                                                Cena za całość: <span class="ms-auto"><b class="fw-bold" id="totalDisplay">@money(($property->price_brutto + $property->relatedProperties->sum('price_brutto')))</b></span>
+                                            </div>
+                                        @endif
+                                    @endif
                                 </div>
                                 <div class="col-12">
                                     <ul class="price-component mb-0 list-unstyled">
