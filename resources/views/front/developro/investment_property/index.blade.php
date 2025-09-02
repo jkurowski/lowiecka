@@ -258,7 +258,7 @@
                         </div>
                         @auth
                             @if($property->investment->file_brochure)
-                                <div class="mt-2">
+                                <div class="mt-3">
                                     <a href="{{ asset('/investment/brochure/'.$property->investment->file_brochure) }}" target="_blank">Prospekt informacyjny</a>
                                 </div>
                             @endif
