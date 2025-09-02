@@ -35,20 +35,20 @@
                         </div>
                         <h1>{{$property->name}}</h1>
 
-                            <div class="row mb-3">
-                                @if($property->price_brutto && $property->status == 1)
-                                    <div class="col-12 col-sm-6 @if($property->highlighted) promotion-price order-2 text-center text-sm-end @endif">
-                                        <h6 class="fs-3 fw-normal mb-0">@money($property->price_brutto)</h6>
-                                        <p>@money(($property->price_brutto / $property->area)) / m<sup>2</sup></p>
-                                    </div>
-                                @endif
-                                @if($property->promotion_price && $property->price_brutto && $property->highlighted)
-                                    <div class="col-12 col-sm-6 @if($property->highlighted) order-1 text-center text-sm-start @endif">
-                                        <h6 class="fs-3 fw-normal mb-0">@money($property->promotion_price)</h6>
-                                        <p>@money(($property->promotion_price / $property->area)) / m<sup>2</sup></p>
-                                    </div>
-                                @endif
-                                    @auth()
+                        <div class="row mb-3">
+                            @if($property->price_brutto && $property->status == 1)
+                                <div class="col-12 col-sm-6 @if($property->highlighted) promotion-price order-2 text-center text-sm-end @endif">
+                                    <h6 class="fs-3 fw-normal mb-0">@money($property->price_brutto)</h6>
+                                    <p>@money(($property->price_brutto / $property->area)) / m<sup>2</sup></p>
+                                </div>
+                            @endif
+                            @if($property->promotion_price && $property->price_brutto && $property->highlighted)
+                                <div class="col-12 col-sm-6 @if($property->highlighted) order-1 text-center text-sm-start @endif">
+                                    <h6 class="fs-3 fw-normal mb-0">@money($property->promotion_price)</h6>
+                                    <p>@money(($property->promotion_price / $property->area)) / m<sup>2</sup></p>
+                                </div>
+                            @endif
+                            @auth()
                                 <div class="col-12 order-3">
                                     @auth
                                         @if($property->has_price_history)
@@ -57,15 +57,15 @@
                                         @endif
                                     @endauth
                                 </div>
-                                    @endauth
-                            </div>
+                            @endauth
+                        </div>
 
                         <div class="pb-60px">
                             @if($property->type == 1)
-                            <div class="apartment-data">
-                                <div class="apartment-data-name">Liczba pokoi</div>
-                                <div class="apartment-data-number">{{$property->rooms}}</div>
-                            </div>
+                                <div class="apartment-data">
+                                    <div class="apartment-data-name">Liczba pokoi</div>
+                                    <div class="apartment-data-number">{{$property->rooms}}</div>
+                                </div>
                             @endif
                             <div class="apartment-data">
                                 <div class="apartment-data-name">Piętro</div>
@@ -258,13 +258,11 @@
                                 <a href="{{ asset('/investment/property/pdf/'.$property->file_pdf) }}" class="bttn" target="_blank">Karta mieszkania PDF</a>
                             @endif
                         </div>
-                        @auth
-                            @if($property->investment->file_brochure)
-                                <div class="mt-3">
-                                    <a href="{{ asset('/investment/brochure/'.$property->investment->file_brochure) }}" target="_blank">Prospekt informacyjny</a>
-                                </div>
-                            @endif
-                        @endauth
+                        @if($property->investment->file_brochure)
+                            <div class="mt-3">
+                                <a href="{{ asset('/investment/brochure/'.$property->investment->file_brochure) }}" target="_blank">Prospekt informacyjny</a>
+                            </div>
+                        @endif
                     </div>
                     <div class="col-12 col-lg-8">
                         <div class="property-plan ps-0 ps-lg-5 mt-5 mt-lg-0">
