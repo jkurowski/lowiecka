@@ -292,4 +292,22 @@ class Investment extends Model
     {
         return $this->hasMany(EmailTemplate::class);
     }
+
+    // API
+    public function activeProperties(): HasMany
+    {
+        return $this->hasMany('App\Models\Property')->where('status', 1);
+    }
+
+    public function company(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(InvestmentCompany::class);
+    }
+
+    public function salePoint(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(InvestmentSalePoint::class);
+    }
+
+
 }
