@@ -476,10 +476,10 @@ class IndexController extends Controller
                     : 'X',
 
                 //Cena m2 powierzchni użytkowej lokalu mieszkalnego / domu jednorodzinnego [zł]
-                (isset($property->area, $property->price)
+                (isset($property->area, $property->price_brutto)
                     && is_numeric($property->area) && $property->area > 0
                     && $property->type == 1)
-                    ? round((float)$property->price / (float)$property->area, 2)
+                    ? round((float)$property->price_brutto / (float)$property->area, 2)
                     : 'X',
 
                 //Data od której cena obowiązuje cena m2 powierzchni użytkowej lokalu mieszkalnego / domu jednorodzinnego

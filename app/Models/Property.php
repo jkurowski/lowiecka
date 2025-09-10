@@ -294,16 +294,16 @@ class Property extends Model
             return 'X';
         }
 
-        return (float)$this->price
+        return (float)$this->price_brutto
             + $this->relatedProperties->sum(function ($prop) {
-                return (float)$prop->price;
+                return (float)$prop->price_brutto;
             });
     }
 
     public function getDisplayPriceAttribute()
     {
-        return ($this->type == 1 && $this->price)
-            ? $this->price
+        return ($this->type == 1 && $this->price_brutto)
+            ? $this->price_brutto
             : 'X';
     }
 
