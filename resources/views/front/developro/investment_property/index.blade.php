@@ -140,8 +140,8 @@
                         </div>
 
                         <div>
-                            <p>Inne świadczenia, o których mowa w art. 19a ust. 1 pkt 3) ustawy z dnia 21 maja 2025 roku o zmianie ustawy o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym:</p>
-                            <ul class="mb-0">
+                            <p style="font-size: 11px;line-height: 16px;" class="mt-3">Inne świadczenia, o których mowa w art. 19a ust. 1 pkt 3) ustawy z dnia 21 maja 2025 roku o zmianie ustawy o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym:</p>
+                            <ul class="mb-0 mt-2" style="font-size: 11px;line-height: 16px;">
                                 <li>koszty aktów notarialnych i opłat sądowych</li>
                                 <li>opłaty administracyjne zawierające koszty zarządzania i administrowania częściami wspólnymi, a także koszty eksploatacji i utrzymania lokalu, naliczane od powierzchni lokalu, od dnia odbioru lokalu do dnia zawiązania się Wspólnoty Mieszkaniowej.</li>
                             </ul>
