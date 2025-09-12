@@ -42,6 +42,7 @@
                         <li class="d-none"><a href="">Ciasteczka</a></li>
                         <li><a href="{{ route('static.page', ['page' => 'finansowanie']) }}">Finansowanie</a></li>
                         <li class="d-none"><a href="">Pod klucz</a></li>
+                        <li><a href="{{ asset('../uploads/historia_cen.pdf') }}" target="_blank">Historia cen mieszkań</a></li>
                     </ul>
                     <div class="mt-4">
                         <a href="http://epsdevelopment.pl/" target="_blank">
