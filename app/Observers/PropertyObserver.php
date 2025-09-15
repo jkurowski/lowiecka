@@ -2,6 +2,8 @@
 
 namespace App\Observers;
 
+use App\Models\PropertyPrice;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
 // CMS
@@ -48,7 +50,6 @@ class PropertyObserver
             File::delete(public_path('investment/property/pdf/' . $property->file_pdf));
         }
     }
-
     /**
      * Handle the Property "updated" event.
      *
@@ -57,122 +58,54 @@ class PropertyObserver
      */
     public function updated(Property $property)
     {
-        $originalStatus = $property->getOriginal('status');
-        $originalPrice = $property->getOriginal('price');
-        $originalArea = $property->getOriginal('area');
-
-        // Set flags for changes
-        $statusChanged = $priceChanged = $areaChanged = false;
-        $message = sprintf('Zmiana parametrów: <b>%s</b>.', $property->name);
-
-        // Handle status change
-        if ($property->isDirty('status')) {
-            $newStatus = $property->status;
-            if ($originalStatus !== $newStatus) {
-                $message .= sprintf('<br>Status: "<b>%s</b>" -> "<b>%s</b>"', roomStatus($originalStatus), roomStatus($newStatus));
-                $statusChanged = true;
-            }
-        }
+        $originalPrice = $property->getOriginal('price_brutto');
 
         // Handle price change
-        if ($property->isDirty('price_brutto')) {
+        if ($property->wasChanged(['price_brutto', 'promotion_price', 'highlighted'])) {
+
             $newPrice = $property->price_brutto;
-            if ($originalPrice !== $newPrice) {
-                $message .= sprintf('<br>Cena: "<b>%s zł</b>" -> "<b>%s zł</b>".',
-                    number_format($originalPrice, 0, '.', ' '),
-                    number_format($newPrice, 0, '.', ' ')
-                );
-                $priceChanged = true;
-            }
-        }
+            $originalPrice = $property->getOriginal('price_brutto');
+            $originalPromotionPrice = $property->getOriginal('promotion_price');
+            $originalHighlighted = $property->getOriginal('highlighted');
 
-        // Handle area change
-        if ($property->isDirty('area')) {
-            $newArea = $property->area;
-            if ($originalArea !== $newArea) {
-                $message .= sprintf('<br>Powierzchnia: "<b>%s m2</b>" -> "<b>%s m2</b>"', $originalArea, $newArea);
-                $areaChanged = true;
-            }
-        }
+            $promotionPrice = $property->promotion_price;
+            $highlighted = $property->highlighted;
 
-        // Send the notification only if a change occurred
-        if ($statusChanged || $priceChanged || $areaChanged) {
-            // Assuming you have a method to fetch the investment or any other context needed
-            $investment = $property->investment; // or whatever logic to get the investment
-            $this->sendMessageToInvestmentSupervisors($investment, $message);
-        }
+            // ✅ Case 1: Promotion added or changed
+            if (
+                $highlighted &&
+                $promotionPrice !== null &&
+                $promotionPrice != $newPrice
+            ) {
+                $this->logPriceChange($property, $originalPrice, $promotionPrice, true);
 
-        // Update related properties
-        $relatedProperties = $property->relatedProperties; // Assume this is an empty collection or array.
+                // ✅ Case 2: Promotion removed (highlighted was true, now false)
+            } elseif (
+                !$highlighted &&
+                $originalHighlighted &&
+                $originalPromotionPrice !== null &&
+                $originalPromotionPrice != $newPrice
+            ) {
+                $this->logPriceChange($property, $originalPromotionPrice, $newPrice, false);
 
-        foreach ($relatedProperties as $relatedProperty) {
-            $relatedProperty->status = $property->status;
-            $relatedProperty->client_id = $property->client_id;
-            $relatedProperty->save();
-        }
+                // ✅ Case 3: Regular price change (no promotion involved)
+            } elseif ($originalPrice !== $newPrice) {
 
-        // Save the history for status change
-        if ($property->isDirty('status')) {
-            $newStatus = $property->status;
-            $previousStatus = $property->getOriginal('status');
+                $this->logPriceChange($property, $originalPrice, $newPrice, false);
 
-            // Handle status change actions
-            if ($previousStatus == 2 && $newStatus == 1) {
-                // If status changed from 2 (reservation) to 1 (for sale)
-                $property->reservation_until = null;
-                $property->client_id = null;
-            }
-
-            if ($previousStatus == 3 && $newStatus == 1) {
-                // If status changed from 3 (sold) to 1 (for sale)
-                $property->saled_at = null;
-                $property->client_id = null;
-            }
-
-            if ($previousStatus == 3 && $newStatus == 2) {
-                // If status changed from 3 (sold) to 2 (reservation)
-                $property->saled_at = null;
-            }
-
-            if ($previousStatus == 2 && $newStatus == 3) {
-                // If status changed from 2 (reservation) to 3 (sold)
-                $property->reservation_until = null;
-            }
-
-            // Save property status change history
-            PropertiesHistory::create([
-                'property_id' => $property->id,
-                'previous_status' => $previousStatus,
-                'new_status' => $newStatus,
-                'created_at' => now(),
-                'user_id' => auth()->id(),
-                'client_id' => $property->client_id
-            ]);
-        }
-
-        if ($property->isDirty('client_id')) {
-            if ($property->isDirty('status')) {
-                $latestHistory = PropertiesHistory::where('property_id', $property->id)->latest()->first();
-                if ($latestHistory) {
-                    $latestHistory->client_id = $property->client_id;
-                    $latestHistory->save();
-                }
-            }
-            else {
-                $latestHistory = PropertiesHistory::where('property_id', $property->id)->latest()->first();
-                if ($latestHistory) {
-                    $newHistory = $latestHistory->replicate();
-                    $newHistory->previous_status = $latestHistory->new_status;
-                    $newHistory->client_id = $property->client_id;
-                    $newHistory->created_at = now();
-                    $newHistory->save();
-                }
             }
         }
     }
-
-    protected function sendMessageToInvestmentSupervisors($investment, $message): void
+    protected function logPriceChange(Property $property, $old, $new, bool $promotion): void
     {
-        $this->investmentRepository->sendMessageToInvestmentSupervisors($investment, $message);
+        PropertyPrice::create([
+            'property_id' => $property->id,
+            'price_brutto' => is_numeric($old) ? $old : 0,
+            'new_price_brutto' => $new,
+            'area' => $property->area,
+            'promotion' => $promotion,
+            'changed_at' => now(),
+            'changed_by' => Auth::id(),
+        ]);
     }
 }

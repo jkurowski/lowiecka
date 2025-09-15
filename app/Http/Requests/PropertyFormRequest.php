@@ -77,7 +77,15 @@ class PropertyFormRequest extends FormRequest
             'parking_space' => '',
             'garage' => '',
             'price' => '',
-            'price_brutto' => ['nullable', 'regex:/^\d+(\.\d{1,2})?$/'],
+            'price_brutto' => [
+                'nullable',
+                'regex:/^\d+(\.\d{1,2})?$/',
+                function ($attribute, $value, $fail) {
+                    if (!preg_match('/^\d+(\.\d{1,2})?$/', $value)) {
+                        $fail('Pole "' . $attribute . '" musi być liczbą dziesiętną z kropką i maksymalnie 2 miejscami po przecinku (np. 123.45).');
+                    }
+                },
+            ],
             'vat' => '',
             'bank_account' => '',
             'cords' => '',
@@ -85,9 +93,24 @@ class PropertyFormRequest extends FormRequest
             'meta_title' => '',
             'meta_description' => '',
             'active' => 'boolean',
-            'highlighted' => 'boolean',
+            'highlighted' => [
+                'boolean',
+                function ($attribute, $value, $fail) {
+                    if ($this->boolean($attribute) && empty($this->input('promotion_price'))) {
+                        $fail('Pole "Cena promocyjna" jest wymagane, jeśli nieruchomość ma być promowana.');
+                    }
+                },
+            ],
             'promotion_end_date' => 'nullable|date|after:now',
-            'promotion_price' => 'nullable',
+            'promotion_price' => [
+                'nullable',
+                'regex:/^\d+(\.\d{1,2})?$/',
+                function ($attribute, $value, $fail) {
+                    if (!empty($value) && !$this->boolean('highlighted')) {
+                        $fail('Pole "Promocja" musi być zaznaczone, jeśli ustawiono cenę promocyjną.');
+                    }
+                },
+            ],
             'client_id' => [
                 'nullable',
                 function ($attribute, $value, $fail) {

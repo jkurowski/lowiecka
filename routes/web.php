@@ -36,6 +36,12 @@ Route::group(['namespace' => 'Front', 'middleware' => 'restrictIp', 'as' => 'fro
         Route::get('/pietro/{floor},{floorSlug}/m/{property},{propertySlug}', 'InvestmentPropertyController@index')->name('property');
     });
 
+    //Historia cen
+    Route::get('/historia/{property}', 'History\IndexController@show')->name('history');
+    Route::get('/przynalezne/{property}', 'History\IndexController@others')->name('others');
+    Route::get('/przynalezne/{property}/show', 'History\IndexController@other')->name('others.show');
+    Route::get('/przynalezne/{property}/table', 'History\IndexController@otherTable')->name('others.table');
+
     // Inline
     Route::group(['prefix' => '/inline', 'as' => 'front.inline.'], function () {
         Route::get('/', 'InlineController@index')->name('index');

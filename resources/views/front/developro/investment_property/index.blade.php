@@ -48,16 +48,12 @@
                                     <p>@money(($property->promotion_price / $property->area)) / m<sup>2</sup></p>
                                 </div>
                             @endif
-                            @auth()
-                                <div class="col-12 order-3">
-                                    @auth
-                                        @if($property->has_price_history)
-                                            <a href="#" class="btn bttn bttn-sm btn-history mt-3" data-id="{{ $property->id }}">Pokaż historię ceny</a>
-                                            <div id="modalHistory"></div>
-                                        @endif
-                                    @endauth
-                                </div>
-                            @endauth
+                            <div class="col-12 order-3">
+                                @if($property->has_price_history)
+                                    <a href="#" class="btn bttn bttn-sm btn-history mt-3" data-id="{{ $property->id }}">Pokaż historię ceny</a>
+                                    <div id="modalHistory"></div>
+                                @endif
+                            </div>
                         </div>
 
                         <div class="pb-60px">
@@ -148,10 +144,10 @@
                         </div>
 
                         @auth()
-                            <div class="row">
+                            <div class="row d-none">
                                 <div class="col-12">
                                     @auth
-                                        @if ($property->status == 1 && $property->type == 1)
+                                        @if ($property->status == 1 && $property->type == 1  && $property->id == 9999999999)
                                             <div class="property-related">
                                                 @if($property->relatedProperties->isNotEmpty())
                                                     <h5>Przynależne powierzchnie:</h5>
@@ -331,5 +327,56 @@
 @push('scripts')
     <script>
         $(".mieszkanie-rzuty").responsiveSlides({auto:true, pager:false, nav:true, timeout:5000, random:false, speed: 500});
+    </script>
+    <link href="{{ asset('/css/history.min.css') }}" rel="stylesheet">
+    <script type="text/javascript">
+        document.addEventListener('click', async function (e) {
+            // History Button
+            const btnHistory = e.target.closest('.btn-history');
+            if (btnHistory) {
+                e.preventDefault();
+
+                // Disable button to prevent double click
+                btnHistory.disabled = true;
+
+                const modalHolder = document.getElementById('modalHistory');
+                const dataId = btnHistory.dataset.id;
+                modalHolder.innerHTML = '';
+
+                try {
+                    const url = `/historia/${dataId}/`;
+
+                    const response = await fetch(url, {
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        }
+                    });
+
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        console.error('Błąd z backendu:', response.status, errorText);
+                        throw new Error(`Błąd sieci: ${response.status}`);
+                    }
+
+                    const html = await response.text();
+                    modalHolder.innerHTML = html;
+
+                    const modalElement = document.getElementById('portletModal');
+                    const bootstrapModal = new bootstrap.Modal(modalElement);
+                    bootstrapModal.show();
+
+                    modalElement.addEventListener('hidden.bs.modal', () => {
+                        modalHolder.innerHTML = '';
+                    }, { once: true });
+
+                } catch (error) {
+                    alert('Wystąpił błąd podczas ładowania historii.');
+                    console.error(error);
+                } finally {
+                    // Re-enable the button after request completes
+                    btnHistory.disabled = false;
+                }
+            }
+        });
     </script>
 @endpush
