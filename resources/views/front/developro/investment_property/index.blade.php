@@ -48,12 +48,17 @@
                                     <p>@money(($property->promotion_price / $property->area)) / m<sup>2</sup></p>
                                 </div>
                             @endif
-                            <div class="col-12 order-3">
-                                @if($property->has_price_history)
-                                    <a href="#" class="btn bttn bttn-sm btn-history mt-3" data-id="{{ $property->id }}">Pokaż historię ceny</a>
-                                    <div id="modalHistory"></div>
-                                @endif
-                            </div>
+
+                            @if($property->status == 1)
+                                <div class="col-12 order-3">
+                                    @if($property->has_price_history)
+                                        <a href="#" class="btn bttn bttn-sm btn-history mt-3" data-id="{{ $property->id }}">Pokaż historię ceny</a>
+                                        <div id="modalHistory"></div>
+                                    @else
+                                        <p class="small"><i>Cena nie zmieniła się od 11.09.2025 r.</i></p>
+                                    @endif
+                                </div>
+                            @endif
                         </div>
 
                         <div class="pb-60px">
