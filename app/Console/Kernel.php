@@ -2,9 +2,7 @@
 
 namespace App\Console;
 
-use App\Jobs\OffersSmsReminder;
-use App\Jobs\ProcessLeads;
-use App\Services\EmailScheduleService;
+use App\Jobs\EndPropertyPromotion;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -25,15 +23,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        
-        $schedule->job(new ProcessLeads)->everySixHours()->appendOutputTo(storage_path('logs/scheduler.log'));
-        $schedule->job(new OffersSmsReminder)->everySixHours()->appendOutputTo(storage_path('logs/scheduler.log'));
+        $schedule->job(new EndPropertyPromotion)->dailyAt('00:05')->appendOutputTo(storage_path('logs/scheduler.log'));
 
-        $schedule->call(function () {
-            app(EmailScheduleService::class)->sendScheduledEmails();
-        })->everyMinute()->onFailure(function () {
-            \Log::error('Failed to send scheduled emails');
-        })->appendOutputTo(storage_path('logs/scheduler.log'));
     }
 
     /**

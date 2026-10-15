@@ -16,25 +16,21 @@ class EndPropertyPromotion implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $propertyId;
-
-    public function __construct($propertyId)
-    {
-        $this->propertyId = $propertyId;
-    }
-
     /**
-     * Execute the job.
+     * End promotions whose end date (last day of the promotion) has passed.
      */
     public function handle(): void
     {
-        $property = Property::find($this->propertyId);
+        $properties = Property::where('highlighted', 1)
+            ->whereNotNull('promotion_end_date')
+            ->where('promotion_end_date', '!=', '')
+            ->where('promotion_end_date', '<', now()->toDateString())
+            ->get();
 
-        if ($property) {
+        foreach ($properties as $property) {
             $property->highlighted = 0;
             $property->save();
-        } else {
-            Log::warning('Property not found with ID: ' . $this->propertyId);
+            Log::info('Promotion ended for property ID: ' . $property->id);
         }
     }
 }
