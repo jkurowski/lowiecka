@@ -61,6 +61,7 @@ class Property extends Model
         'file2_webp',
         'meta_title',
         'meta_description',
+        'content',
         'views',
         'active',
         'promotion_end_date',
@@ -84,6 +85,14 @@ class Property extends Model
     public function getHasPriceHistoryAttribute(): bool
     {
         return $this->priceHistory()->exists();
+    }
+
+    // Opis i atuty - sekcja na stronie mieszkania tylko, gdy treść nie jest pusta
+    // (edytor po skasowaniu tekstu zostawia np. <p>&nbsp;</p>)
+    public function getHasContentAttribute(): bool
+    {
+        $text = html_entity_decode(strip_tags((string) $this->content, '<img>'), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        return trim(str_replace("\u{00A0}", ' ', $text)) !== '';
     }
 
     public function getCurrentPriceDateAttribute()

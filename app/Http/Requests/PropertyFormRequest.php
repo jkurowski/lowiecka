@@ -92,6 +92,7 @@ class PropertyFormRequest extends FormRequest
             'html' => '',
             'meta_title' => '',
             'meta_description' => '',
+            'content' => 'nullable|string',
             'active' => 'boolean',
             'highlighted' => [
                 'boolean',

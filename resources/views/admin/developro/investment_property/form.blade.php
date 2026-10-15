@@ -358,6 +358,9 @@
                                     @include('form-elements.html-input-text-count', ['label' => 'Opis strony', 'sublabel'=> 'Meta tag - description', 'name' => 'meta_description', 'value' => $entry->meta_description, 'maxlength' => 158])
                                 </div>
                                 <div class="row w-100 form-group">
+                                    @include('form-elements.textarea-fullwidth', ['label' => 'Treść', 'sublabel' => 'Opis i atuty mieszkania. Sekcja pokaże się na stronie mieszkania tylko, gdy to pole jest wypełnione', 'name' => 'content', 'value' => $entry->content, 'rows' => 11, 'class' => 'tinymce'])
+                                </div>
+                                <div class="row w-100 form-group">
                                     @include('form-elements.html-input-file', [
                                         'label' => 'Plan mieszkania',
                                         'sublabel' => '(wymiary: '.config('images.property_plan.width').'px / '.config('images.property_plan.height').'px)',
@@ -393,6 +396,7 @@
                 </form>
                 @endsection
 @push('scripts')
+@include('form-elements.tintmce')
 <script src="{{ asset('/js/plan/underscore.js') }}" charset="utf-8"></script>
 <script src="{{ asset('/js/plan/mappa-backbone.js') }}" charset="utf-8"></script>
 <script src="{{ asset('/js/datepicker/bootstrap-datepicker.min.js') }}" charset="utf-8"></script>

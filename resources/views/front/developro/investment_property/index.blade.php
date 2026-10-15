@@ -308,6 +308,28 @@
             </div>
         </section>
 
+        @if($property->has_content)
+            <section class="pt-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title mb-4 mb-sm-5">
+                                <div class="sub-section-title">
+                                    <span>O MIESZKANIU</span>
+                                </div>
+                                <h2 class="">Opis i atuty</h2>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="text-content">
+                                {!! parse_text($property->content) !!}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endif
+
         <section class="pt-0">
             <div class="container">
                 <div class="row flex-row-reverse">
