@@ -13,10 +13,16 @@
                         @include('form-elements.html-select', ['label' => 'Uruchom baner', 'name' => 'popup_mode', 'selected' => settings()->get("popup_mode"), 'select' => ['0' => 'Tylko raz', '1' => 'Za każdym razem']])
                     </div>
                     <div class="row w-100 form-group">
-                        @include('form-elements.html-input-number', ['label' => 'Czas wyświetlenia', 'sublabel'=> '1000 = 1 sekunda', 'name' => 'popup_timeout', 'value' => settings()->get("popup_timeout")])
+                        @include('form-elements.html-input-number', ['label' => 'Czas wyświetlenia', 'sublabel'=> '0 lub puste = baner zamyka tylko odwiedzający (krzyżykiem). 1000 = 1 sekunda', 'name' => 'popup_timeout', 'value' => settings()->get("popup_timeout")])
                     </div>
                     <div class="row w-100 form-group">
-                        @include('form-elements.textarea-fullwidth', ['label' => 'Wprowadź tekst', 'name' => 'popup_text', 'value' => settings()->get("popup_text"), 'rows' => 11, 'class' => 'tinymce'])
+                        @include('form-elements.html-input-date', ['label' => 'Wyświetlaj od dnia', 'sublabel'=> 'Pierwszy dzień wyświetlania (włącznie). Puste = od razu', 'name' => 'popup_from', 'value' => settings()->get("popup_from")])
+                    </div>
+                    <div class="row w-100 form-group">
+                        @include('form-elements.html-input-date', ['label' => 'Wyświetlaj do dnia', 'sublabel'=> 'Ostatni dzień wyświetlania (włącznie). Puste = bez końca', 'name' => 'popup_until', 'value' => settings()->get("popup_until")])
+                    </div>
+                    <div class="row w-100 form-group">
+                        @include('form-elements.textarea-fullwidth', ['label' => 'Treść / grafika banera', 'name' => 'popup_text', 'value' => settings()->get("popup_text"), 'rows' => 11, 'class' => 'tinymce'])
                     </div>
                 </div>
             </div>
@@ -33,7 +39,12 @@
     </form>
     @include('form-elements.tintmce')
     @push('scripts')
+        <script src="{{ asset('/js/datepicker/bootstrap-datepicker.min.js') }}" charset="utf-8"></script>
+        <script src="{{ asset('/js/datepicker/bootstrap-datepicker.pl.min.js') }}" charset="utf-8"></script>
+        <link href="{{ asset('/js/datepicker/bootstrap-datepicker3.css') }}" rel="stylesheet">
         <script>
+            $('.datepicker').datepicker({ format: 'yyyy-mm-dd', todayHighlight: true, language: 'pl', clearBtn: true });
+
             @if (session('success')) toastr.options={closeButton:!0,progressBar:!0,positionClass:"toast-bottom-right",timeOut:"3000"};toastr.success("{{ session('success') }}"); @endif
         </script>
     @endpush

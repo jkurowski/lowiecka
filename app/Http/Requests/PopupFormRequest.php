@@ -26,8 +26,10 @@ class PopupFormRequest extends FormRequest
         return [
             'popup_status' => 'boolean',
             'popup_mode' => 'boolean',
-            'popup_timeout' => 'required|integer',
-            'popup_text' => '',
+            'popup_timeout' => 'nullable|integer|min:0',
+            'popup_text' => 'nullable|string',
+            'popup_from' => 'nullable|date',
+            'popup_until' => 'nullable|date|after_or_equal:popup_from',
         ];
     }
 }
