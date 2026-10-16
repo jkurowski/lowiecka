@@ -26,7 +26,7 @@
                         <ul class="mb-0 list-unstyled">
                             @if($room->price_brutto && $room->status == 1)
                                 @if($room->highlighted && $room->promotion_price)
-                                    <li><b>promocja:</b> <b class="list-new-price">@money($room->promotion_price)</b></li>
+                                    <li><span class="list-new-price fw-bold">promocja:</span> <b class="list-new-price">@money($room->promotion_price)</b></li>
                                     <li class="list-old-price">cena: <b>@money($room->price_brutto)</b></li>
                                 @else
                                     <li>cena: <b>@money($room->price_brutto)</b></li>
