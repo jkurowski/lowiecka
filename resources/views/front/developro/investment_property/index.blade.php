@@ -37,13 +37,13 @@
 
                         <div class="row mb-3">
                             @if($property->price_brutto && $property->status == 1)
-                                <div class="col-12 col-sm-6 @if($property->highlighted) promotion-price order-2 text-center text-sm-end @endif">
+                                <div class="col-12 col-sm-6 @if($property->highlighted) promotion-price order-2 text-center text-sm-end @endif @if($property->highlighted && $property->promotion_price) old-price @endif">
                                     <h6 class="fs-3 fw-normal mb-0">@money($property->price_brutto)</h6>
                                     <p>@money(($property->price_brutto / $property->area)) / m<sup>2</sup></p>
                                 </div>
                             @endif
                             @if($property->promotion_price && $property->price_brutto && $property->highlighted)
-                                <div class="col-12 col-sm-6 @if($property->highlighted) order-1 text-center text-sm-start @endif">
+                                <div class="col-12 col-sm-6 @if($property->highlighted) order-1 text-center text-sm-start @endif new-price">
                                     <h6 class="fs-3 fw-normal mb-0">@money($property->promotion_price)</h6>
                                     <p>@money(($property->promotion_price / $property->area)) / m<sup>2</sup></p>
                                 </div>
@@ -351,6 +351,14 @@
         </section>
     </main>
 @endsection
+@push('style')
+    <style>
+        /* Promocja - cena promocyjna na czerwono, cena przed obniżką przygaszona i przekreślona */
+        .new-price h6, .new-price p { color: #d0021b; }
+        .new-price h6 { font-weight: 600 !important; }
+        .old-price h6, .old-price p { text-decoration: line-through; opacity: .5; }
+    </style>
+@endpush
 @push('scripts')
     <script>
         $(".mieszkanie-rzuty").responsiveSlides({auto:true, pager:false, nav:true, timeout:5000, random:false, speed: 500});

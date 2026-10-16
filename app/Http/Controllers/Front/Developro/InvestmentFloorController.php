@@ -29,6 +29,7 @@ class InvestmentFloorController extends Controller
         $investment_room = $investment->load(array(
             'floorRooms' => function ($query) use ($floor, $request) {
                 $query->where('floor_id', $floor->id);
+                $query->where('properties.active', 1);
                 if ($request->input('rooms')) {
                     $query->where('rooms', $request->input('rooms'));
                 }

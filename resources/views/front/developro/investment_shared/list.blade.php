@@ -25,7 +25,12 @@
                     <div class="col-6 col-sm d-flex align-items-center">
                         <ul class="mb-0 list-unstyled">
                             @if($room->price_brutto && $room->status == 1)
-                                <li>cena: <b>@money($room->price_brutto)</b></li>
+                                @if($room->highlighted && $room->promotion_price)
+                                    <li>cena: <b class="list-new-price">@money($room->promotion_price)</b></li>
+                                    <li class="list-old-price">@money($room->price_brutto)</li>
+                                @else
+                                    <li>cena: <b>@money($room->price_brutto)</b></li>
+                                @endif
                             @endif
                             @if($room->type == 1)
                             <li>pokoje: <b>{{$room->rooms}}</b></li>
@@ -52,3 +57,12 @@
         @endif
     </div>
 </div>
+@once
+    @push('style')
+        <style>
+            /* Promocja - cena promocyjna na czerwono, cena przed obniżką przygaszona i przekreślona */
+            #roomsList .list-new-price { color: #d0021b; }
+            #roomsList .list-old-price { text-decoration: line-through; opacity: .5; }
+        </style>
+    @endpush
+@endonce

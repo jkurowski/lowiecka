@@ -39,6 +39,9 @@ class InvestmentController extends Controller
         // Find the investment by slug and eager load related data
         $investment = Investment::find(1)
             ->load([
+                'properties' => function ($query) {
+                    $query->where('active', 1);
+                },
                 'properties.building',
                 'properties.floor',
             ]);

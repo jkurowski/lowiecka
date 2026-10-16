@@ -20,6 +20,9 @@ class InvestmentPropertyController extends Controller
 
     public function index(Floor $floor, $floorSlug, Property $property, $propertySlug)
     {
+        // "Widoczne: Nie" w panelu - strona lokalu niedostępna (zalogowany administrator nadal ją widzi)
+        abort_if(!$property->active && !auth('web')->check(), 404);
+
         $property->timestamps = false;
         $property->increment('views');
         $page = Page::where('id', $this->pageId)->first();
