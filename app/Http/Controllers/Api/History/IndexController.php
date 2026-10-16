@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\History;
 use App\Helpers\PropertyAreaTypes;
 use App\Http\Controllers\Controller;
 use App\Models\Investment;
+use App\Models\Property;
 use DOMDocument;
 use DOMXPath;
 use League\Csv\Writer;
@@ -106,224 +107,11 @@ class IndexController extends Controller
             $filename = "ceny-ofertowe-" . $investment->slug . "-" . $today . ".csv";
             $csvPath = public_path("datasets/{$filename}");
 
-            // Tworzymy CSV w pamięci
             $csv = Writer::createFromPath($csvPath, 'w+');
-            $headers = [
-                "Nazwa dewelopera",
-                "Forma prawna dewelopera",
-                "Nr KRS",
-                "Nr wpisu do CEiDG",
-                "Nr NIP",
-                "Nr REGON",
-                "Nr telefonu",
-                "Adres poczty elektronicznej",
-                "Nr faxu",
-                "Adres strony internetowej dewelopera",
+            $csv->insertOne(self::REPORT_HEADERS);
 
-                "Województwo adresu siedziby/głównego miejsca wykonywania działalności gospodarczej dewelopera",
-                "Powiat adresu siedziby/głównego miejsca wykonywania działalności gospodarczej dewelopera",
-                "Gmina adresu siedziby/głównego miejsca wykonywania działalności gospodarczej dewelopera",
-                "Miejscowość adresu siedziby/głównego miejsca wykonywania działalności gospodarczej dewelopera",
-                "Ulica adresu siedziby/głównego miejsca wykonywania działalności gospodarczej dewelopera",
-                "Nr nieruchomości adresu siedziby/głównego miejsca wykonywania działalności gospodarczej dewelopera",
-                "Nr lokalu adresu siedziby/głównego miejsca wykonywania działalności gospodarczej dewelopera",
-                "Kod pocztowy adresu siedziby/głównego miejsca wykonywania działalności gospodarczej dewelopera",
-
-                "Województwo adresu lokalu, w którym prowadzona jest sprzedaż",
-                "Powiat adresu lokalu, w którym prowadzona jest sprzedaż",
-                "Gmina adresu lokalu, w którym prowadzona jest sprzedaż",
-                "Miejscowość adresu lokalu, w którym prowadzona jest sprzedaż",
-                "Ulica adresu lokalu, w którym prowadzona jest sprzedaż",
-                "Nr nieruchomości adresu lokalu, w którym prowadzona jest sprzedaż",
-                "Nr lokalu adresu lokalu, w którym prowadzona jest sprzedaż",
-                "Kod pocztowy adresu lokalu, w którym prowadzona jest sprzedaż",
-                "Dodatkowe lokalizacje, w których prowadzona jest sprzedaż",
-                "Sposób kontaktu nabywcy z deweloperem",
-
-                "Województwo lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
-                "Powiat lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
-                "Gmina lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
-                "Miejscowość lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
-                "Ulica lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
-                "Nr nieruchomości lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
-                "Kod pocztowy lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
-
-                "Rodzaj nieruchomości: lokal mieszkalny, dom jednorodzinny",
-                "Nr lokalu lub domu jednorodzinnego nadany przez dewelopera",
-                "Cena m2 powierzchni użytkowej lokalu mieszkalnego / domu jednorodzinnego [zł]",
-                "Data od której cena obowiązuje cena m2 powierzchni użytkowej lokalu mieszkalnego / domu jednorodzinnego",
-                "Cena lokalu mieszkalnego lub domu jednorodzinnego będących przedmiotem umowy stanowiąca iloczyn ceny m2 oraz powierzchni [zł]",
-                "Data od której cena obowiązuje cena lokalu mieszkalnego lub domu jednorodzinnego będących przedmiotem umowy stanowiąca iloczyn ceny m2 oraz powierzchni",
-                "Cena lokalu mieszkalnego lub domu jednorodzinnego uwzględniająca cenę lokalu stanowiącą iloczyn powierzchni oraz metrażu i innych składowych ceny, o których mowa w art. 19a ust. 1 pkt 1), 2) lub 3) [zł]",
-                "Data od której obowiązuje cena lokalu mieszkalnego lub domu jednorodzinnego uwzględniająca cenę lokalu stanowiącą iloczyn powierzchni oraz metrażu i innych składowych ceny, o których mowa w art. 19a ust. 1 pkt 1), 2) lub 3)",
-                "Rodzaj części nieruchomości będących przedmiotem umowy",
-                "Oznaczenie części nieruchomości nadane przez dewelopera",
-                "Cena części nieruchomości, będących przedmiotem umowy [zł]",
-                "Data od której obowiązuje cena części nieruchomości, będących przedmiotem umowy",
-                "Rodzaj pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
-                "Oznaczenie pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
-                "Wyszczególnienie cen pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali [zł]",
-                "Data od której obowiązuje cena wyszczególnionych pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
-                "Wyszczególnienie praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego",
-                "Wartość praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego [zł]",
-                "Data od której obowiązuje cena wartości praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego",
-                "Wyszczególnienie rodzajów innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz dewelopera w wykonaniu umowy przenoszącej własność",
-                "Wartość innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz dewelopera w wykonaniu umowy przenoszącej własność [zł]",
-                "Data od której obowiązuje cena wartości innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz dewelopera w wykonaniu umowy przenoszącej własność",
-                "Adres strony internetowej, pod którym dostępny jest prospekt informacyjny"
-            ];
-            $csv->insertOne($headers);
-            $baseUrl = config('app.url');
-
-            foreach ($investment->activeProperties as $property) {
-                $row = [
-                    $investment->company->name ?? 'X',
-                    $investment->company->legal_form ?? 'X',
-                    $investment->company->krs_number ?? 'X',
-                    $investment->company->ceidg_number ?? 'X',
-                    $investment->company->nip ?? 'X',
-                    $investment->company->regon ?? 'X',
-                    $investment->company->phone ?? 'X',
-                    $investment->company->email ?? 'X',
-                    $investment->company->fax ?? 'X',
-                    $investment->company->website ?? 'X',
-                    $investment->company->province ?? 'X',
-                    $investment->company->district ?? 'X',
-                    $investment->company->municipality ?? 'X',
-                    $investment->company->city ?? 'X',
-                    $investment->company->street ?? 'X',
-                    $investment->company->building_number ?? 'X',
-                    $investment->company->apartment_number ?? 'X',
-                    $investment->company->postal_code ?? 'X',
-
-                    $investment->salePoint->province ?? 'X',
-                    $investment->salePoint->district ?? 'X',
-                    $investment->salePoint->municipality ?? 'X',
-                    $investment->salePoint->city ?? 'X',
-                    $investment->salePoint->street ?? 'X',
-                    $investment->salePoint->building_number ?? 'X',
-                    $investment->salePoint->apartment_number ?? 'X',
-                    $investment->salePoint->postal_code ?? 'X',
-                    $investment->salePoint->additional_locations ?? 'X',
-                    $investment->salePoint->contact_method ?? 'X',
-
-                    $investment->inv_province ?? 'X',
-                    $investment->inv_county ?? 'X',
-                    $investment->inv_municipality ?? 'X',
-                    $investment->inv_city ?? 'X',
-                    $investment->inv_street ?? 'X',
-                    $investment->inv_property_number ?? 'X',
-                    $investment->inv_postal_code ?? 'X',
-
-                    //Rodzaj nieruchomości: lokal mieszkalny, dom jednorodzinny
-                    ($property->type == 1)
-                        ? (PropertyAreaTypes::getStatusText($property->type) ?? 'X')
-                        : 'X',
-
-                    //Nr lokalu lub domu jednorodzinnego nadany przez dewelopera
-                    ($property->type == 1)
-                        ? ($property->number ?? 'X')
-                        : 'X',
-
-                    //Cena m2 powierzchni użytkowej lokalu mieszkalnego / domu jednorodzinnego [zł]
-                    (isset($property->area, $property->price_brutto)
-                        && is_numeric($property->area) && $property->area > 0
-                        && $property->type == 1)
-                        ? round((float)$property->price_brutto / (float)$property->area, 2)
-                        : 'X',
-
-                    //Data od której cena obowiązuje cena m2 powierzchni użytkowej lokalu mieszkalnego / domu jednorodzinnego
-                    ($property->type == 1)
-                        ? '09.09.2025'
-                        : 'X',
-
-                    //Cena lokalu mieszkalnego lub domu jednorodzinnego będących przedmiotem umowy stanowiąca iloczyn ceny m2 oraz powierzchni [zł]
-                    $property->display_price,
-
-                    //Data od której cena obowiązuje cena lokalu mieszkalnego lub domu jednorodzinnego będących przedmiotem umowy stanowiąca iloczyn ceny m2 oraz powierzchni
-                    ($property->type == 1)
-                        ? '09.09.2025'
-                        : 'X',
-
-                    //Cena lokalu mieszkalnego lub domu jednorodzinnego uwzględniająca cenę lokalu stanowiącą iloczyn powierzchni oraz metrażu i innych składowych ceny, o których mowa w art. 19a ust. 1 pkt 1), 2) lub 3) [zł]
-                    $property->total_with_related_price,
-
-                    //Data od której obowiązuje cena lokalu mieszkalnego lub domu jednorodzinnego uwzględniająca cenę lokalu stanowiącą iloczyn powierzchni oraz metrażu i innych składowych ceny, o których mowa w art. 19a ust. 1 pkt 1), 2) lub 3)
-                    ($property->type == 1)
-                        ? '09.09.2025'
-                        : 'X',
-
-                    //Rodzaj części nieruchomości będących przedmiotem umowy (piwnice, garaże, komórki lokatorskie, strychy, miejsce postojowe)
-                    ($property->type != 1)
-                        ? (PropertyAreaTypes::getStatusText($property->type) ?? 'X')
-                        : 'X',
-
-                    //Oznaczenie części nieruchomości nadane przez dewelopera
-                    ($property->type != 1)
-                        ? ($property->number ?? 'X')
-                        : 'X',
-
-                    //Cena części nieruchomości, będących przedmiotem umowy [zł]
-                    ($property->type != 1)
-                        ? ($property->price_brutto ?? 'X')
-                        : 'X',
-
-                    //Data od której obowiązuje cena części nieruchomości, będących przedmiotem umowy
-                    ($property->type != 1)
-                        ? '09.09.2025'
-                        : 'X',
-
-                    //Rodzaj pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali (piwnice, garaże, komórki lokatorskie, strychy, miejsce postojowe)
-                    ($property->type == 1)
-                        ? $property->related_types
-                        : 'X',
-
-                    //Oznaczenie pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali
-                    ($property->type == 1)
-                        ? $property->related_numbers
-                        : 'X',
-
-                    //Wyszczególnienie cen pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali [zł]
-                    ($property->type == 1)
-                        ? $property->related_prices
-                        : 'X',
-
-                    //Data od której obowiązuje cena wyszczególnionych pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali
-                    ($property->type == 1)
-                        ? '09.09.2025'
-                        : 'X',
-
-                    //Wyszczególnienie praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego
-                    'X',
-
-                    //Wartość praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego [zł]
-                    'X',
-
-                    //Data od której obowiązuje cena wartości praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego
-                    'X',
-
-                    //Wyszczególnienie rodzajów innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz dewelopera w wykonaniu umowy przenoszącej własność
-                    $property->priceComponents->isNotEmpty()
-                        ? $property->priceComponents->pluck('pivot.category')->map(fn($c) => $c ?? 'X')->implode(', ')
-                        : 'X',
-
-                    //Wartość innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz dewelopera w wykonaniu umowy przenoszącej własność [zł]
-                    $property->priceComponents->isNotEmpty()
-                        ? $property->priceComponents->pluck('pivot.value')->map(fn($v) => $v ?? 'X')->implode(', ')
-                        : 'X',
-
-                    //Data od której obowiązuje cena wartości innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz dewelopera w wykonaniu umowy przenoszącej własność
-                    ($property->priceComponents->isNotEmpty())
-                        ? '09.09.2025'
-                        : 'X',
-
-                    //Adres strony internetowej, pod którym dostępny jest prospekt informacyjny
-                    isset($investment->file_brochure)
-                        ? $baseUrl . "investment/brochure/".$investment->file_brochure
-                        : 'X',
-                ];
-
-                $csv->insertOne($row);
+            foreach ($this->reportProperties($investment) as $property) {
+                $csv->insertOne($this->reportRow($investment, $property));
             }
 
             $data = [
@@ -340,242 +128,293 @@ class IndexController extends Controller
         return response()->json(['message' => 'Dodano nowy resource', 'path' => $xmlPath]);
     }
 
+    /**
+     * Podgląd raportu jako tabela HTML - te same kolumny i wartości co w CSV
+     */
     public function showAsTable(Investment $investment)
     {
-        $today = now()->format('Y-m-d');
-        //$investments = Investment::where('status', 1)->with(['company', 'salePoint', 'properties'])->get();
-        $investment->with(['company', 'salePoint', 'properties'])->get();
-
-        $baseUrl = config('app.url');
+        $investment->load(['company', 'salePoint']);
 
         echo '<table border="1">';
-        // Table header
-        $headers = [
-            "Nazwa dewelopera",
-            "Forma prawna dewelopera",
-            "Nr KRS",
-            "Nr wpisu do CEiDG",
-            "Nr NIP",
-            "Nr REGON",
-            "Nr telefonu",
-            "Adres poczty elektronicznej",
-            "Nr faxu",
-            "Adres strony internetowej dewelopera",
-
-            "Województwo adresu siedziby/głównego miejsca wykonywania działalności gospodarczej dewelopera",
-            "Powiat adresu siedziby/głównego miejsca wykonywania działalności gospodarczej dewelopera",
-            "Gmina adresu siedziby/głównego miejsca wykonywania działalności gospodarczej dewelopera",
-            "Miejscowość adresu siedziby/głównego miejsca wykonywania działalności gospodarczej dewelopera",
-            "Ulica adresu siedziby/głównego miejsca wykonywania działalności gospodarczej dewelopera",
-            "Nr nieruchomości adresu siedziby/głównego miejsca wykonywania działalności gospodarczej dewelopera",
-            "Nr lokalu adresu siedziby/głównego miejsca wykonywania działalności gospodarczej dewelopera",
-            "Kod pocztowy adresu siedziby/głównego miejsca wykonywania działalności gospodarczej dewelopera",
-
-            "Województwo adresu lokalu, w którym prowadzona jest sprzedaż",
-            "Powiat adresu lokalu, w którym prowadzona jest sprzedaż",
-            "Gmina adresu lokalu, w którym prowadzona jest sprzedaż",
-            "Miejscowość adresu lokalu, w którym prowadzona jest sprzedaż",
-            "Ulica adresu lokalu, w którym prowadzona jest sprzedaż",
-            "Nr nieruchomości adresu lokalu, w którym prowadzona jest sprzedaż",
-            "Nr lokalu adresu lokalu, w którym prowadzona jest sprzedaż",
-            "Kod pocztowy adresu lokalu, w którym prowadzona jest sprzedaż",
-            "Dodatkowe lokalizacje, w których prowadzona jest sprzedaż",
-            "Sposób kontaktu nabywcy z deweloperem",
-
-            "Województwo lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
-            "Powiat lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
-            "Gmina lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
-            "Miejscowość lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
-            "Ulica lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
-            "Nr nieruchomości lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
-            "Kod pocztowy lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
-
-            "Rodzaj nieruchomości: lokal mieszkalny, dom jednorodzinny",
-            "Nr lokalu lub domu jednorodzinnego nadany przez dewelopera",
-            "Cena m2 powierzchni użytkowej lokalu mieszkalnego / domu jednorodzinnego [zł]",
-            "Data od której cena obowiązuje cena m2 powierzchni użytkowej lokalu mieszkalnego / domu jednorodzinnego",
-            "Cena lokalu mieszkalnego lub domu jednorodzinnego będących przedmiotem umowy stanowiąca iloczyn ceny m2 oraz powierzchni [zł]",
-            "Data od której cena obowiązuje cena lokalu mieszkalnego lub domu jednorodzinnego będących przedmiotem umowy stanowiąca iloczyn ceny m2 oraz powierzchni",
-            "Cena lokalu mieszkalnego lub domu jednorodzinnego uwzględniająca cenę lokalu stanowiącą iloczyn powierzchni oraz metrażu i innych składowych ceny, o których mowa w art. 19a ust. 1 pkt 1), 2) lub 3) [zł]",
-            "Data od której obowiązuje cena lokalu mieszkalnego lub domu jednorodzinnego uwzględniająca cenę lokalu stanowiącą iloczyn powierzchni oraz metrażu i innych składowych ceny, o których mowa w art. 19a ust. 1 pkt 1), 2) lub 3)",
-            "Rodzaj części nieruchomości będących przedmiotem umowy",
-            "Oznaczenie części nieruchomości nadane przez dewelopera",
-            "Cena części nieruchomości, będących przedmiotem umowy [zł]",
-            "Data od której obowiązuje cena części nieruchomości, będących przedmiotem umowy",
-            "Rodzaj pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
-            "Oznaczenie pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
-            "Wyszczególnienie cen pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali [zł]",
-            "Data od której obowiązuje cena wyszczególnionych pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
-            "Wyszczególnienie praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego",
-            "Wartość praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego [zł]",
-            "Data od której obowiązuje cena wartości praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego",
-            "Wyszczególnienie rodzajów innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz dewelopera w wykonaniu umowy przenoszącej własność",
-            "Wartość innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz dewelopera w wykonaniu umowy przenoszącej własność [zł]",
-            "Data od której obowiązuje cena wartości innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz dewelopera w wykonaniu umowy przenoszącej własność",
-            "Adres strony internetowej, pod którym dostępny jest prospekt informacyjny"
-        ];
-
         echo '<thead><tr>';
-        foreach ($headers as $header) {
-            echo "<th>{$header}</th>";
+        foreach (self::REPORT_HEADERS as $header) {
+            echo '<th>' . e($header) . '</th>';
         }
         echo '</tr></thead>';
-
-        // Table body
         echo '<tbody>';
 
-        foreach ($investment->activeProperties as $property) {
-
-            $row = [
-                $investment->company->name ?? 'X',
-                $investment->company->legal_form ?? 'X',
-                $investment->company->krs_number ?? 'X',
-                $investment->company->ceidg_number ?? 'X',
-                $investment->company->nip ?? 'X',
-                $investment->company->regon ?? 'X',
-                $investment->company->phone ?? 'X',
-                $investment->company->email ?? 'X',
-                $investment->company->fax ?? 'X',
-                $investment->company->website ?? 'X',
-                $investment->company->province ?? 'X',
-                $investment->company->district ?? 'X',
-                $investment->company->municipality ?? 'X',
-                $investment->company->city ?? 'X',
-                $investment->company->street ?? 'X',
-                $investment->company->building_number ?? 'X',
-                $investment->company->apartment_number ?? 'X',
-                $investment->company->postal_code ?? 'X',
-
-                $investment->salePoint->province ?? 'X',
-                $investment->salePoint->district ?? 'X',
-                $investment->salePoint->municipality ?? 'X',
-                $investment->salePoint->city ?? 'X',
-                $investment->salePoint->street ?? 'X',
-                $investment->salePoint->building_number ?? 'X',
-                $investment->salePoint->apartment_number ?? 'X',
-                $investment->salePoint->postal_code ?? 'X',
-                $investment->salePoint->additional_locations ?? 'X',
-                $investment->salePoint->contact_method ?? 'X',
-
-                $investment->inv_province ?? 'X',
-                $investment->inv_county ?? 'X',
-                $investment->inv_municipality ?? 'X',
-                $investment->inv_city ?? 'X',
-                $investment->inv_street ?? 'X',
-                $investment->inv_property_number ?? 'X',
-                $investment->inv_postal_code ?? 'X',
-
-                //Rodzaj nieruchomości: lokal mieszkalny, dom jednorodzinny
-                ($property->type == 1)
-                    ? (PropertyAreaTypes::getStatusText($property->type) ?? 'X')
-                    : 'X',
-
-                //Nr lokalu lub domu jednorodzinnego nadany przez dewelopera
-                ($property->type == 1)
-                    ? ($property->number ?? 'X')
-                    : 'X',
-
-                //Cena m2 powierzchni użytkowej lokalu mieszkalnego / domu jednorodzinnego [zł]
-                (isset($property->area, $property->price_brutto)
-                    && is_numeric($property->area) && $property->area > 0
-                    && $property->type == 1)
-                    ? round((float)$property->price_brutto / (float)$property->area, 2)
-                    : 'X',
-
-                //Data od której cena obowiązuje cena m2 powierzchni użytkowej lokalu mieszkalnego / domu jednorodzinnego
-                'X',
-
-                //Cena lokalu mieszkalnego lub domu jednorodzinnego będących przedmiotem umowy stanowiąca iloczyn ceny m2 oraz powierzchni [zł]
-                $property->display_price,
-
-                //Data od której cena obowiązuje cena lokalu mieszkalnego lub domu jednorodzinnego będących przedmiotem umowy stanowiąca iloczyn ceny m2 oraz powierzchni
-                'X',
-
-                //Cena lokalu mieszkalnego lub domu jednorodzinnego uwzględniająca cenę lokalu stanowiącą iloczyn powierzchni oraz metrażu i innych składowych ceny, o których mowa w art. 19a ust. 1 pkt 1), 2) lub 3) [zł]
-                $property->total_with_related_price,
-
-                //Data od której obowiązuje cena lokalu mieszkalnego lub domu jednorodzinnego uwzględniająca cenę lokalu stanowiącą iloczyn powierzchni oraz metrażu i innych składowych ceny, o których mowa w art. 19a ust. 1 pkt 1), 2) lub 3)
-                'X',
-
-                //Rodzaj części nieruchomości będących przedmiotem umowy (piwnice, garaże, komórki lokatorskie, strychy, miejsce postojowe)
-                ($property->type != 1)
-                    ? (PropertyAreaTypes::getStatusText($property->type) ?? 'X')
-                    : 'X',
-
-                //Oznaczenie części nieruchomości nadane przez dewelopera
-                ($property->type != 1)
-                    ? ($property->number ?? 'X')
-                    : 'X',
-
-                //Cena części nieruchomości, będących przedmiotem umowy [zł]
-                ($property->type != 1)
-                    ? ($property->price_brutto ?? 'X')
-                    : 'X',
-
-                //Data od której obowiązuje cena części nieruchomości, będących przedmiotem umowy
-                'X',
-
-                //Rodzaj pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali (piwnice, garaże, komórki lokatorskie, strychy, miejsce postojowe)
-                ($property->type == 1)
-                    ? $property->related_types
-                    : 'X',
-
-                //Oznaczenie pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali
-                ($property->type == 1)
-                    ? $property->related_numbers
-                    : 'X',
-
-                //Wyszczególnienie cen pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali [zł]
-                ($property->type == 1)
-                    ? $property->related_prices
-                    : 'X',
-
-                //Data od której obowiązuje cena wyszczególnionych pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali
-                'X',
-
-                //Wyszczególnienie praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego
-                'X',
-
-                //Wartość praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego [zł]
-                'X',
-
-                //Data od której obowiązuje cena wartości praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego
-                'X',
-
-                //Wyszczególnienie rodzajów innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz dewelopera w wykonaniu umowy przenoszącej własność
-                $property->priceComponents->isNotEmpty()
-                    ? $property->priceComponents->pluck('pivot.category')->map(fn($c) => $c ?? 'X')->implode(', ')
-                    : 'X',
-
-                //Wartość innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz dewelopera w wykonaniu umowy przenoszącej własność [zł]
-                $property->priceComponents->isNotEmpty()
-                    ? $property->priceComponents->pluck('pivot.value')->map(fn($v) => $v ?? 'X')->implode(', ')
-                    : 'X',
-
-                //Data od której obowiązuje cena wartości innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz dewelopera w wykonaniu umowy przenoszącej własność
-                'X',
-
-                //Adres strony internetowej, pod którym dostępny jest prospekt informacyjny
-                isset($investment->file_brochure)
-                    ? $baseUrl . "investment/brochure/".$investment->file_brochure
-                    : 'X',
-            ];
-
+        foreach ($this->reportProperties($investment) as $property) {
             echo '<tr>';
-            foreach ($row as $cell) {
-                // If the cell is a collection (like related_types or priceComponents), implode it
-                if (is_object($cell) && method_exists($cell, 'implode')) {
-                    $cell = $cell->implode(', ');
-                } elseif (is_array($cell)) {
-                    $cell = implode(', ', $cell);
-                }
-                echo "<td>{$cell}</td>";
+            foreach ($this->reportRow($investment, $property) as $cell) {
+                echo '<td>' . e($cell) . '</td>';
             }
             echo '</tr>';
         }
-        echo '</tbody>';
 
+        echo '</tbody>';
         echo '</table>';
+    }
+
+    /**
+     * Nazwy pól wg załącznika do rozporządzenia Ministra Cyfryzacji w sprawie struktury danych
+     * zawartych w informacjach dotyczących sprzedaży lokali mieszkalnych i domów jednorodzinnych
+     * (obowiązuje od 11.11.2026). Kolejność kolumn = kolejność pól w załączniku (grupy A-J, 57 pól).
+     */
+    private const REPORT_HEADERS = [
+        // A. Podmiot obowiązany
+        "Firma",
+        "Forma prawna",
+        "Numer w Krajowym Rejestrze Sądowym (KRS)",
+        "Numer wpisu do Centralnej Ewidencji i Informacji o Działalności Gospodarczej (CEIDG)",
+        "Numer Identyfikacji Podatkowej (NIP)",
+        "Numer identyfikacyjny REGON",
+        "Numer telefonu",
+        "Adres poczty elektronicznej",
+        "Adres strony internetowej",
+
+        // B. Adres siedziby albo głównego miejsca wykonywania działalności
+        "Województwo adresu siedziby albo głównego miejsca wykonywania działalności",
+        "Powiat adresu siedziby albo głównego miejsca wykonywania działalności",
+        "Gmina adresu siedziby albo głównego miejsca wykonywania działalności",
+        "Miejscowość adresu siedziby albo głównego miejsca wykonywania działalności",
+        "Ulica adresu siedziby albo głównego miejsca wykonywania działalności",
+        "Numer nieruchomości adresu siedziby albo głównego miejsca wykonywania działalności",
+        "Numer lokalu adresu siedziby albo głównego miejsca wykonywania działalności",
+        "Kod pocztowy adresu siedziby albo głównego miejsca wykonywania działalności",
+
+        // C. Adres lokalu, w którym prowadzona jest sprzedaż
+        "Województwo adresu lokalu, w którym jest prowadzona sprzedaż",
+        "Powiat adresu lokalu, w którym jest prowadzona sprzedaż",
+        "Gmina adresu lokalu, w którym jest prowadzona sprzedaż",
+        "Miejscowość adresu lokalu, w którym jest prowadzona sprzedaż",
+        "Ulica adresu lokalu, w którym jest prowadzona sprzedaż",
+        "Numer nieruchomości adresu lokalu, w którym jest prowadzona sprzedaż",
+        "Numer lokalu adresu lokalu, w którym jest prowadzona sprzedaż",
+        "Kod pocztowy adresu lokalu, w którym jest prowadzona sprzedaż",
+        "Dodatkowe lokalizacje, w których jest prowadzona sprzedaż",
+        "Sposób kontaktu nabywcy z podmiotem obowiązanym",
+
+        // D. Lokalizacja przedsięwzięcia deweloperskiego albo zadania inwestycyjnego
+        "Województwo lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
+        "Powiat lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
+        "Gmina lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
+        "Miejscowość lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
+        "Ulica lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
+        "Numer nieruchomości lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
+        "Kod pocztowy lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
+
+        // E. Lokal mieszkalny albo dom jednorodzinny
+        "Rodzaj nieruchomości",
+        "Numer lokalu mieszkalnego albo domu jednorodzinnego, nadany przez podmiot obowiązany",
+        "Cena 1 m2 powierzchni użytkowej lokalu mieszkalnego albo domu jednorodzinnego",
+        "Data, od której obowiązuje cena 1 m2 powierzchni użytkowej lokalu mieszkalnego albo domu jednorodzinnego",
+        "Cena lokalu mieszkalnego albo domu jednorodzinnego, będącego przedmiotem umowy, stanowiąca iloczyn ceny m2 oraz powierzchni użytkowej",
+        "Data, od której obowiązuje cena lokalu mieszkalnego albo domu jednorodzinnego, będącego przedmiotem umowy, stanowiąca iloczyn ceny m2 oraz powierzchni użytkowej",
+        "Cena lokalu mieszkalnego albo domu jednorodzinnego, obejmująca łączną cenę całej nieruchomości albo jej części będącej przedmiotem umowy oraz cenę i świadczenia pieniężne, o których mowa w art. 19a ust. 1 pkt 2 i 3 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym",
+        "Data, od której obowiązuje cena lokalu mieszkalnego albo domu jednorodzinnego, obejmująca łączną cenę całej nieruchomości albo jej części będącej przedmiotem umowy oraz cenę i świadczenia pieniężne, o których mowa w art. 19a ust. 1 pkt 2 i 3 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym",
+
+        // F. Części nieruchomości będące przedmiotem umowy
+        "Rodzaj części nieruchomości będącej przedmiotem umowy",
+        "Oznaczenie części nieruchomości nadane przez podmiot obowiązany",
+        "Cena części nieruchomości będącej przedmiotem umowy",
+        "Data, od której obowiązuje cena części nieruchomości, będących przedmiotem umowy",
+
+        // G. Pomieszczenia przynależne
+        "Rodzaj pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
+        "Oznaczenie pomieszczenia przynależnego, o którym mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
+        "Wyszczególnienie cen pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
+        "Data, od której obowiązuje cena wyszczególnionych pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
+
+        // H. Prawa niezbędne do korzystania z lokalu mieszkalnego albo domu jednorodzinnego
+        "Wyszczególnienie praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego",
+        "Wartość praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego",
+        "Data, od której obowiązuje wartości praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego",
+
+        // I. Inne świadczenia pieniężne
+        "Wyszczególnienie rodzajów innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz podmiotu obowiązanego w wykonaniu umowy przenoszącej własność",
+        "Wartość innego świadczenia pieniężnego, które nabywca zobowiązany jest spełnić na rzecz podmiotu obowiązanego w wykonaniu umowy przenoszącej własność",
+        "Data, od której obowiązuje cena wartości innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz podmiotu obowiązanego w wykonaniu umowy przenoszącej własność",
+
+        // J. Dodatkowe dane
+        "Adres strony internetowej, pod którym jest dostępny prospekt informacyjny",
+    ];
+
+    /**
+     * Data obowiązywania ceny, gdy lokal nie ma wpisu w historii cen (property_prices).
+     * Historia cen jest prowadzona od 16.09.2025; wcześniej raport podawał stałą datę 09.09.2025.
+     */
+    private const FALLBACK_PRICE_DATE = '2025-09-09';
+
+    private function reportProperties(Investment $investment)
+    {
+        return $investment->activeProperties()
+            ->with(['priceHistory', 'relatedProperties.priceHistory', 'priceComponents'])
+            ->get();
+    }
+
+    /**
+     * Jeden rekord raportu = jeden lokal (mieszkanie albo część nieruchomości), kolumny jak REPORT_HEADERS.
+     * Pole bez zastosowania = "X".
+     */
+    private function reportRow(Investment $investment, Property $property): array
+    {
+        $company = $investment->company;
+        $salePoint = $investment->salePoint;
+
+        $isApartment = $property->type == PropertyAreaTypes::ROOM_APARTMENT;
+        $price = $this->offerPrice($property);
+        $priceDate = $this->priceDate($property);
+
+        $related = $isApartment ? $property->relatedProperties : collect();
+        $relatedWithPrice = $related->filter(fn ($p) => $this->offerPrice($p) !== null);
+        $components = $property->priceComponents;
+
+        $baseUrl = rtrim(config('app.url'), '/') . '/';
+
+        $row = [
+            // A
+            $this->value($company?->name),
+            $this->value($company?->legal_form),
+            $this->value($company?->krs_number),
+            $this->value($company?->ceidg_number),
+            $this->value($company?->nip),
+            $this->value($company?->regon),
+            $this->value($company?->phone),
+            $this->value($company?->email),
+            $this->value($company?->website),
+
+            // B
+            $this->value($company?->province),
+            $this->value($company?->district),
+            $this->value($company?->municipality),
+            $this->value($company?->city),
+            $this->value($company?->street),
+            $this->value($company?->building_number),
+            $this->value($company?->apartment_number),
+            $this->value($company?->postal_code),
+
+            // C
+            $this->value($salePoint?->province),
+            $this->value($salePoint?->district),
+            $this->value($salePoint?->municipality),
+            $this->value($salePoint?->city),
+            $this->value($salePoint?->street),
+            $this->value($salePoint?->building_number),
+            $this->value($salePoint?->apartment_number),
+            $this->value($salePoint?->postal_code),
+            $this->value($salePoint?->additional_locations),
+            $this->value($salePoint?->contact_method),
+
+            // D
+            $this->value($investment->inv_province),
+            $this->value($investment->inv_county),
+            $this->value($investment->inv_municipality),
+            $this->value($investment->inv_city),
+            $this->value($investment->inv_street),
+            $this->value($investment->inv_property_number),
+            $this->value($investment->inv_postal_code),
+
+            // E - tylko dla lokalu mieszkalnego
+            $isApartment ? 'lokal mieszkalny' : 'X',
+            $isApartment ? $this->value($property->number) : 'X',
+            ($isApartment && $price !== null && (float) $property->area > 0)
+                ? $this->money($price / (float) $property->area)
+                : 'X',
+            $isApartment ? $priceDate : 'X',
+            ($isApartment && $price !== null) ? $this->money($price) : 'X',
+            $isApartment ? $priceDate : 'X',
+            ($isApartment && $price !== null)
+                ? $this->money($price + $relatedWithPrice->sum(fn ($p) => $this->offerPrice($p)))
+                : 'X',
+            $isApartment ? $this->latestDate(array_merge([$priceDate], $relatedWithPrice->map(fn ($p) => $this->priceDate($p))->all())) : 'X',
+
+            // F - komórki, miejsca postojowe itp. raportowane jako osobne rekordy
+            !$isApartment ? $this->value(PropertyAreaTypes::getStatusText($property->type)) : 'X',
+            !$isApartment ? $this->value($property->number) : 'X',
+            (!$isApartment && $price !== null) ? $this->money($price) : 'X',
+            (!$isApartment && $price !== null) ? $priceDate : 'X',
+
+            // G - pomieszczenia przynależne powiązane z mieszkaniem
+            $relatedWithPrice->isNotEmpty()
+                ? $relatedWithPrice->map(fn ($p) => PropertyAreaTypes::getStatusText($p->type) ?? 'X')->implode(', ')
+                : 'X',
+            $relatedWithPrice->isNotEmpty()
+                ? $relatedWithPrice->map(fn ($p) => $p->number ?? 'X')->implode(', ')
+                : 'X',
+            $relatedWithPrice->isNotEmpty()
+                ? $relatedWithPrice->map(fn ($p) => $this->money($this->offerPrice($p)))->implode(', ')
+                : 'X',
+            $relatedWithPrice->isNotEmpty()
+                ? $this->latestDate($relatedWithPrice->map(fn ($p) => $this->priceDate($p))->all())
+                : 'X',
+
+            // H - brak takich praw w ofercie
+            'X',
+            'X',
+            'X',
+
+            // I
+            $components->isNotEmpty()
+                ? $components->map(fn ($c) => $c->pivot->category ?? 'X')->implode(', ')
+                : 'X',
+            $components->isNotEmpty()
+                ? $components->map(fn ($c) => is_numeric($c->pivot->value) ? $this->money($c->pivot->value) : 'X')->implode(', ')
+                : 'X',
+            $components->isNotEmpty()
+                ? $this->latestDate($components->map(fn ($c) => optional($c->pivot->updated_at)->toDateString() ?? $priceDate)->all())
+                : 'X',
+
+            // J
+            $investment->file_brochure
+                ? $baseUrl . 'investment/brochure/' . $investment->file_brochure
+                : 'X',
+        ];
+
+        if (count($row) !== count(self::REPORT_HEADERS)) {
+            throw new \LogicException('Raport cen: liczba wartości (' . count($row) . ') różna od liczby kolumn (' . count(self::REPORT_HEADERS) . ')');
+        }
+
+        return $row;
+    }
+
+    /** Cena ofertowa - przy aktywnej promocji cena promocyjna (tak jak na stronie i w historii cen). */
+    private function offerPrice(Property $property): ?float
+    {
+        if ($property->highlighted && (float) $property->promotion_price > 0) {
+            return (float) $property->promotion_price;
+        }
+
+        return (float) $property->price_brutto > 0 ? (float) $property->price_brutto : null;
+    }
+
+    /** Data, od której obowiązuje aktualna cena (RRRR-MM-DD) - ostatnia zmiana z historii cen. */
+    private function priceDate(Property $property): string
+    {
+        $latest = $property->priceHistory->first();
+
+        return $latest && $latest->changed_at
+            ? $latest->changed_at->toDateString()
+            : self::FALLBACK_PRICE_DATE;
+    }
+
+    private function latestDate(array $dates): string
+    {
+        $dates = array_filter($dates);
+
+        return $dates ? max($dates) : self::FALLBACK_PRICE_DATE;
+    }
+
+    /** Kwota w zł z dokładnością do dwóch miejsc po przecinku. */
+    private function money($amount): string
+    {
+        return number_format((float) $amount, 2, '.', '');
+    }
+
+    private function value($value): string
+    {
+        $value = is_string($value) ? trim($value) : $value;
+
+        return ($value === null || $value === '') ? 'X' : (string) $value;
     }
 
     public function generateMD5()
@@ -611,7 +450,7 @@ class IndexController extends Controller
 
         $resource->appendChild($doc->createElement("extIdent", $this->generateExtIdent()));
 
-        $baseUrl = config('app.url');
+        $baseUrl = rtrim(config('app.url'), '/') . '/';
         $resource->appendChild(
             $doc->createElement(
                 "url",
