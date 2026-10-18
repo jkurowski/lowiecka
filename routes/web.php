@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('routes', function () {
     Artisan::call('route:list');
