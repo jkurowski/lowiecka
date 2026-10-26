@@ -17,7 +17,7 @@
                     <p>96-100 Skierniewice</p>
                     <p>&nbsp;</p>
                     <p><a href="mailto:biuro@epsdevelopment.pl">biuro@epsdevelopment.pl</a></p>
-                    <p><a href="mailto:+48690256457">690-256-457</a></p>
+                    <p><a href="tel:+48690256457">690-256-457</a></p>
                 </div>
             </div>
             <div class="col-6 col-md-4 col-lg-2">

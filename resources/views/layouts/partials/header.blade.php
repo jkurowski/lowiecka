@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="top text-end">
-                            <a href="">+48 690 256 457</a>
+                            <a href="tel:+48690256457">+48 690 256 457</a>
                         </div>
                     </div>
                     <div class="col-12 d-flex justify-content-end">
