@@ -56,6 +56,9 @@ class InvestmentFormRequest extends FormRequest
             'inv_street' => ['nullable', 'string', 'max:150'],
             'inv_property_number' => ['nullable', 'string', 'max:50'],
             'inv_postal_code' => ['nullable', 'string', 'max:20', 'regex:/^\d{2}-\d{3}$/'], // matches 00-000 format
+            // współrzędne WGS-84 do raportu cen (dane.gov.pl); zakres obejmuje Polskę z zapasem
+            'inv_longitude' => ['nullable', 'numeric', 'between:14,25'],
+            'inv_latitude' => ['nullable', 'numeric', 'between:49,55'],
 
             'company_id' => ['required', 'integer', 'exists:investment_companies,id'],
             'sale_point_id' => ['nullable', 'integer', 'exists:investment_sale_points,id'],

@@ -120,6 +120,20 @@
                         ])
                     </div>
                     <div class="col-4 mt-4">
+                        @include('form-elements.html-input-text', [
+                            'label' => 'Długość geograficzna lokalizacji (np. 19.455983)',
+                            'name' => 'inv_longitude',
+                            'value' => $entry->inv_longitude,
+                        ])
+                    </div>
+                    <div class="col-4 mt-4">
+                        @include('form-elements.html-input-text', [
+                            'label' => 'Szerokość geograficzna lokalizacji (np. 51.759445)',
+                            'name' => 'inv_latitude',
+                            'value' => $entry->inv_latitude,
+                        ])
+                    </div>
+                    <div class="col-4 mt-4">
                         @include('form-elements.html-select', [
                             'label' => 'Spółka celowa',
                             'name' => 'company_id',

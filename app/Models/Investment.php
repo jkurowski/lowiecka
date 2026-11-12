@@ -60,6 +60,8 @@ class Investment extends Model
         'inv_street',
         'inv_property_number',
         'inv_postal_code',
+        'inv_longitude',
+        'inv_latitude',
         'company_id',
         'sale_point_id',
     ];

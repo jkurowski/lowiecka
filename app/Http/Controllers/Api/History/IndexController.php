@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\Api\History;
 
 use App\Helpers\PropertyAreaTypes;
+use App\Helpers\ProvinceTypes;
 use App\Http\Controllers\Controller;
 use App\Models\Investment;
 use App\Models\Property;
 use DOMDocument;
 use DOMXPath;
-use League\Csv\Writer;
-use SplTempFileObject;
 
 class IndexController extends Controller
 {
@@ -102,17 +101,18 @@ class IndexController extends Controller
 
         $today = now()->format('Y-m-d');
         $investments = Investment::where('status', 1)->with(['company', 'salePoint'])->get();
+
+        // Najpierw wszystkie wiersze, dopiero potem zapis - błąd w danych jednej inwestycji
+        // nie zostawia na dysku połowy plików i niedokończonego XML-a.
+        $reports = [];
         foreach ($investments as $investment) {
+            $reports[] = [$investment, $this->reportRows($investment)];
+        }
 
+        foreach ($reports as [$investment, $rows]) {
             $filename = "ceny-ofertowe-" . $investment->slug . "-" . $today . ".csv";
-            $csvPath = public_path("datasets/{$filename}");
 
-            $csv = Writer::createFromPath($csvPath, 'w+');
-            $csv->insertOne(self::REPORT_HEADERS);
-
-            foreach ($this->reportProperties($investment) as $property) {
-                $csv->insertOne($this->reportRow($investment, $property));
-            }
+            file_put_contents(public_path("datasets/{$filename}"), $this->csvContent($rows));
 
             $data = [
                 'company_name' => $investment->company->name ?? 'Brak nazwy firmy',
@@ -143,9 +143,9 @@ class IndexController extends Controller
         echo '</tr></thead>';
         echo '<tbody>';
 
-        foreach ($this->reportProperties($investment) as $property) {
+        foreach ($this->reportRows($investment) as $row) {
             echo '<tr>';
-            foreach ($this->reportRow($investment, $property) as $cell) {
+            foreach ($row as $cell) {
                 echo '<td>' . e($cell) . '</td>';
             }
             echo '</tr>';
@@ -156,33 +156,27 @@ class IndexController extends Controller
     }
 
     /**
-     * Nazwy pól wg załącznika do rozporządzenia Ministra Cyfryzacji w sprawie struktury danych
+     * Nazwy pól wg załącznika do rozporządzenia Ministra Cyfryzacji z 10.11.2026 w sprawie struktury danych
      * zawartych w informacjach dotyczących sprzedaży lokali mieszkalnych i domów jednorodzinnych
-     * (obowiązuje od 11.11.2026). Kolejność kolumn = kolejność pól w załączniku (grupy A-J, 57 pól).
+     * (Dz.U. 2026 poz. 1489, obowiązuje od 11.11.2026). Brzmienie i kolejność nagłówków dokładnie jak
+     * we wzorcowym pliku CSV z dane.gov.pl (grupy A-H, 48 pól) - nie poprawiać "po swojemu".
      */
     private const REPORT_HEADERS = [
-        // A. Podmiot obowiązany
+        // A. Dane identyfikacyjne podmiotu obowiązanego
         "Firma",
-        "Forma prawna",
-        "Numer w Krajowym Rejestrze Sądowym (KRS)",
-        "Numer wpisu do Centralnej Ewidencji i Informacji o Działalności Gospodarczej (CEIDG)",
-        "Numer Identyfikacji Podatkowej (NIP)",
-        "Numer identyfikacyjny REGON",
-        "Numer telefonu",
-        "Adres poczty elektronicznej",
-        "Adres strony internetowej",
+        "Numer identyfikacji podatkowej (NIP)",
 
-        // B. Adres siedziby albo głównego miejsca wykonywania działalności
-        "Województwo adresu siedziby albo głównego miejsca wykonywania działalności",
-        "Powiat adresu siedziby albo głównego miejsca wykonywania działalności",
-        "Gmina adresu siedziby albo głównego miejsca wykonywania działalności",
-        "Miejscowość adresu siedziby albo głównego miejsca wykonywania działalności",
-        "Ulica adresu siedziby albo głównego miejsca wykonywania działalności",
-        "Numer nieruchomości adresu siedziby albo głównego miejsca wykonywania działalności",
-        "Numer lokalu adresu siedziby albo głównego miejsca wykonywania działalności",
-        "Kod pocztowy adresu siedziby albo głównego miejsca wykonywania działalności",
+        // B. Adres siedziby albo głównego miejsca wykonywania działalności gospodarczej
+        "Województwo adresu siedziby albo głównego miejsca wykonywania działalności gospodarczej",
+        "Powiat adresu siedziby albo głównego miejsca wykonywania działalności gospodarczej",
+        "Gmina adresu siedziby albo głównego miejsca wykonywania działalności gospodarczej",
+        "Miejscowość adresu siedziby albo głównego miejsca wykonywania działalności gospodarczej",
+        "Ulica adresu siedziby albo głównego miejsca wykonywania działalności gospodarczej",
+        "Numer nieruchomości adresu siedziby albo głównego miejsca wykonywania działalności gospodarczej",
+        "Numer lokalu adresu siedziby albo głównego miejsca wykonywania działalności gospodarczej",
+        "Kod pocztowy adresu siedziby albo głównego miejsca wykonywania działalności gospodarczej",
 
-        // C. Adres lokalu, w którym prowadzona jest sprzedaż
+        // C. Adres lokalu, w którym jest prowadzona sprzedaż
         "Województwo adresu lokalu, w którym jest prowadzona sprzedaż",
         "Powiat adresu lokalu, w którym jest prowadzona sprzedaż",
         "Gmina adresu lokalu, w którym jest prowadzona sprzedaż",
@@ -194,7 +188,7 @@ class IndexController extends Controller
         "Dodatkowe lokalizacje, w których jest prowadzona sprzedaż",
         "Sposób kontaktu nabywcy z podmiotem obowiązanym",
 
-        // D. Lokalizacja przedsięwzięcia deweloperskiego albo zadania inwestycyjnego
+        // D. Lokalizacja przedsięwzięcia deweloperskiego lub zadania inwestycyjnego
         "Województwo lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
         "Powiat lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
         "Gmina lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
@@ -202,89 +196,168 @@ class IndexController extends Controller
         "Ulica lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
         "Numer nieruchomości lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
         "Kod pocztowy lokalizacji przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
+        "Długość geograficzna punktu określającego lokalizację przestrzenną przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
+        "Szerokość geograficzna punktu określającego lokalizację przestrzenną przedsięwzięcia deweloperskiego lub zadania inwestycyjnego",
 
-        // E. Lokal mieszkalny albo dom jednorodzinny
+        // E. Dane dotyczące lokalu mieszkalnego albo domu jednorodzinnego lub ich części
         "Rodzaj nieruchomości",
-        "Numer lokalu mieszkalnego albo domu jednorodzinnego, nadany przez podmiot obowiązany",
+        "Identyfikator lokalu mieszkalnego albo domu jednorodzinnego",
         "Cena 1 m2 powierzchni użytkowej lokalu mieszkalnego albo domu jednorodzinnego",
-        "Data, od której obowiązuje cena 1 m2 powierzchni użytkowej lokalu mieszkalnego albo domu jednorodzinnego",
-        "Cena lokalu mieszkalnego albo domu jednorodzinnego, będącego przedmiotem umowy, stanowiąca iloczyn ceny m2 oraz powierzchni użytkowej",
-        "Data, od której obowiązuje cena lokalu mieszkalnego albo domu jednorodzinnego, będącego przedmiotem umowy, stanowiąca iloczyn ceny m2 oraz powierzchni użytkowej",
-        "Cena lokalu mieszkalnego albo domu jednorodzinnego, obejmująca łączną cenę całej nieruchomości albo jej części będącej przedmiotem umowy oraz cenę i świadczenia pieniężne, o których mowa w art. 19a ust. 1 pkt 2 i 3 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym",
-        "Data, od której obowiązuje cena lokalu mieszkalnego albo domu jednorodzinnego, obejmująca łączną cenę całej nieruchomości albo jej części będącej przedmiotem umowy oraz cenę i świadczenia pieniężne, o których mowa w art. 19a ust. 1 pkt 2 i 3 ustawy z dnia 20 maja 2021 r. o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym",
+        "Data i czas, od których obowiązuje cena 1 m2 powierzchni użytkowej lokalu mieszkalnego albo domu jednorodzinnego",
+        "Cena lokalu mieszkalnego albo domu jednorodzinnego lub ich części będących przedmiotem umowy",
+        "Data i czas, od których obowiązuje cena lokalu mieszkalnego albo domu jednorodzinnego lub ich części",
 
-        // F. Części nieruchomości będące przedmiotem umowy
-        "Rodzaj części nieruchomości będącej przedmiotem umowy",
-        "Oznaczenie części nieruchomości nadane przez podmiot obowiązany",
-        "Cena części nieruchomości będącej przedmiotem umowy",
-        "Data, od której obowiązuje cena części nieruchomości, będących przedmiotem umowy",
+        // F. Pomieszczenia przynależne
+        "Rodzaj pomieszczenia przynależnego, o którym mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
+        "Identyfikator pomieszczenia przynależnego, o którym mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
+        "Cena pomieszczenia przynależnego, o którym mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
+        "Data i czas, od których obowiązuje cena pomieszczenia przynależnego, o którym mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
+        "Identyfikator lokalu mieszkalnego albo domu jednorodzinnego dla pomieszczenia przynależnego",
 
-        // G. Pomieszczenia przynależne
-        "Rodzaj pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
-        "Oznaczenie pomieszczenia przynależnego, o którym mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
-        "Wyszczególnienie cen pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
-        "Data, od której obowiązuje cena wyszczególnionych pomieszczeń przynależnych, o których mowa w art. 2 ust. 4 ustawy z dnia 24 czerwca 1994 r. o własności lokali",
+        // G. Prawa niezbędne do korzystania z lokalu mieszkalnego albo domu jednorodzinnego
+        "Wyszczególnienie praw niezbędnych do korzystania z lokalu mieszkalnego albo domu jednorodzinnego",
+        "Wartość praw niezbędnych do korzystania z lokalu mieszkalnego albo domu jednorodzinnego",
+        "Data i czas, od których obowiązuje wartość praw niezbędnych do korzystania z lokalu mieszkalnego albo domu jednorodzinnego",
+        "Identyfikator lokalu mieszkalnego albo domu jednorodzinnego dla prawa niezbędnego",
 
-        // H. Prawa niezbędne do korzystania z lokalu mieszkalnego albo domu jednorodzinnego
-        "Wyszczególnienie praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego",
-        "Wartość praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego",
-        "Data, od której obowiązuje wartości praw niezbędnych do korzystania z lokalu mieszkalnego lub domu jednorodzinnego",
-
-        // I. Inne świadczenia pieniężne
-        "Wyszczególnienie rodzajów innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz podmiotu obowiązanego w wykonaniu umowy przenoszącej własność",
-        "Wartość innego świadczenia pieniężnego, które nabywca zobowiązany jest spełnić na rzecz podmiotu obowiązanego w wykonaniu umowy przenoszącej własność",
-        "Data, od której obowiązuje cena wartości innych świadczeń pieniężnych, które nabywca zobowiązany jest spełnić na rzecz podmiotu obowiązanego w wykonaniu umowy przenoszącej własność",
-
-        // J. Dodatkowe dane
-        "Adres strony internetowej, pod którym jest dostępny prospekt informacyjny",
+        // H. Inne świadczenia pieniężne
+        "Wyszczególnienie rodzaju innego świadczenia pieniężnego, które nabywca jest zobowiązany spełnić na rzecz podmiotu obowiązanego w wykonaniu umowy przenoszącej własność",
+        "Wartość innego świadczenia pieniężnego, które nabywca jest zobowiązany spełnić na rzecz podmiotu obowiązanego w wykonaniu umowy przenoszącej własność",
+        "Data i czas, od których obowiązuje wartość innego świadczenia pieniężnego, które nabywca jest zobowiązany spełnić na rzecz podmiotu obowiązanego w wykonaniu umowy przenoszącej własność",
+        "Identyfikator lokalu mieszkalnego albo domu jednorodzinnego dla innego świadczenia",
     ];
 
     /**
      * Data obowiązywania ceny, gdy lokal nie ma wpisu w historii cen (property_prices).
      * Historia cen jest prowadzona od 16.09.2025; wcześniej raport podawał stałą datę 09.09.2025.
      */
-    private const FALLBACK_PRICE_DATE = '2025-09-09';
+    private const FALLBACK_PRICE_DATE = '2025-09-09 00:00:00';
+
+    /** Skróty rodzajów pomieszczeń w identyfikatorze (pole F2), np. "MP-13". Wzorzec MC: "GAR03", "PIW03". */
+    private const PREMISES_CODES = [
+        PropertyAreaTypes::STORAGE => 'KL',
+        PropertyAreaTypes::PARKING => 'MP',
+        PropertyAreaTypes::GARDEN => 'OG',
+        PropertyAreaTypes::PARKING_STORAGE => 'MPK',
+    ];
 
     private function reportProperties(Investment $investment)
     {
+        // lokale usługowe nie są lokalami mieszkalnymi ani ich częściami - nie podlegają raportowi
         return $investment->activeProperties()
+            ->where('type', '!=', PropertyAreaTypes::SHOP)
             ->with(['priceHistory', 'relatedProperties.priceHistory', 'priceComponents'])
             ->get();
     }
 
     /**
-     * Jeden rekord raportu = jeden lokal (mieszkanie albo część nieruchomości), kolumny jak REPORT_HEADERS.
-     * Pole bez zastosowania = "X".
+     * Wszystkie wiersze raportu dla inwestycji, kolumny jak REPORT_HEADERS. Pole bez zastosowania = "X".
+     *
+     * Układ wierszy jak we wzorcowym pliku MC:
+     * - mieszkanie = tyle wierszy, ile ma pozycji w najdłuższej z grup F (pomieszczenia powiązane z ceną)
+     *   i H (składniki ceny), co najmniej jeden; dane lokalu (E) powtarzają się w każdym wierszu,
+     *   a F5 / H4 wskazują identyfikator lokalu z E2. Jedna komórka = jedna wartość (bez list po przecinku).
+     * - komórka / miejsce postojowe / ogródek sprzedawane osobno (nieprzypisane do mieszkania z raportu)
+     *   = własny wiersz z grupą F, bez danych lokalu (E = "X", F5 = "X").
+     *   Pomieszczenie przypisane do mieszkania występuje tylko w wierszu tego mieszkania.
      */
-    private function reportRow(Investment $investment, Property $property): array
+    private function reportRows(Investment $investment): array
+    {
+        $properties = $this->reportProperties($investment);
+
+        $apartments = $properties->filter(fn ($p) => $this->isApartment($p))->values();
+
+        $relatedOf = [];
+        $attachedIds = [];
+        foreach ($apartments as $apartment) {
+            $relatedOf[$apartment->id] = $apartment->relatedProperties
+                ->filter(fn ($p) => !$this->isApartment($p)
+                    && $p->type != PropertyAreaTypes::SHOP
+                    && $this->offerPrice($p) !== null)
+                ->values();
+
+            foreach ($relatedOf[$apartment->id] as $related) {
+                $attachedIds[$related->id] = true;
+            }
+        }
+
+        $standalone = $properties
+            ->filter(fn ($p) => !$this->isApartment($p) && !isset($attachedIds[$p->id]))
+            ->values();
+
+        $identifiers = $this->identifiers($investment);
+        $idOf = fn (Property $p) => $identifiers[$p->id] ?? $this->baseIdentifier($p);
+
+        $head = $this->investmentCells($investment);
+        $rows = [];
+
+        foreach ($apartments as $apartment) {
+            $id = $idOf($apartment);
+            $price = $this->offerPrice($apartment);
+            $priceDate = $this->priceDate($apartment);
+            $hasArea = (float) $apartment->area > 0;
+
+            $e = [
+                'lokal mieszkalny',
+                $id,
+                ($price !== null && $hasArea) ? $this->money($price / (float) $apartment->area) : 'X',
+                ($price !== null && $hasArea) ? $priceDate : 'X',
+                $price !== null ? $this->money($price) : 'X',
+                $price !== null ? $priceDate : 'X',
+            ];
+
+            $f = $relatedOf[$apartment->id]->map(fn ($p) => $this->premisesCells($p, $idOf($p), $id))->all();
+            $h = $this->componentCells($apartment, $priceDate, $id);
+
+            for ($i = 0, $n = max(1, count($f), count($h)); $i < $n; $i++) {
+                $rows[] = $this->row($head, $e, $f[$i] ?? null, $h[$i] ?? null);
+            }
+        }
+
+        foreach ($standalone as $premises) {
+            $f = $this->premisesCells($premises, $idOf($premises), 'X');
+            $h = $this->componentCells($premises, $this->priceDate($premises), 'X');
+
+            for ($i = 0, $n = max(1, count($h)); $i < $n; $i++) {
+                $rows[] = $this->row($head, null, $i === 0 ? $f : null, $h[$i] ?? null);
+            }
+        }
+
+        return $rows;
+    }
+
+    /** Składa wiersz z grup; brak grupy = "X" w każdym jej polu. Pilnuje liczby kolumn. */
+    private function row(array $head, ?array $e, ?array $f, ?array $h): array
+    {
+        $row = array_merge(
+            $head,
+            $e ?? array_fill(0, 6, 'X'),
+            $f ?? array_fill(0, 5, 'X'),
+            // G - prawa niezbędne do korzystania z lokalu: brak takich pozycji w ofercie
+            array_fill(0, 4, 'X'),
+            $h ?? array_fill(0, 4, 'X')
+        );
+
+        if (count($row) !== count(self::REPORT_HEADERS)) {
+            throw new \LogicException('Raport cen: liczba wartości (' . count($row) . ') różna od liczby kolumn (' . count(self::REPORT_HEADERS) . ')');
+        }
+
+        return $row;
+    }
+
+    /** Grupy A-D - wspólne dla wszystkich wierszy inwestycji (29 pól). */
+    private function investmentCells(Investment $investment): array
     {
         $company = $investment->company;
         $salePoint = $investment->salePoint;
 
-        $isApartment = $property->type == PropertyAreaTypes::ROOM_APARTMENT;
-        $price = $this->offerPrice($property);
-        $priceDate = $this->priceDate($property);
-
-        $related = $isApartment ? $property->relatedProperties : collect();
-        $relatedWithPrice = $related->filter(fn ($p) => $this->offerPrice($p) !== null);
-        $components = $property->priceComponents;
-
-        $baseUrl = rtrim(config('app.url'), '/') . '/';
-
-        $row = [
+        return [
             // A
             $this->value($company?->name),
-            $this->value($company?->legal_form),
-            $this->value($company?->krs_number),
-            $this->value($company?->ceidg_number),
-            $this->value($company?->nip),
-            $this->value($company?->regon),
-            $this->value($company?->phone),
-            $this->value($company?->email),
-            $this->value($company?->website),
+            $this->value(preg_replace('/\D+/', '', (string) $company?->nip)),
 
             // B
-            $this->value($company?->province),
+            $this->province($company?->province),
             $this->value($company?->district),
             $this->value($company?->municipality),
             $this->value($company?->city),
@@ -294,7 +367,7 @@ class IndexController extends Controller
             $this->value($company?->postal_code),
 
             // C
-            $this->value($salePoint?->province),
+            $this->province($salePoint?->province),
             $this->value($salePoint?->district),
             $this->value($salePoint?->municipality),
             $this->value($salePoint?->city),
@@ -306,75 +379,118 @@ class IndexController extends Controller
             $this->value($salePoint?->contact_method),
 
             // D
-            $this->value($investment->inv_province),
+            $this->province($investment->inv_province),
             $this->value($investment->inv_county),
             $this->value($investment->inv_municipality),
             $this->value($investment->inv_city),
             $this->value($investment->inv_street),
             $this->value($investment->inv_property_number),
             $this->value($investment->inv_postal_code),
-
-            // E - tylko dla lokalu mieszkalnego
-            $isApartment ? 'lokal mieszkalny' : 'X',
-            $isApartment ? $this->value($property->number) : 'X',
-            ($isApartment && $price !== null && (float) $property->area > 0)
-                ? $this->money($price / (float) $property->area)
-                : 'X',
-            $isApartment ? $priceDate : 'X',
-            ($isApartment && $price !== null) ? $this->money($price) : 'X',
-            $isApartment ? $priceDate : 'X',
-            ($isApartment && $price !== null)
-                ? $this->money($price + $relatedWithPrice->sum(fn ($p) => $this->offerPrice($p)))
-                : 'X',
-            $isApartment ? $this->latestDate(array_merge([$priceDate], $relatedWithPrice->map(fn ($p) => $this->priceDate($p))->all())) : 'X',
-
-            // F - komórki, miejsca postojowe itp. raportowane jako osobne rekordy
-            !$isApartment ? $this->value(PropertyAreaTypes::getStatusText($property->type)) : 'X',
-            !$isApartment ? $this->value($property->number) : 'X',
-            (!$isApartment && $price !== null) ? $this->money($price) : 'X',
-            (!$isApartment && $price !== null) ? $priceDate : 'X',
-
-            // G - pomieszczenia przynależne powiązane z mieszkaniem
-            $relatedWithPrice->isNotEmpty()
-                ? $relatedWithPrice->map(fn ($p) => PropertyAreaTypes::getStatusText($p->type) ?? 'X')->implode(', ')
-                : 'X',
-            $relatedWithPrice->isNotEmpty()
-                ? $relatedWithPrice->map(fn ($p) => $p->number ?? 'X')->implode(', ')
-                : 'X',
-            $relatedWithPrice->isNotEmpty()
-                ? $relatedWithPrice->map(fn ($p) => $this->money($this->offerPrice($p)))->implode(', ')
-                : 'X',
-            $relatedWithPrice->isNotEmpty()
-                ? $this->latestDate($relatedWithPrice->map(fn ($p) => $this->priceDate($p))->all())
-                : 'X',
-
-            // H - brak takich praw w ofercie
-            'X',
-            'X',
-            'X',
-
-            // I
-            $components->isNotEmpty()
-                ? $components->map(fn ($c) => $c->pivot->category ?? 'X')->implode(', ')
-                : 'X',
-            $components->isNotEmpty()
-                ? $components->map(fn ($c) => is_numeric($c->pivot->value) ? $this->money($c->pivot->value) : 'X')->implode(', ')
-                : 'X',
-            $components->isNotEmpty()
-                ? $this->latestDate($components->map(fn ($c) => optional($c->pivot->updated_at)->toDateString() ?? $priceDate)->all())
-                : 'X',
-
-            // J
-            $investment->file_brochure
-                ? $baseUrl . 'investment/brochure/' . $investment->file_brochure
-                : 'X',
+            $this->coordinate($investment->inv_longitude),
+            $this->coordinate($investment->inv_latitude),
         ];
+    }
 
-        if (count($row) !== count(self::REPORT_HEADERS)) {
-            throw new \LogicException('Raport cen: liczba wartości (' . count($row) . ') różna od liczby kolumn (' . count(self::REPORT_HEADERS) . ')');
+    /** Grupa F dla jednego pomieszczenia (5 pól). */
+    private function premisesCells(Property $premises, string $identifier, string $apartmentIdentifier): array
+    {
+        $price = $this->offerPrice($premises);
+
+        return [
+            $this->value(PropertyAreaTypes::getStatusText((int) $premises->type)),
+            $identifier,
+            $price !== null ? $this->money($price) : 'X',
+            $price !== null ? $this->priceDate($premises) : 'X',
+            $apartmentIdentifier,
+        ];
+    }
+
+    /**
+     * Grupa H - po jednym zestawie 4 pól na składnik ceny. Nazwa to nazwa składnika (pivot.category to tylko
+     * obowiązkowy/opcjonalny), kwota stała albo za m2 x powierzchnia; bez kwoty "X" (wtedy data też "X").
+     */
+    private function componentCells(Property $property, string $priceDate, string $apartmentIdentifier): array
+    {
+        return $property->priceComponents->map(function ($component) use ($property, $priceDate, $apartmentIdentifier) {
+            $amount = $this->componentValue($component, $property);
+            $changedAt = $component->pivot->updated_at ?? $component->pivot->created_at;
+
+            return [
+                $this->value($component->name),
+                $amount,
+                $amount === 'X' ? 'X' : ($changedAt ? $this->dateTime($changedAt) : $priceDate),
+                $apartmentIdentifier,
+            ];
+        })->all();
+    }
+
+    /**
+     * Identyfikatory unikalne w ramach inwestycji (E2, F2), klucz = id rekordu.
+     *
+     * Podstawą jest numer nadany w panelu. Gdy dwa rekordy dają ten sam identyfikator (np. miejsce nr 9
+     * w garażu i nr 9 na parkingu naziemnym), każdy z nich dostaje dopisaną nazwę kondygnacji:
+     * "MP-9 / Parking Naziemny". Dopiero gdy i to nie rozróżnia (albo brak kondygnacji) - id rekordu.
+     *
+     * Powtórzenia liczone są po WSZYSTKICH lokalach inwestycji, także sprzedanych, a nie tylko po tych
+     * z dzisiejszego raportu - inaczej identyfikator zmieniłby się w dniu, w którym "bliźniak" znika z oferty,
+     * a rozporządzenie wymaga, żeby zachowywał tę samą wartość przez cały czas oferowania.
+     */
+    private function identifiers(Investment $investment): array
+    {
+        $all = $investment->properties()
+            ->where('type', '!=', PropertyAreaTypes::SHOP)
+            ->with('floor')
+            ->get();
+
+        $groups = [];
+        foreach ($all as $property) {
+            $groups[$this->baseIdentifier($property)][] = $property;
         }
 
-        return $row;
+        $identifiers = [];
+        foreach ($groups as $base => $group) {
+            if (count($group) === 1 && $base !== 'X') {
+                $identifiers[$group[0]->id] = (string) $base;
+                continue;
+            }
+
+            $withFloor = [];
+            foreach ($group as $property) {
+                $floor = $this->value($property->floor?->name);
+                $withFloor[$property->id] = $floor === 'X' ? null : $base . ' / ' . $floor;
+            }
+
+            $distinct = !in_array(null, $withFloor, true) && count(array_unique($withFloor)) === count($withFloor);
+
+            foreach ($group as $property) {
+                $identifiers[$property->id] = $distinct ? $withFloor[$property->id] : $base . '-' . $property->id;
+            }
+        }
+
+        return $identifiers;
+    }
+
+    /**
+     * Identyfikator przed rozróżnianiem powtórzeń: mieszkanie = numer z panelu; pomieszczenie = oznaczenie
+     * z panelu, gdy zaczyna się od litery (np. "K14", "G15" - te same co w dotychczasowych raportach),
+     * a przy samym numerze skrót rodzaju + numer, np. "MP-13".
+     */
+    private function baseIdentifier(Property $property): string
+    {
+        $number = $this->value($property->number);
+
+        if ($this->isApartment($property)) {
+            return $number;
+        }
+
+        $code = self::PREMISES_CODES[$property->type] ?? 'P';
+
+        return preg_match('/^\p{L}/u', $number) ? $number : $code . '-' . $number;
+    }
+
+    private function isApartment(Property $property): bool
+    {
+        return $property->type == PropertyAreaTypes::ROOM_APARTMENT;
     }
 
     /** Cena ofertowa - przy aktywnej promocji cena promocyjna (tak jak na stronie i w historii cen). */
@@ -387,27 +503,58 @@ class IndexController extends Controller
         return (float) $property->price_brutto > 0 ? (float) $property->price_brutto : null;
     }
 
-    /** Data, od której obowiązuje aktualna cena (RRRR-MM-DD) - ostatnia zmiana z historii cen. */
+    /** Data i czas, od których obowiązuje aktualna cena (RRRR-MM-DD GG:MM:SS) - ostatnia zmiana z historii cen. */
     private function priceDate(Property $property): string
     {
         $latest = $property->priceHistory->first();
 
         return $latest && $latest->changed_at
-            ? $latest->changed_at->toDateString()
+            ? $this->dateTime($latest->changed_at)
             : self::FALLBACK_PRICE_DATE;
     }
 
-    private function latestDate(array $dates): string
+    private function dateTime($value): string
     {
-        $dates = array_filter($dates);
-
-        return $dates ? max($dates) : self::FALLBACK_PRICE_DATE;
+        return \Carbon\Carbon::parse($value)->format('Y-m-d H:i:s');
     }
 
-    /** Kwota w zł z dokładnością do dwóch miejsc po przecinku. */
+    /** Wartość składnika ceny: kwota stała, a gdy jej brak - cena za m2 x powierzchnia lokalu; bez kwoty "X". */
+    private function componentValue($component, Property $property): string
+    {
+        $value = str_replace(',', '.', (string) $component->pivot->value);
+        if (is_numeric($value) && (float) $value > 0) {
+            return $this->money($value);
+        }
+
+        $valueM2 = str_replace(',', '.', (string) $component->pivot->value_m2);
+        if (is_numeric($valueM2) && (float) $valueM2 > 0 && (float) $property->area > 0) {
+            return $this->money((float) $valueM2 * (float) $property->area);
+        }
+
+        return 'X';
+    }
+
+    /** Kwota w zł: dwa miejsca po przecinku, przecinek dziesiętny (jak we wzorcowym CSV), bez separatora tysięcy. */
     private function money($amount): string
     {
-        return number_format((float) $amount, 2, '.', '');
+        return number_format((float) $amount, 2, ',', '');
+    }
+
+    /** Współrzędna WGS-84: sześć miejsc po przecinku, przecinek dziesiętny; brak w panelu = "X". */
+    private function coordinate($value): string
+    {
+        $value = str_replace(',', '.', trim((string) $value));
+
+        return is_numeric($value) ? number_format((float) $value, 6, ',', '') : 'X';
+    }
+
+    /** Województwo: w panelu zapisany jest klucz bez polskich znaków ("lodzkie") - do raportu idzie nazwa ("łódzkie"). */
+    private function province($value): string
+    {
+        $value = $this->value($value);
+        $names = ProvinceTypes::getProvinces();
+
+        return isset($names[$value]) ? mb_strtolower($names[$value]) : $value;
     }
 
     private function value($value): string
@@ -415,6 +562,30 @@ class IndexController extends Controller
         $value = is_string($value) ? trim($value) : $value;
 
         return ($value === null || $value === '') ? 'X' : (string) $value;
+    }
+
+    /**
+     * Treść pliku CSV w formacie wzorcowego dokumentu MC: UTF-8 z BOM, separator pól ";", koniec wiersza CRLF.
+     * Składane ręcznie (bez league/csv i bez parametru eol w fputcsv) - działa tak samo na każdej wersji PHP.
+     */
+    private function csvContent(array $rows): string
+    {
+        $lines = [$this->csvLine(self::REPORT_HEADERS)];
+        foreach ($rows as $row) {
+            $lines[] = $this->csvLine($row);
+        }
+
+        return "\xEF\xBB\xBF" . implode("\r\n", $lines) . "\r\n";
+    }
+
+    private function csvLine(array $cells): string
+    {
+        return implode(';', array_map(function ($cell) {
+            // znak nowej linii w polu rozbiłby rekord - zamieniamy na spację
+            $cell = preg_replace('/\s*[\r\n]+\s*/', ' ', (string) $cell);
+
+            return (strpbrk($cell, ';"') !== false) ? '"' . str_replace('"', '""', $cell) . '"' : $cell;
+        }, $cells));
     }
 
     public function generateMD5()
