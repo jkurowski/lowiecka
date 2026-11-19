@@ -255,7 +255,7 @@ class IndexController extends Controller
      *
      * Układ wierszy jak we wzorcowym pliku MC:
      * - mieszkanie = tyle wierszy, ile ma pozycji w najdłuższej z grup F (pomieszczenia przynależne),
-     *   G (miejsca w garażu podziemnym - prawo do wyłącznego korzystania) i H (składniki ceny), co najmniej
+     *   G (miejsca postojowe - udział w hali garażowej albo prawo do wyłącznego korzystania) i H (składniki ceny), co najmniej
      *   jeden; dane lokalu (E) powtarzają się w każdym wierszu, a F5 / G4 / H4 wskazują identyfikator lokalu
      *   z E2. Jedna komórka = jedna wartość (bez list po przecinku).
      * - komórka / miejsce postojowe / ogródek sprzedawane osobno (nieprzypisane do mieszkania z raportu)
@@ -404,17 +404,25 @@ class IndexController extends Controller
     }
 
     /**
-     * Forma sprzedaży wg klienta (mail 19.11.2026): komórki lokatorskie i miejsca na parkingu naziemnym
-     * to pomieszczenia przynależne (grupa F), miejsca w garażu podziemnym - prawo do wyłącznego korzystania
-     * z części nieruchomości wspólnej (grupa G). Garaż rozpoznajemy po kondygnacji "Garaż podziemny",
-     * a bez kondygnacji po oznaczeniu "G…" nadawanym w panelu miejscom w garażu.
+     * Forma sprzedaży wg klienta (doprecyzowanie z 19.11.2026):
+     * - komórka lokatorska - pomieszczenie przynależne wpisane do KW mieszkania (grupa F),
+     * - miejsce postojowe zewnętrzne - prawo do wyłącznego korzystania z części nieruchomości wspólnej (grupa G),
+     * - miejsce w garażu podziemnym - udział 1/54 w hali garażowej (odrębny lokal z własną KW) wraz z prawem
+     *   do wyłącznego korzystania z miejsca o danym numerze (grupa G).
      */
+    private const GARAGE_SHARE = '1/54';
+
     private function isRight(Property $property): bool
     {
-        if (!in_array((int) $property->type, [PropertyAreaTypes::PARKING, PropertyAreaTypes::PARKING_STORAGE], true)) {
-            return false;
-        }
+        return in_array((int) $property->type, [PropertyAreaTypes::PARKING, PropertyAreaTypes::PARKING_STORAGE], true);
+    }
 
+    /**
+     * Miejsce w garażu podziemnym: po kondygnacji "Garaż podziemny", a bez kondygnacji po oznaczeniu "G…"
+     * nadawanym w panelu miejscom w garażu (miejsca zewnętrzne mają "P…").
+     */
+    private function isGarage(Property $property): bool
+    {
         $floor = mb_strtolower((string) $property->floor?->name);
         if ($floor !== '') {
             return str_contains($floor, 'garaż') || str_contains($floor, 'garaz');
@@ -430,12 +438,16 @@ class IndexController extends Controller
     private function rightCells(Property $premises, string $identifier, string $apartmentIdentifier): array
     {
         $price = $this->offerPrice($premises);
-        $name = $premises->type == PropertyAreaTypes::PARKING_STORAGE
-            ? 'miejsce postojowe z komórką lokatorską w garażu podziemnym'
-            : 'miejsce postojowe w garażu podziemnym';
+        $place = $premises->type == PropertyAreaTypes::PARKING_STORAGE
+            ? 'miejsca postojowego z komórką lokatorską'
+            : 'miejsca postojowego';
+
+        $description = $this->isGarage($premises)
+            ? 'udział ' . self::GARAGE_SHARE . ' w lokalu niemieszkalnym - hali garażowej wraz z prawem do wyłącznego korzystania z ' . $place . ' ' . $identifier
+            : 'prawo do wyłącznego korzystania z części nieruchomości wspólnej - zewnętrznego ' . $place . ' ' . $identifier;
 
         return [
-            'prawo do wyłącznego korzystania z części nieruchomości wspólnej - ' . $name . ' ' . $identifier,
+            $description,
             $price !== null ? $this->money($price) : 'X',
             $price !== null ? $this->priceDate($premises) : 'X',
             $apartmentIdentifier,
