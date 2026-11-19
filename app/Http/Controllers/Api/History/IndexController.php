@@ -246,7 +246,7 @@ class IndexController extends Controller
         // lokale usługowe nie są lokalami mieszkalnymi ani ich częściami - nie podlegają raportowi
         return $investment->activeProperties()
             ->where('type', '!=', PropertyAreaTypes::SHOP)
-            ->with(['priceHistory', 'relatedProperties.priceHistory', 'priceComponents'])
+            ->with(['floor', 'priceHistory', 'relatedProperties.priceHistory', 'relatedProperties.floor', 'priceComponents'])
             ->get();
     }
 
@@ -254,11 +254,12 @@ class IndexController extends Controller
      * Wszystkie wiersze raportu dla inwestycji, kolumny jak REPORT_HEADERS. Pole bez zastosowania = "X".
      *
      * Układ wierszy jak we wzorcowym pliku MC:
-     * - mieszkanie = tyle wierszy, ile ma pozycji w najdłuższej z grup F (pomieszczenia powiązane z ceną)
-     *   i H (składniki ceny), co najmniej jeden; dane lokalu (E) powtarzają się w każdym wierszu,
-     *   a F5 / H4 wskazują identyfikator lokalu z E2. Jedna komórka = jedna wartość (bez list po przecinku).
+     * - mieszkanie = tyle wierszy, ile ma pozycji w najdłuższej z grup F (pomieszczenia przynależne),
+     *   G (miejsca w garażu podziemnym - prawo do wyłącznego korzystania) i H (składniki ceny), co najmniej
+     *   jeden; dane lokalu (E) powtarzają się w każdym wierszu, a F5 / G4 / H4 wskazują identyfikator lokalu
+     *   z E2. Jedna komórka = jedna wartość (bez list po przecinku).
      * - komórka / miejsce postojowe / ogródek sprzedawane osobno (nieprzypisane do mieszkania z raportu)
-     *   = własny wiersz z grupą F, bez danych lokalu (E = "X", F5 = "X").
+     *   = własny wiersz z grupą F albo G, bez danych lokalu (E = "X", F5 / G4 = "X").
      *   Pomieszczenie przypisane do mieszkania występuje tylko w wierszu tego mieszkania.
      */
     private function reportRows(Investment $investment): array
@@ -306,20 +307,32 @@ class IndexController extends Controller
                 $price !== null ? $priceDate : 'X',
             ];
 
-            $f = $relatedOf[$apartment->id]->map(fn ($p) => $this->premisesCells($p, $idOf($p), $id))->all();
+            $f = [];
+            $g = [];
+            foreach ($relatedOf[$apartment->id] as $p) {
+                if ($this->isRight($p)) {
+                    $g[] = $this->rightCells($p, $idOf($p), $id);
+                } else {
+                    $f[] = $this->premisesCells($p, $idOf($p), $id);
+                }
+            }
             $h = $this->componentCells($apartment, $priceDate, $id);
 
-            for ($i = 0, $n = max(1, count($f), count($h)); $i < $n; $i++) {
-                $rows[] = $this->row($head, $e, $f[$i] ?? null, $h[$i] ?? null);
+            for ($i = 0, $n = max(1, count($f), count($g), count($h)); $i < $n; $i++) {
+                $rows[] = $this->row($head, $e, $f[$i] ?? null, $g[$i] ?? null, $h[$i] ?? null);
             }
         }
 
         foreach ($standalone as $premises) {
-            $f = $this->premisesCells($premises, $idOf($premises), 'X');
+            $isRight = $this->isRight($premises);
+            $cells = $isRight
+                ? $this->rightCells($premises, $idOf($premises), 'X')
+                : $this->premisesCells($premises, $idOf($premises), 'X');
             $h = $this->componentCells($premises, $this->priceDate($premises), 'X');
 
             for ($i = 0, $n = max(1, count($h)); $i < $n; $i++) {
-                $rows[] = $this->row($head, null, $i === 0 ? $f : null, $h[$i] ?? null);
+                $first = $i === 0 ? $cells : null;
+                $rows[] = $this->row($head, null, $isRight ? null : $first, $isRight ? $first : null, $h[$i] ?? null);
             }
         }
 
@@ -327,14 +340,13 @@ class IndexController extends Controller
     }
 
     /** Składa wiersz z grup; brak grupy = "X" w każdym jej polu. Pilnuje liczby kolumn. */
-    private function row(array $head, ?array $e, ?array $f, ?array $h): array
+    private function row(array $head, ?array $e, ?array $f, ?array $g, ?array $h): array
     {
         $row = array_merge(
             $head,
             $e ?? array_fill(0, 6, 'X'),
             $f ?? array_fill(0, 5, 'X'),
-            // G - prawa niezbędne do korzystania z lokalu: brak takich pozycji w ofercie
-            array_fill(0, 4, 'X'),
+            $g ?? array_fill(0, 4, 'X'),
             $h ?? array_fill(0, 4, 'X')
         );
 
@@ -388,6 +400,45 @@ class IndexController extends Controller
             $this->value($investment->inv_postal_code),
             $this->coordinate($investment->inv_longitude),
             $this->coordinate($investment->inv_latitude),
+        ];
+    }
+
+    /**
+     * Forma sprzedaży wg klienta (mail 19.11.2026): komórki lokatorskie i miejsca na parkingu naziemnym
+     * to pomieszczenia przynależne (grupa F), miejsca w garażu podziemnym - prawo do wyłącznego korzystania
+     * z części nieruchomości wspólnej (grupa G). Garaż rozpoznajemy po kondygnacji "Garaż podziemny",
+     * a bez kondygnacji po oznaczeniu "G…" nadawanym w panelu miejscom w garażu.
+     */
+    private function isRight(Property $property): bool
+    {
+        if (!in_array((int) $property->type, [PropertyAreaTypes::PARKING, PropertyAreaTypes::PARKING_STORAGE], true)) {
+            return false;
+        }
+
+        $floor = mb_strtolower((string) $property->floor?->name);
+        if ($floor !== '') {
+            return str_contains($floor, 'garaż') || str_contains($floor, 'garaz');
+        }
+
+        return (bool) preg_match('/^G\d/u', trim((string) $property->number));
+    }
+
+    /**
+     * Grupa G dla jednego prawa (4 pola). Grupa nie ma osobnego pola na oznaczenie, więc oznaczenie
+     * (to samo, które było w F2) jest w opisie.
+     */
+    private function rightCells(Property $premises, string $identifier, string $apartmentIdentifier): array
+    {
+        $price = $this->offerPrice($premises);
+        $name = $premises->type == PropertyAreaTypes::PARKING_STORAGE
+            ? 'miejsce postojowe z komórką lokatorską w garażu podziemnym'
+            : 'miejsce postojowe w garażu podziemnym';
+
+        return [
+            'prawo do wyłącznego korzystania z części nieruchomości wspólnej - ' . $name . ' ' . $identifier,
+            $price !== null ? $this->money($price) : 'X',
+            $price !== null ? $this->priceDate($premises) : 'X',
+            $apartmentIdentifier,
         ];
     }
 
